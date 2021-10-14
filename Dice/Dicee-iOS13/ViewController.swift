@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceIV2: UIImageView!
     
     // Local Variables
-    var topDie = 0
-    var bottomDie = 0
+    var topDie = Int.random(in: 1...5)
+    var bottomDie = Int.random(in: 1...5)
     var dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     override func viewDidLoad() {
@@ -32,7 +32,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        print("I did it.")
+        topDie = Int.random(in: 1...5)
+        bottomDie = Int.random(in: 1...5)
+        diceTotal.text = "\(topDie + bottomDie)"
+        
         diceIV1.image = dice[topDie]
         diceIV2.image = dice[bottomDie]
     }
