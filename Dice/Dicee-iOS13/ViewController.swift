@@ -35,6 +35,12 @@ class ViewController: UIViewController {
         bottomDie = Int.random(in: 1...5)
         diceTotal.text = "\(2 + topDie + bottomDie)"
         
+        /**
+            NTFS ~
+              If I wasn't trying to calculate the total
+                diceIV1.image = dice.randomElement()
+                diceIV2.image = dice.randomElement()
+        */
         diceIV1.image = dice[topDie]
         diceIV2.image = dice[bottomDie]
     }
