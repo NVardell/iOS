@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceIV2: UIImageView!
     
     // Local Variables
-    var topDie = Int.random(in: 1...5)
-    var bottomDie = Int.random(in: 1...5)
+    var topDie = Int.random(in: 0...5)
+    var bottomDie = Int.random(in: 0...5)
     let dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     override func viewDidLoad() {
