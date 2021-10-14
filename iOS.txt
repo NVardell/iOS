@@ -52,4 +52,11 @@
     - String Interpolation (Ex. print("TEXT \(2+2) TEXT"))
 • What is an Array?
     - An ordered sequence of items.
-    
+• How do you define a constant?
+    - With the 'let' keyword. (Ex. let x = 10)
+• How do you define a variable?
+    - 
+• What is the difference between a constant and a variable?
+    - 
+• 
+• 
