@@ -10,23 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var diceIV1: UIImageView!
+    // UI Lables
+    @IBOutlet weak var diceTotal: UILabel!
     
+    // UI Images
+    @IBOutlet weak var diceIV1: UIImageView!
     @IBOutlet weak var diceIV2: UIImageView!
+    
+    // Local Variables
+    var topDie = 0
+    var bottomDie = 0
+    var dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        diceIV1.image = #imageLiteral(resourceName: "DiceSix")
-        diceIV2.image = #imageLiteral(resourceName: "DiceSix")
-        diceIV1.alpha = 0.75
+        diceTotal.text = "\(topDie + bottomDie)"
+        
+        
+//        diceIV1.alpha = 0.75
         diceIV2.alpha = 0.75
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
         print("I did it.")
-        diceIV1.image = #imageLiteral(resourceName: "DiceFour")
-        diceIV2.image = #imageLiteral(resourceName: "DiceFour")
+        diceIV1.image = dice[topDie]
+        diceIV2.image = dice[bottomDie]
     }
     
     
