@@ -25,9 +25,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        diceIV1.alpha = 0.75
-        diceIV2.alpha = 0.75
-        
         diceIV1.image = dice[topDie]
         diceIV2.image = dice[bottomDie]
         diceTotal.text = "\(2 + topDie + bottomDie)"
