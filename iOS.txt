@@ -57,7 +57,7 @@
 • How do you define a variable?
     - With the 'var' keyword. (Ex. var x = 10)
 • What is the difference between a constant and a variable?
-    - 
+    - They have different keywords defining them, let v. var. 
 • What is the difference between a Double & Float?
     - A Double is double the accuracy of a Float.
 • How many positions does a Float have?
@@ -70,5 +70,18 @@
     - '...' Includes the lower and upper values.  Used when randomizing numbers in a specific range,
 • Can you have a partially open range operator?
     - Yes. '..<' Include lower bound and everything less than upper bound.
+• What is the difference between Safe Area and Superview?
+    - Superview is the area at the top/bottom of the phone where default Apple OS gestures and stats appear.
+      Adding UI elements to these areas is frowned upon.  Hence the Safe Area auto sizes things to stay out of that area.
+• Alignment v Pinning
+    - Alignment Constraints force a UI object to a horizontal/vertical rule.
+    - Pinning Constraints force UI objects to be a specific # of pixels from each edge of the display.
+    - Align to the Center & Pin to the bottom.
+• Name 3 different ways to create UI Container Views for objects to sit in.
+    1. Plus button, Search "uiview", Click & Drag "View" object to Builder
+    2. Select UI Objects -> Select 'Editor' menu -> Select 'Embed In' -> Select 'View'
+    3. Select UI Objects -> Click icon in lower right with an arrow in a box -> Select 'View'
 • 
 • 
+
+
