@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
-               BuildableName = "Magic 8 Ball.app"
+               BuildableName = "Magic 8.app"
                BlueprintName = "Magic 8"
                ReferencedContainer = "container:Magic 8.xcodeproj">
             </BuildableReference>
@@ -40,8 +40,7 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
@@ -49,7 +48,7 @@
             BlueprintName = "Magic 8"
             ReferencedContainer = "container:Magic 8.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,16 +56,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
-            BuildableName = "Magic 8 Ball.app"
+            BuildableName = "Magic 8.app"
             BlueprintName = "Magic 8"
             ReferencedContainer = "container:Magic 8.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
