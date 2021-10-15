@@ -55,8 +55,20 @@
 • How do you define a constant?
     - With the 'let' keyword. (Ex. let x = 10)
 • How do you define a variable?
-    - 
+    - With the 'var' keyword. (Ex. var x = 10)
 • What is the difference between a constant and a variable?
     - 
+• What is the difference between a Double & Float?
+    - A Double is double the accuracy of a Float.
+• How many positions does a Float have?
+    - 8 positions, or 32 bits. (Ex. print(Float.pi) // 3.1415925, print(Float.pi * 1000) // 3141.5925)
+• How many positions does a Double have?
+    - 16 positions, or 64 bits. (Ex. print(Double.pi) // 3.141592653589793, print(Double.pi * 1000) // 3141.592653589793)
+• How many data types are there in Swift?
+    - 7 (Int, Float, Double, Array, Bool, String, Dictionary)
+• What is a closed ranged operator?
+    - '...' Includes the lower and upper values.  Used when randomizing numbers in a specific range,
+• Can you have a partially open range operator?
+    - Yes. '..<' Include lower bound and everything less than upper bound.
 • 
 • 
