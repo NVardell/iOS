@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
-               BuildableName = "Magic 8 Ball.app"
+               BuildableName = "Magic 8.app"
                BlueprintName = "Magic 8"
                ReferencedContainer = "container:Magic 8.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
-            BuildableName = "Magic 8 Ball.app"
+            BuildableName = "Magic 8.app"
             BlueprintName = "Magic 8"
             ReferencedContainer = "container:Magic 8.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "ADE1FB3F22B3A4B100DD2BD6"
-            BuildableName = "Magic 8 Ball.app"
+            BuildableName = "Magic 8.app"
             BlueprintName = "Magic 8"
             ReferencedContainer = "container:Magic 8.xcodeproj">
          </BuildableReference>
