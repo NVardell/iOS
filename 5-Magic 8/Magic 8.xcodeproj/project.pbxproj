@@ -86,7 +86,7 @@
 			dependencies = (
 			);
 			name = "Magic 8";
-			productName = "Magic 8 Ball";
+			productName = "Magic 8";
 			productReference = ADE1FB4022B3A4B100DD2BD6 /* Magic 8.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -292,7 +292,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ4T89ZULU;
-				INFOPLIST_FILE = "Magic 8 Ball/Info.plist";
+				INFOPLIST_FILE = "Magic 8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQ4T89ZULU;
-				INFOPLIST_FILE = "Magic 8 Ball/Info.plist";
+				INFOPLIST_FILE = "Magic 8/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
