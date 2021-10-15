@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you desire?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juP-QZ-B7a">
+                                <rect key="frame" x="69" y="126" width="252" height="65"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="19"/>
+                                <color key="textColor" red="0.82104245580808077" green="0.82104245580808077" blue="0.82104245580808077" alpha="0.86721336920529801" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="l8f-fy-PuO">
+                                <rect key="frame" x="42.666666666666657" y="281" width="305" height="273.66666666666674"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUo-xa-QyL">
+                                <rect key="frame" x="139" y="648" width="112" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Bb1-JG-NMl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Ask Me">
+                                    <fontDescription key="titleFontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="askButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nP3-5b-Dh8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.22454149419562283" green="0.17432859317522104" blue="0.43312026515151514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="hUo-xa-QyL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="3dY-cg-O3i"/>
+                            <constraint firstItem="juP-QZ-B7a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="7Aa-AY-2hO"/>
+                            <constraint firstItem="hUo-xa-QyL" firstAttribute="centerX" secondItem="juP-QZ-B7a" secondAttribute="centerX" id="7mq-Ug-PQN"/>
+                            <constraint firstItem="hUo-xa-QyL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8hZ-tT-KWK"/>
+                            <constraint firstItem="hUo-xa-QyL" firstAttribute="centerX" secondItem="l8f-fy-PuO" secondAttribute="centerX" id="KOL-7S-3NK"/>
+                            <constraint firstItem="l8f-fy-PuO" firstAttribute="top" secondItem="juP-QZ-B7a" secondAttribute="bottom" constant="90" id="j7x-Jv-v1e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hUo-xa-QyL" secondAttribute="bottom" constant="131" id="oT5-ox-GQq"/>
+                            <constraint firstItem="juP-QZ-B7a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="sIM-xc-T3x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="askBtn" destination="hUo-xa-QyL" id="Cnh-gp-l1q"/>
+                        <outlet property="ballView" destination="l8f-fy-PuO" id="2kl-l2-jTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70.769230769230774" y="137.91469194312796"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ball1" width="305" height="273.66665649414062"/>
+    </resources>
+</document>

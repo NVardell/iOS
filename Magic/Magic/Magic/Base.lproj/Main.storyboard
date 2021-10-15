@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask away..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeC-zW-cyj">
+                                <rect key="frame" x="105" y="117" width="204" height="92"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="27"/>
+                                <color key="textColor" red="0.81313131313131315" green="0.81313131313131315" blue="0.81313131313131315" alpha="0.88907284768211925" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czt-Gx-4Md">
+                                <rect key="frame" x="120" y="631" width="174" height="54"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Ask me!">
+                                    <fontDescription key="titleFontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="33"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="askBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1nx-8Y-b0K"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lff-Ho-BnA">
+                                <rect key="frame" x="87" y="282" width="240" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="gl3-cj-Z5z"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.2245414942" green="0.17432859319999999" blue="0.43312026520000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="czt-Gx-4Md" secondAttribute="bottom" constant="177" id="2zH-Vh-O52"/>
+                            <constraint firstItem="lff-Ho-BnA" firstAttribute="centerX" secondItem="czt-Gx-4Md" secondAttribute="centerX" id="FtT-y0-6N7"/>
+                            <constraint firstItem="xeC-zW-cyj" firstAttribute="centerX" secondItem="lff-Ho-BnA" secondAttribute="centerX" id="KvO-ar-ilZ"/>
+                            <constraint firstItem="lff-Ho-BnA" firstAttribute="top" secondItem="xeC-zW-cyj" secondAttribute="bottom" constant="73" id="MKm-uh-qdP"/>
+                            <constraint firstItem="czt-Gx-4Md" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="QfY-Os-xBV"/>
+                            <constraint firstItem="xeC-zW-cyj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="aO2-pS-mvC"/>
+                            <constraint firstItem="lff-Ho-BnA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="hGX-vl-IZw"/>
+                            <constraint firstItem="xeC-zW-cyj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zY0-d8-Dg1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ballIV" destination="lff-Ho-BnA" id="wRv-6V-mCr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+</document>
