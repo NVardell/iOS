@@ -1,4 +1,27 @@
 /**********************************************************************************************************************
+**************************************************      KEYMAPS      **************************************************
+***********************************************************************************************************************/
+• OS
+    - Text Selection
+        + Word
+            - Previous Word = Option+Left
+            - Next Word = Option+Right
+        + Line
+            - Start Line = Command+Left
+            - End Line = Command+Right
+        + Paragraph
+            - Start = Option+Up
+            - End = Option+Down
+        + Starts a new line in apps like Messages, Slack, or WYSIWYG editors = Shift+Enter
+• xCode
+    - Quick Documentation = Option+Click
+    - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
+
+
+
+
+
+/**********************************************************************************************************************
 ****************************************************      CODE      ***************************************************
 ***********************************************************************************************************************/
 • Image Literal - #imageLiteral(resourceName: "DiceFour")
