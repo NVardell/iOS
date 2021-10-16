@@ -12,19 +12,20 @@ import AVFoundation
 class ViewController: UIViewController {
 
     var player: AVAudioPlayer?
+    var key = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
 
-    @IBAction func cKeyPress(_ sender: UIButton) {
-        print("C Key Pressed.")
+    @IBAction func keyPressed(_ sender: UIButton) {
+        key = sender.currentTitle ?? "X"
         playSound()
     }
     
     func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+        let url = Bundle.main.url(forResource: key, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player?.play()
     }
