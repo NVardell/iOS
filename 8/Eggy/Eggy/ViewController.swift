@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
 
+    let eggTimes = ["Soft":5, "Medium":7, "Hard":12]
+    
+    @IBOutlet weak var timerValue: UIView!
+
+    @IBAction func hardenessSelected(_ sender: UIButton) {
+        let hardness = sender.currentTitle!
+        print(eggTimes[hardness]!)
+    }
 
 }
