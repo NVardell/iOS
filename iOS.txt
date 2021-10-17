@@ -114,7 +114,8 @@
     7. Connections
 • What is AVFoundation?
     - AVFoundation standing for Audio Visual Foundation is a library that you can import in swift to incorporate AV actions.
-• 
+• When retrieving data from a Dictionary, what Data Type is the value?
+    - Optional
 • 
 • 
 • 
