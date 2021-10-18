@@ -1,7 +1,12 @@
 /**********************************************************************************************************************
 **************************************************      KEYMAPS      **************************************************
 ***********************************************************************************************************************/
+• Sublime
+    - Alt Key = Option
+    - Find Highlighted Word - Cmd+E
+    - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
+    - Hidden Files = Cmd+Shift+. (While in Finder Window)
     - Text Selection
         + Word
             - Previous Word = Option+Left
@@ -16,6 +21,8 @@
 • xCode
     - Quick Documentation = Option+Click
     - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
+    - Build Clean = Cmd+Ctrl+K
+    - Build = Cmd+B
 
 
 
