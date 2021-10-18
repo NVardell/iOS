@@ -6,6 +6,10 @@
     - Find Highlighted Word - Cmd+E
     - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
+    - Magnet - Window Snapping
+        + Left/Right/Up/Down = Fn+Ctrl+Arrow
+        + Corners = Fn+Ctrl+Q/W/A/S
+        + Thirds Left/Center/Right = Fn+Ctrl+Z/X/C
     - Hidden Files = Cmd+Shift+. (While in Finder Window)
     - Text Selection
         + Word
@@ -23,6 +27,7 @@
     - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
     - Build Clean = Cmd+Ctrl+K
     - Build = Cmd+B
+• 
 
 
 
