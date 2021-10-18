@@ -1,5 +1,5 @@
 
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
+![Banner](Documentation/Banner.png)
 
 #  Quizzler
 
