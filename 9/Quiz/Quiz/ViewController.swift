@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         Question(text: "Q7", answer: "True"),
         Question(text: "Q8", answer: "True"),
         Question(text: "Q9", answer: "True"),
-        Question(text: "Q10" answer: ,"True")
+        Question(text: "Q10", answer: "True")
     ]
     
     /**
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         progressBar.progress = 0.0
         
         totalQuestions = quiz.count
-        questionLabel.text = quiz[currentQuestion][0]
+        questionLabel.text = quiz[currentQuestion].text
     }
     
     
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         let answer = sender.currentTitle
-        let currentAnswer = quiz[currentQuestion][0]
+        let currentAnswer = quiz[currentQuestion].answer
         
         if(answer == currentAnswer) {
             correct+=1
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         }
         
         completedQuestions+=1
-        questionLabel.text = quiz[currentQuestion][0]
+        questionLabel.text = quiz[currentQuestion].text
         progressBar.progress = Float(completedQuestions) / Float(totalQuestions)
     }
 
