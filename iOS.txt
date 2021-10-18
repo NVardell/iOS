@@ -2,11 +2,14 @@
 **************************************************      KEYMAPS      **************************************************
 ***********************************************************************************************************************/
 • Sublime
-    - Alt Key = Option
-    - Find Highlighted Word - Cmd+E
+    - Keys
+        + Option = Alt
+        + Command = Super
+    - Find Highlighted Word - Cmd+F & Cmd+E
     - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
     - Magnet - Window Snapping
+        + Maximize Window = Fn+Ctrl+M
         + Left/Right/Up/Down = Fn+Ctrl+Arrow
         + Corners = Fn+Ctrl+Q/W/A/S
         + Thirds Left/Center/Right = Fn+Ctrl+Z/X/C
@@ -23,6 +26,12 @@
             - End = Option+Down
         + Starts a new line in apps like Messages, Slack, or WYSIWYG editors = Shift+Enter
 • xCode
+    - Editor
+        + Default
+        + Move Lines = Option+Cmd+[ OR Option+Cmd+]
+        + Remapped
+    - Editor (Changed)
+        + Move Lines = Option+Cmd+[ OR Option+Cmd+]
     - Quick Documentation = Option+Click
     - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
     - Build Clean = Cmd+Ctrl+K
