@@ -26,9 +26,9 @@
     - Editor
         + Default
             - Move Lines = Option+Cmd+[ OR Option+Cmd+]
+            - Multiple Cursors = Ctrl+Shift+Up/Down
         + Remapped
-    - Editor (Changed)
-        + Move Lines = Option+Cmd+[ OR Option+Cmd+]
+            - Move Lines = Option+Cmd+[ OR Option+Cmd+]
     - Quick Documentation = Option+Click
     - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
     - Build Clean = Cmd+Ctrl+K
@@ -135,7 +135,8 @@
     - AVFoundation standing for Audio Visual Foundation is a library that you can import in swift to incorporate AV actions.
 • When retrieving data from a Dictionary, what Data Type is the value?
     - Optional
-• 
-• 
+• What is the difference between a function & method?
+    - Generically the same thing, but a method is a function defined within a structure; aka only that structure can call it.
+• What is the purpose of an initializer? (init(){})
 • 
 
