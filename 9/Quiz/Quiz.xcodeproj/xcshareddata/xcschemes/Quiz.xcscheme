@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD4BDE4522D878BA005BA4CC"
-               BuildableName = "Quizzler-iOS13.app"
+               BuildableName = "Quiz.app"
                BlueprintName = "Quiz"
                ReferencedContainer = "container:Quiz.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD4BDE4522D878BA005BA4CC"
-            BuildableName = "Quizzler-iOS13.app"
+            BuildableName = "Quiz.app"
             BlueprintName = "Quiz"
             ReferencedContainer = "container:Quiz.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD4BDE4522D878BA005BA4CC"
-            BuildableName = "Quizzler-iOS13.app"
+            BuildableName = "Quiz.app"
             BlueprintName = "Quiz"
             ReferencedContainer = "container:Quiz.xcodeproj">
          </BuildableReference>
