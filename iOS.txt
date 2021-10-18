@@ -42,6 +42,7 @@
 • Decal
     - Navy Background - #183C66
     - Orange Triangles - #FAA619
+    - Accent - #C4494F
 
 
 
