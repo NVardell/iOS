@@ -20,16 +20,17 @@ class ViewController: UIViewController {
     
     // Base Quiz Array for quick testing
     let quiz = [
-        ["Q1","True"],
-        ["Q2","True"],
-        ["Q3","True"],
-        ["Q4","True"],
-        ["Q5","True"],
-        ["Q6","True"],
-        ["Q7","True"],
-        ["Q8","True"],
-        ["Q9","True"],
-        ["Q10","True"]
+        Question(text: "Q1", answer: "True"),
+        Question(text: "Q1", answer: "True"),
+        Question(text: "Q2", answer: "True"),
+        Question(text: "Q3", answer: "True"),
+        Question(text: "Q4", answer: "True"),
+        Question(text: "Q5", answer: "True"),
+        Question(text: "Q6", answer: "True"),
+        Question(text: "Q7", answer: "True"),
+        Question(text: "Q8", answer: "True"),
+        Question(text: "Q9", answer: "True"),
+        Question(text: "Q10" answer: ,"True")
     ]
     
     /**
