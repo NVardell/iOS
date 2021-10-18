@@ -9,10 +9,7 @@
     - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
     - Magnet - Window Snapping
-        + Maximize Window = Fn+Ctrl+M
         + Left/Right/Up/Down = Fn+Ctrl+Arrow
-        + Corners = Fn+Ctrl+Q/W/A/S
-        + Thirds Left/Center/Right = Fn+Ctrl+Z/X/C
     - Hidden Files = Cmd+Shift+. (While in Finder Window)
     - Text Selection
         + Word
@@ -28,7 +25,7 @@
 • xCode
     - Editor
         + Default
-        + Move Lines = Option+Cmd+[ OR Option+Cmd+]
+            - Move Lines = Option+Cmd+[ OR Option+Cmd+]
         + Remapped
     - Editor (Changed)
         + Move Lines = Option+Cmd+[ OR Option+Cmd+]
