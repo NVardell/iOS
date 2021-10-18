@@ -1,21 +1,26 @@
 /**********************************************************************************************************************
 **************************************************      KEYMAPS      **************************************************
 ***********************************************************************************************************************/
+• Sublime
+    - Alt Key = Option
+    - Find Highlighted Word - Cmd+E
+    - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
+    - Hidden Files = Cmd+Shift+. (While in Finder Window)
     - Text Selection
         + Word
-            - Previous Word = Option+Left
-            - Next Word = Option+Right
+            - Previous Word = Opt.+Left
+            - Next Word = Opt.+Right
         + Line
             - Start Line = Command+Left
             - End Line = Command+Right
         + Paragraph
-            - Start = Option+Up
-            - End = Option+Down
+            - Start = Opt.+Up
+            - End = Opt.+Down
         + Starts a new line in apps like Messages, Slack, or WYSIWYG editors = Shift+Enter
 • xCode
-    - Quick Documentation = Option+Click
-    - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
+    - Quick Documentation = Opt.+Click
+    - Side-by-Side Assistant Editor = Control+Opt.+Cmd+Enter
 
 
 
@@ -115,7 +120,7 @@
 • What is AVFoundation?
     - AVFoundation standing for Audio Visual Foundation is a library that you can import in swift to incorporate AV actions.
 • When retrieving data from a Dictionary, what Data Type is the value?
-    - Optional
+    - Opt.al
 • 
 • 
 • 
