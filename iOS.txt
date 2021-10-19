@@ -63,7 +63,7 @@
 ***************************************************      TERMS      ***************************************************
 ***********************************************************************************************************************/
 • IBOutlet - Interface Builder Outlet (Code version that references an object we added to UI.)
-• 
+• MVC - Model, View, Controller
 
 
 
@@ -137,8 +137,13 @@
 • What is the difference between a function & method?
     - Generically the same thing, but a method is a function defined within a structure; aka only that structure can call it.
 • What is the purpose of an initializer? (init(){})
-• 
-• 
+    - To reuse a base structure to create a brand new instance of an object with its own unique values.
+• What is a Design Pattern?
+    - A proven solution to a common problem.... (Feel like this is a terrible explanation... xD)
+• Explain the MVC Design Pattern.
+    - Model: Data & Logic -> Sends data to Controller
+    - View: User Interface -> Sends input events to Controller
+    - Controller: Mediator -> Modifies View & Makes Requests to Models
 • 
 • 
 • 
