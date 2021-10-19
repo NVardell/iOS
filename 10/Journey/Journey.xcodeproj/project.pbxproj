@@ -67,9 +67,9 @@
 				AD7631D322FC5E7E00C6E71B /* AppDelegate.swift */,
 				AD7631D522FC5E7E00C6E71B /* SceneDelegate.swift */,
 				AD7631DC22FC5E8300C6E71B /* Assets.xcassets */,
-				AD7631E722FC64A100C6E71B /* Controller */,
 				AD7631EB22FC64C900C6E71B /* Model */,
 				AD7631E822FC64AB00C6E71B /* View */,
+				AD7631E722FC64A100C6E71B /* Controller */,
 			);
 			path = Journey;
 			sourceTree = "<group>";
