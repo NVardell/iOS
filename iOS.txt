@@ -147,7 +147,13 @@
     - Model: Data & Logic -> Sends data to Controller
     - View: User Interface -> Sends input events to Controller
     - Controller: Mediator -> Modifies View & Makes Requests to Models
-• 
+• What specifically should the Controller be responsible for within the MVC design pattern?
+    - Telling the other components what to do.
+    - Respond to changes in other components.
+    - Handle what to do with user actions from the view.
+    - Tell the view what to display.
+    - Fetch the relevant data from the model.
+    - Tell the model to update itself.
 • 
 • 
 • 
