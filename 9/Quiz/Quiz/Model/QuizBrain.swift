@@ -10,8 +10,7 @@ import Foundation
 
 struct QuizBrain {
       
-    // Maintaining Current & Completed for future randomization of questions
-    var totalQuestions = 0, completedQuestions = 1, currentQuestion = 0
+    var totalQuestions = 0, currentQuestion = 0
     var correct = 0, incorrect = 0
     
     // Base Quiz Array for quick testing
@@ -29,24 +28,31 @@ struct QuizBrain {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     
-    func checkAnswer(_ userAnswer:String) -> Bool {
+    mutating func checkAnswer(_ userAnswer:String) -> Bool {
         
         if(userAnswer == quiz[currentQuestion].answer) {
+            correct+=1
             return(true)
-//            correct+=1
-//            sender.backgroundColor = UIColor.green
         } else {
+            incorrect+=1
             return(false)
-//            incorrect+=1
-//            sender.backgroundColor = UIColor.red
         }
     }
     
     func getProgress() -> Float {
-        return Float(completedQuestions) / Float(totalQuestions)
+        return Float(currentQuestion+1) / Float(totalQuestions)
     }
     
     func getQuestionText() -> String {
         return quiz[currentQuestion].text
+    }
+    
+    mutating func nextQuestion() {
+        // Forces an infinite loop of the quiz questions
+        if currentQuestion < totalQuestions-1 {
+            currentQuestion+=1
+        } else {
+            currentQuestion = 0
+        }
     }
 }

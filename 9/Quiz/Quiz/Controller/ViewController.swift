@@ -24,8 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         quizBrain.totalQuestions = quizBrain.quiz.count
-        questionLabel.text = quizBrain.quiz[quizBrain.currentQuestion].text
-        progressBar.progress = Float(quizBrain.completedQuestions) / Float(quizBrain.totalQuestions)
+        questionLabel.text = quizBrain.getQuestionText()
+        progressBar.progress = quizBrain.getProgress()
     }
     
     
@@ -51,15 +51,7 @@ class ViewController: UIViewController {
     
     @objc func updateUI() {
         
-        // Forces an infinite loop of the quiz questions
-        if quizBrain.currentQuestion < quizBrain.totalQuestions-1 {
-            quizBrain.currentQuestion+=1
-        } else {
-            quizBrain.currentQuestion = 0
-            quizBrain.completedQuestions = -1
-        }
-        
-        quizBrain.completedQuestions+=1
+        quizBrain.nextQuestion()
         questionLabel.text = quizBrain.getQuestionText()
         progressBar.progress = quizBrain.getProgress()
         trueButton.backgroundColor = UIColor.clear
