@@ -154,6 +154,16 @@
     - Tell the view what to display.
     - Fetch the relevant data from the model.
     - Tell the model to update itself.
+• How do you unwrap an optional?
+    - By adding an exclamation mark at the end of the statement. (Ex. let answer = sender.currentTitle!)
+• What 4 things are required when writing a function with an output?
+    1. Return Arrow '->'
+    2. Return Type
+    3. Return Keyword
+    4. Return Value 
+• 
+• 
+• 
 • 
 • 
 • 
