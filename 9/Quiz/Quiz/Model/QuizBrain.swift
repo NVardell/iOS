@@ -11,9 +11,8 @@ import Foundation
 struct QuizBrain {
       
     var totalQuestions = 0, currentQuestion = 0
-    var correct = 0, incorrect = 0
+    var correct = 0, highScore = 0
     
-    // Base Quiz Array for quick testing
     let quiz = [
         Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
         Question(q: "The total surface area of two human lungs is approximately 70 square metres.", a: "True"),
@@ -32,11 +31,22 @@ struct QuizBrain {
         
         if(userAnswer == quiz[currentQuestion].answer) {
             correct+=1
+            
+            if correct>highScore {
+                highScore=correct
+            }
+            
             return(true)
         } else {
-            incorrect+=1
             return(false)
         }
+    }
+    
+    func getScore() -> Int {
+        return correct
+    }
+    func getHighScore() -> Int {
+        return highScore
     }
     
     func getProgress() -> Float {
@@ -53,6 +63,7 @@ struct QuizBrain {
             currentQuestion+=1
         } else {
             currentQuestion = 0
+            correct=0
         }
     }
 }
