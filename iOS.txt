@@ -26,7 +26,7 @@
     - Editor
         + Default
             - Move Lines = Option+Cmd+[ OR Option+Cmd+]
-            - Multiple Cursors = Ctrl+Shift+Up/Down
+            - Multiple Cursors = Ctrl+Shift+Up/Down 
         + Remapped
             - Move Lines = Option+Cmd+[ OR Option+Cmd+]
     - Quick Documentation = Option+Click
@@ -43,7 +43,7 @@
 ****************************************************      CODE      ***************************************************
 ***********************************************************************************************************************/
 • Image Literal - #imageLiteral(resourceName: "DiceFour")
-
+• 
 
 
 
@@ -54,6 +54,7 @@
     - Navy Background - #183C66
     - Orange Triangles - #FAA619
     - Accent - #C4494F
+• 
 
 
 
@@ -62,8 +63,6 @@
 ***************************************************      TERMS      ***************************************************
 ***********************************************************************************************************************/
 • IBOutlet - Interface Builder Outlet (Code version that references an object we added to UI.)
-• 
-• 
 • 
 
 
@@ -138,5 +137,10 @@
 • What is the difference between a function & method?
     - Generically the same thing, but a method is a function defined within a structure; aka only that structure can call it.
 • What is the purpose of an initializer? (init(){})
+• 
+• 
+• 
+• 
+• 
 • 
 
