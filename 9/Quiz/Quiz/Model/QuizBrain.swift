@@ -41,4 +41,12 @@ struct QuizBrain {
 //            sender.backgroundColor = UIColor.red
         }
     }
+    
+    func getProgress() -> Float {
+        return Float(completedQuestions) / Float(totalQuestions)
+    }
+    
+    func getQuestionText() -> String {
+        return quiz[currentQuestion].text
+    }
 }

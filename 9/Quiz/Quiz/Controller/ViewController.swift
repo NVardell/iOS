@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
         let answer = sender.currentTitle!
+        
         if quizBrain.checkAnswer(answer) {
             sender.backgroundColor = UIColor.green
         } else {
@@ -59,8 +60,8 @@ class ViewController: UIViewController {
         }
         
         quizBrain.completedQuestions+=1
-        questionLabel.text = quizBrain.quiz[quizBrain.currentQuestion].text
-        progressBar.progress = Float(quizBrain.completedQuestions) / Float(quizBrain.totalQuestions)
+        questionLabel.text = quizBrain.getQuestionText()
+        progressBar.progress = quizBrain.getProgress()
         trueButton.backgroundColor = UIColor.clear
         falseButton.backgroundColor = UIColor.clear
     }
