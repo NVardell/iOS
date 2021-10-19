@@ -161,7 +161,8 @@
     2. Return Type
     3. Return Keyword
     4. Return Value 
-• 
+• What does it mean when we say a Struct is immutable?
+    - 
 • 
 • 
 • 
