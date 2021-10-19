@@ -154,6 +154,7 @@
     - Tell the view what to display.
     - Fetch the relevant data from the model.
     - Tell the model to update itself.
+    - Responsible for delegating tasks to the models & sending updated data to the UI.
 • How do you unwrap an optional?
     - By adding an exclamation mark at the end of the statement. (Ex. let answer = sender.currentTitle!)
 • What 4 things are required when writing a function with an output?
