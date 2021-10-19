@@ -29,6 +29,9 @@
             - Multiple Cursors = Ctrl+Shift+Up/Down 
         + Remapped
             - Move Lines = Option+Cmd+[ OR Option+Cmd+]
+    - View
+        + Hide top toolbar = Opt+Cmd+T
+        + Show Project Files Left Toolbar = Cmd+1
     - Quick Documentation = Option+Click
     - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
     - Build Clean = Cmd+Ctrl+K
