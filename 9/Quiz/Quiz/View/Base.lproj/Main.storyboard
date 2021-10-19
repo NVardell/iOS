@@ -25,8 +25,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fal-oS-tEg">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feH-Jm-tbS">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="84.5"/>
+                                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="26"/>
+                                        <color key="textColor" red="0.82104245580000002" green="0.82104245580000002" blue="0.82104245580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkJ-WZ-R0t">
+                                        <rect key="frame" x="0.0" y="94.5" width="374" height="84"/>
+                                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="26"/>
+                                        <color key="textColor" red="0.82104245580000002" green="0.82104245580000002" blue="0.82104245580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Question Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-li-mhO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="618"/>
+                                        <rect key="frame" x="0.0" y="188.5" width="374" height="429.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -86,8 +98,10 @@
                     </view>
                     <connections>
                         <outlet property="falseButton" destination="tbn-vQ-GyC" id="sfp-G2-Uok"/>
+                        <outlet property="highScoreLabel" destination="KkJ-WZ-R0t" id="9Uk-sf-abg"/>
                         <outlet property="progressBar" destination="TXm-qh-7Xg" id="hhu-pa-Gik"/>
                         <outlet property="questionLabel" destination="rSI-li-mhO" id="8PJ-8W-rr9"/>
+                        <outlet property="scoreLabel" destination="feH-Jm-tbS" id="4l0-MM-1Kg"/>
                         <outlet property="trueButton" destination="oVw-Hl-IRe" id="lOk-8v-OYd"/>
                     </connections>
                 </viewController>
