@@ -161,9 +161,10 @@
     2. Return Type
     3. Return Keyword
     4. Return Value 
-• What does it mean when we say a Struct is immutable?
-    - 
-• 
+• What does immutable mean?
+    - Can't be changed.  Created with the 'let' keyword.
+• How do you allow a struct to change the value of an internal immutable field?
+    - Adding the keyword 'mutating' before the function definition inside of the struct. (Ex. mutating func change(){})
 • 
 • 
 • 
