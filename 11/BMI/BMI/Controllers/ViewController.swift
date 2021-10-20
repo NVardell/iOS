@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func heightSliderChanged(_ sender: UISlider) {
+        heightLabel.text = "\(Float(sender.value).rounded())"
+    }
+    
+    
+    @IBAction func weightSliderChanged(_ sender: UISlider) {
+        weightLabel.text = "\(Float(sender.value).rounded())"
+    }
 }
 
