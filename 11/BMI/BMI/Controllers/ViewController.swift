@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         let bmi = weight / (height*height)
         print(bmi)
         
-        // Assign Calculated BMI to Result Lable on second View
+        // TODO ~ Assign Calculated BMI to Result Lable on second View
     }
 }
 
