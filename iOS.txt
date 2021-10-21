@@ -178,8 +178,43 @@
     - NSObject. NS standing for Next Step (NeXTSTEP) which was the company that Steve Jobs started when he got booted from Apple.
 • What is the inheritance chain for a simple UIButton?
     - UIButton -> UIControl -> UIView -> UIResponder -> NSObject
-• 
-• 
 • Differences between Classes & Structs?
-    - 
+    - Structs
+        1. Inheritance = FALSE (Can't inherit from a Super class.)
+        2. Init Method = Not Required.
+        3. Immutable = TRUE
+            - A 'mutating' func makes property changes by destroying the original Struct & creating a new one with updated values.
+        4. Passed by = VALUE
+            - You get one & I get one!
+            - Copying a Struct creates an entirely new object. 
+            - We go from 1 object to 2 objects.
+    - Classes
+        1. Inheritance = TRUE (Can inherit from a Super class.)
+        2. Init Method = Required
+        3. Passed by = REFERENCE
+            - Everyone has to share a single object. ):
+            - Copying a Class Object simply creates a new pointer to an existing object.
+• What does Apple advise when creating new object templates? Structs or Classes?
+    - Structs, good when you need a basic blueprint for creating objects.
+• When should you create Classes instead of Structs?
+    1. You need inheritance.
+    2. You need to work with old Objective-C Code
+• What framework is required when creating Controller classes that interact with the UI?
+    - UIKit (import UIKit)
+• 
+• 
+• 
+• 
+
+
+
+
+
+
+
+
+
+
+
+
 
