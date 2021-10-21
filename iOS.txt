@@ -166,9 +166,20 @@
     - Can't be changed.  Created with the 'let' keyword.
 • How do you allow a struct to change the value of an internal immutable field?
     - Adding the keyword 'mutating' before the function definition inside of the struct. (Ex. mutating func change(){})
+• What is a SuperClass?
+    - A parent class, generically having rudimentary fields & functions.
+    - Inherited by Sub-Classes, and then overrides original definition or is built out with additional fields & functions.
+    - Common Ex. SuperClass=Shape. Sub-Classes=Circle, Square, Triangle...
+• In Swift, how do you specify a classes SuperClass?
+    - In class definition. (Ex. class Square: Shape {...} )
+• Is it possible to call a SuperClass method from a SubClass method?
+    - Yes.  Requires the keyword 'super'. (Ex. super.method())
+• What is the most basic object in Swift?
+    - NSObject. NS standing for Next Step (NeXTSTEP) which was the company that Steve Jobs started when he got booted from Apple.
+• What is the inheritance chain for a simple UIButton?
+    - UIButton -> UIControl -> UIView -> UIResponder -> NSObject
+• 
+• 
 • Differences between Classes & Structs?
     - 
-• 
-• 
-• 
 
