@@ -21,7 +21,7 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func recalcPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToCalculate", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
