@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         print(bmi)
         
         // TODO ~ Assign Calculated BMI to Result Lable on second View
+        let secondVC = SecondViewController()
+        secondVC.bmiValue = String(format: "%.1f", bmi)
+        
+        self.present(secondVC, animated: true, completion: nil)
     }
 }
 
