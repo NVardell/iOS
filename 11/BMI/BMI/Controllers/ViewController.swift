@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BMI Calculator
 //
-//  Created by Angela Yu on 21/08/2019.
+//  Created by Nate V. on 10/20/2021.
 //  Copyright © 2019 Angela Yu. All rights reserved.
 //
 
@@ -12,19 +12,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var bmiLabel: UILabel!
+    @IBOutlet weak var heightSlider: UISlider!
+    @IBOutlet weak var weightSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func heightSliderChanged(_ sender: UISlider) {
-        heightLabel.text = "\(Float(sender.value).rounded())"
+        heightLabel.text = String(format: "%.2fm", sender.value)
     }
     
     
     @IBAction func weightSliderChanged(_ sender: UISlider) {
-        weightLabel.text = "\(Float(sender.value).rounded())"
+        weightLabel.text = "\(Int(sender.value))Kg"
+    }
+    
+    
+    @IBAction func calcButtonPressed(_ sender: UIButton) {
+        let height = heightSlider.value
+        let weight = weightSlider.value
+        let bmi = weight / (height*height)
+        print(bmi)
+        
+        // Assign Calculated BMI to Result Lable on second View
     }
 }
 
