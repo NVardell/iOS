@@ -205,7 +205,8 @@
     - UIKit (import UIKit)
 • When creating new views, what does a new View Controller ALWAYS have?
     - A View! (Which is what we use to connect the swift controller to the new view.)
-• 
+• What keyword is required for Down Casting?
+    - as! (Ex. let destinationVC = segue.destination as! MyViewController)
 • 
 • 
 
