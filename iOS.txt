@@ -67,6 +67,8 @@
 ***********************************************************************************************************************/
 • IBOutlet - Interface Builder Outlet (Code version that references an object we added to UI.)
 • MVC - Model, View, Controller
+• CG - Core Graphic
+• IB - Interface Builder
 
 
 
@@ -201,7 +203,8 @@
     2. You need to work with old Objective-C Code
 • What framework is required when creating Controller classes that interact with the UI?
     - UIKit (import UIKit)
-• 
+• When creating new views, what does a new View Controller ALWAYS have?
+    - A View! (Which is what we use to connect the swift controller to the new view.)
 • 
 • 
 • 
