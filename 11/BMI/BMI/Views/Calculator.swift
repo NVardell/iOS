@@ -12,9 +12,6 @@ struct Calculator {
     
     var bmiValue = ""
     
-//    let bmi = weight / (height*height)
-//    bmiValue = String(format: "%.1f", bmi)
-    
     func getBMIValue() -> String {
         return bmiValue
     }
