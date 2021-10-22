@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct Calculator {
+    
+    var bmiValue = ""
+    
+//    let bmi = weight / (height*height)
+//    bmiValue = String(format: "%.1f", bmi)
+    
+    func getBMIValue() -> String {
+        return bmiValue
+    }
+    
+    mutating func calculateBMI(height: Float, weight: Float) {
+        let bmi = weight / (height*height)
+        bmiValue = String(format: "%.1f", bmi)
+    }
+}
