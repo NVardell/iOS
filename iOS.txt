@@ -78,8 +78,22 @@
 ***********************************************************************************************************************/
 • GENERIC
     - Main.Storyboard AKA Interface Builder.
-• 
-
+• OPTIONALS
+    - Ways to work with them?
+        1. (!) Force Unwrapping
+            - Arguably, the least safe option.
+            - Essentially, tells xCode that I promise it will never be nil.
+        2. Check nil
+            - If check. Kinda dumb cause ya still gotta force unwrap.
+        3. Optional Binding
+            - if let safeOptional = optional { safeOptional .... }
+        4. (??) Nil Coalescing Operator
+            - optional ?? defaultValue
+            - Supplies a default value for the optional preventing nil errors. 
+        5. Optional Chaining
+            - optional?.property
+            - optional?.method()
+            - If the optional is NOT nil, then continue down the chain(.).
 
 
 
