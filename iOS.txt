@@ -220,7 +220,8 @@
     - A View! (Which is what we use to connect the swift controller to the new view.)
 • What keyword is required for Down Casting?
     - as! (Ex. let destinationVC = segue.destination as! MyViewController)
-• 
+• What is a segue?
+    - A relationship between views.
 • 
 
 
