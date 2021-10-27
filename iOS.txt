@@ -222,13 +222,19 @@
     - as! (Ex. let destinationVC = segue.destination as! MyViewController)
 • What is a segue?
     - A relationship between views.
+• When was SF Symbols added?
+    - iOS 13. Set of 1,500 symbols for devs to use in their apps. SF = San Francisco.
+• How do you setup your own Light/Dark Mode colors?
+    - Add new Color Set to project Assets, and then change 'Appearances' to 'Any, Dark'
+• How do you prevent pixelation when zooming images?
+    - Using Vector Images (Udemy has pdf files for this.)
+    - Also need to change Resizing to 'Preserve Vector Data' & change Scales to 'Single Scale'
+• What is required when adding Light/Dark mode assets?
+    - Appearance field in Inspector sidebar needs to be updated to 'Any, Dark' or 'Any, Light, Dark'.
+• How to tap into device keyboard? (Ex. Capturing Enter/Return)
+    - Using UITextFieldDelegate.
 • 
-
-
-
-
-
-
+• 
 
 
 
