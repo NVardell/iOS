@@ -52,7 +52,14 @@
         optional?.method()
 • Nil Coalescing
         optional ?? defaultValue
-•                 
+• Delegate: Connect UI Text Field to Controller
+        class MyViewController: UIViewController, UITextFieldDelegate {
+            let textField = UITextField()   // Create a delegate
+            textField.delegate = self       // Connect delegate to current class
+
+            // Define UITextFieldDelegate Protocol required function
+            func textFieldDidBeginEditing() { /* DO STUFF */}
+        }            
 • 
 
 
@@ -64,10 +71,12 @@
 /**********************************************************************************************************************
 ***************************************************      TERMS      ***************************************************
 ***********************************************************************************************************************/
-• IBOutlet - Interface Builder Outlet (Code version that references an object we added to UI.)
-• MVC - Model, View, Controller
-• CG - Core Graphic
-• IB - Interface Builder
+• API: Application Programming Interface
+• CG: Core Graphic
+• IB: Interface Builder
+• IBOutlet: Interface Builder Outlet (Code version that references an object we added to UI.)
+• MVC: Model, View, Controller
+• VC: View Controller
 
 
 
@@ -77,22 +86,38 @@
 ***********************************************************************************************************************/
 • GENERIC
     - Main.Storyboard AKA Interface Builder.
-• OPTIONALS
-    - Ways to work with them?
-        1. (!) Force Unwrapping
-            - Arguably, the least safe option.
-            - Essentially, tells xCode that I promise it will never be nil.
-        2. Check nil
-            - If check. Kinda dumb cause ya still gotta force unwrap.
-        3. Optional Binding
-            - if let safeOptional = optional { safeOptional .... }
-        4. (??) Nil Coalescing Operator
-            - optional ?? defaultValue
-            - Supplies a default value for the optional preventing nil errors. 
-        5. Optional Chaining
-            - optional?.property
-            - optional?.method()
-            - If the optional is NOT nil, then continue down the chain(.).
+• DESIGN PATTERNS
+    - A proven solution to a common problem
+    - POPULAR PATTERNS
+        + MVC: Model View Controller
+            * Model: Data & Logic -> Sends data to Controller
+            * View: User Interface -> Sends input events to Controller
+            * Controller: Mediator -> Modifies View & Makes Requests to Models
+        + DELEGATE:
+            * Setting up a 
+• SWIFT
+    - OPTIONALS
+        + Ways to work with them?
+            1. (!) Force Unwrapping
+                - Arguably, the least safe option.
+                - Essentially, tells xCode that I promise it will never be nil.
+            2. Check nil
+                - If check. Kinda dumb cause ya still gotta force unwrap.
+            3. Optional Binding
+                - if let safeOptional = optional { safeOptional .... }
+            4. (??) Nil Coalescing Operator
+                - optional ?? defaultValue
+                - Supplies a default value for the optional preventing nil errors. 
+            5. Optional Chaining
+                - optional?.property
+                - optional?.method()
+                - If the optional is NOT nil, then continue down the chain(.).
+    - PROTOCOLS
+        + Defining a protocol
+            protocol MyProtocol { /* Define Protocol Requirements. */}
+        + Using a protocol
+            struct MyStruct: MyProtocol {}
+        + Structures & classes can adopt protocols.
 
 
 
@@ -226,16 +251,27 @@
     - iOS 13. Set of 1,500 symbols for devs to use in their apps. SF = San Francisco.
 • How do you setup your own Light/Dark Mode colors?
     - Add new Color Set to project Assets, and then change 'Appearances' to 'Any, Dark'
-• How do you prevent pixelation when zooming images?
+• How do you prevent pixelate when zooming images?
     - Using Vector Images (Udemy has pdf files for this.)
     - Also need to change Resizing to 'Preserve Vector Data' & change Scales to 'Single Scale'
 • What is required when adding Light/Dark mode assets?
     - Appearance field in Inspector sidebar needs to be updated to 'Any, Dark' or 'Any, Light, Dark'.
 • How to tap into device keyboard? (Ex. Capturing Enter/Return)
     - Using UITextFieldDelegate.
+• Structures can't inherit like classes, but can they adopt Protocols?
+    - Yes, Structs & Classes can both adopt Protocols.
+• What is a Protocol?
+    - A Protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or functionality.
+• Can Protocols define implementation?
+    - No, but protocol extensions can; however, generally adopting classes define implementations.
+• What is an API?
+    - An Application Programming Interface (API) is a set of commands, functions, protocols, and objects that programmers 
+    can use to create software o interact with an external system.
+    - It provides developers with standard commands for performing common operations so they do not have to write the code from scratch.
 • 
 • 
-
+• 
+• 
 
 
 
