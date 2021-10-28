@@ -50,6 +50,7 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
                                                 <connections>
+                                                    <action selector="oldChange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IVl-mw-qva"/>
                                                     <action selector="searchPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Db7-cU-7MY"/>
                                                 </connections>
                                             </button>
