@@ -41,33 +41,6 @@
 
 
 
-
-/**********************************************************************************************************************
-****************************************************      CODE      ***************************************************
-***********************************************************************************************************************/
-• Image Literal
-        #imageLiteral(resourceName: "DiceFour")
-• Optional Chaining
-        optional?.property
-        optional?.method()
-• Nil Coalescing
-        optional ?? defaultValue
-• Delegate: Connect UI Text Field to Controller
-        class MyViewController: UIViewController, UITextFieldDelegate {
-            let textField = UITextField()   // Create a delegate
-            textField.delegate = self       // Connect delegate to current class
-
-            // Define UITextFieldDelegate Protocol required function
-            func textFieldDidBeginEditing() { /* DO STUFF */}
-        }            
-• 
-
-
-
-
-
-
-
 /**********************************************************************************************************************
 ***************************************************      TERMS      ***************************************************
 ***********************************************************************************************************************/
@@ -77,6 +50,8 @@
 • IBOutlet: Interface Builder Outlet (Code version that references an object we added to UI.)
 • MVC: Model, View, Controller
 • VC: View Controller
+• Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
+• JSON: JavaScript Object Notation
 
 
 
@@ -86,6 +61,9 @@
 ***********************************************************************************************************************/
 • GENERIC
     - Main.Storyboard AKA Interface Builder.
+    - Anonymous Parameters
+        + Use '$' and an index location to refer to a parameter.
+            Ex. $0
 • DESIGN PATTERNS
     - A proven solution to a common problem
     - POPULAR PATTERNS
@@ -96,6 +74,16 @@
         + DELEGATE:
             * Setting up a 
 • SWIFT
+    - MISC
+        + If the last parameter of a function is a Closure, you can omit the last parameter name
+          & close the input section; simply, having the closure trailing at the end of line.
+            Ex.
+                let result = calc(n1:2, n2:3) { $0 + $1 }
+    - HIGH LEVEL FUNCTIONS
+        + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
+            1. Map
+            2. Reduce
+            3. Filter     
     - OPTIONALS
         + Ways to work with them?
             1. (!) Force Unwrapping
@@ -118,6 +106,69 @@
         + Using a protocol
             struct MyStruct: MyProtocol {}
         + Structures & classes can adopt protocols.
+    - NETWORKING (3rd PARTY APIs)
+        + Steps to setup networking
+            1. Create a URL
+            2. Create a URLSession
+            3. Give URLSession a task
+            4. Start the task
+    - CLOSURES
+        + Closures are anonymous functions. 
+        + Provide anonymous parameter names ($0...)
+        + Provide Type Inference so explicit data typing is not required.
+        + Converting a function to a closure takes a couple modifications.
+                1. Remove 'func funcName' 
+                2. Move left brace '{' from end of line to beginning of line.
+                3. Add keyword 'in' where left bracket '{' was.
+                Ex.
+                    func sum(n1:Int, n2:Int) -> Int{ return n1 + n2 }
+                    { (n1:Int, n2:Int) -> Int in return n1 + n2 }
+                    { (n1, n2) -> in return n1 + n2 }
+                    { $0 + $1 }
+        + Generic Closure Syntax
+            { ('parameters') -> 'return type' in 'statements' }
+        + If a Closure is an input in a function, you can highlight it in xCode and hit enter to auto insert.
+
+
+
+
+
+/**********************************************************************************************************************
+****************************************************      CODE      ***************************************************
+***********************************************************************************************************************/
+• Image Literal
+        #imageLiteral(resourceName: "DiceFour")
+• Optional Chaining
+        optional?.property
+        optional?.method()
+• Nil Coalescing
+        optional ?? defaultValue
+• Delegate: Connect UI Text Field to Controller
+        class MyViewController: UIViewController, UITextFieldDelegate {
+            let textField = UITextField()   // Create a delegate
+            textField.delegate = self       // Connect delegate to current class
+
+            // Define UITextFieldDelegate Protocol required function
+            func textFieldDidBeginEditing() { /* DO STUFF */}
+        }            
+• Convert Int array to String array
+        let array = [1, 2, 3]
+        let newArray = array.map{"\($0)"}
+• Convert JSON Data Object into a String
+        // Most common encoding for web requests is utf8.
+        let dataString = String(data: data, encoding: .utf8)
+
+
+
+/**********************************************************************************************************************
+***************************************************      ERRORS      **************************************************
+***********************************************************************************************************************/
+• 1022  - NSURLErrorDomain
+    + Error: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.
+    + Fix: Validate URL is 'https://' NOT 'http://'
+
+
+
 
 
 
@@ -269,13 +320,29 @@
     can use to create software o interact with an external system.
     - It provides developers with standard commands for performing common operations so they do not have to write the code from scratch.
     - Essentially, it is a contract between the developer and the API provider.
-• 
-• 
-• 
-• 
+• When creating a task, what method must you call to initiate the task & why?
+    - The 'resume()' method must be called to start the task because newly created tasks begin in a suspended state.
+• What are the 4 steps to setting up networking in Swift? (Aka API Request.)
+    1. Create URL String
+    2. Create URLSession
+    3. Create Task for URLSession
+    4. Initiate Task (Go Get that data!)
+• What are Closures?
+    - Closures are anonymous functions. 
+    - Could also consider functions as named Closures.
+    - Essentially, they are packages of functionality that can be passed around freely.
+• How do you convert a function into a Closure?
+    1. Remove 'func funcName' 
+    2. Move left brace '{' from end of line to beginning of line.
+    3. Add keyword 'in' where left bracket '{' was.
+    Ex.
+        func sum(n1:Int, n2:Int)->Int{return n1+n2}
+        {(n1:Int, n2:Int)->Int in return n1+n2}
+• What does a Model class require if it is going to be used as a JSON object representation?
+    - Requires 'Decodable' keyword in definition.
 
 
 
 
-
-
+no_reply@email.apple.com
+do_not_reply@itunes.com
