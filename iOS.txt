@@ -268,6 +268,7 @@
     - An Application Programming Interface (API) is a set of commands, functions, protocols, and objects that programmers 
     can use to create software o interact with an external system.
     - It provides developers with standard commands for performing common operations so they do not have to write the code from scratch.
+    - Essentially, it is a contract between the developer and the API provider.
 • 
 • 
 • 
