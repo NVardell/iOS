@@ -136,7 +136,10 @@
         + Generic Closure Syntax
             { ('parameters') -> 'return type' in 'statements' }
         + If a Closure is an input in a function, you can highlight it in xCode and hit enter to auto insert.
-
+    - EXTENSIONS
+        + Defining an Extension
+                extension SomeType { /* Add new functionality! */ }
+        + SomeType (From above) can be any existing Class, Struct, or Protocol.
 
 
 
