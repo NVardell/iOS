@@ -18,6 +18,7 @@ struct List: Decodable {
     let id: Int
     let name: String
     let main: Main
+    let weather: [Weather]
 }
 
 struct Main: Decodable {
@@ -27,4 +28,10 @@ struct Main: Decodable {
     let temp_max: Double
     let pressure: Int
     let humidity: Int
+}
+
+struct Weather: Decodable {
+    let id: Int
+    let main: String
+    let description: String
 }
