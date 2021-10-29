@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct WeatherData: Decodable {
+struct WeatherData: Codable {
     let message: String
     let cod: String
     let count: Int
     let list: [List]
 }
 
-struct List: Decodable {
+struct List: Codable {
     let id: Int
     let name: String
     let main: Main
     let weather: [Weather]
 }
 
-struct Main: Decodable {
+struct Main: Codable {
     let temp: Double
     let feels_like: Double
     let temp_min: Double
@@ -30,7 +30,7 @@ struct Main: Decodable {
     let humidity: Int
 }
 
-struct Weather: Decodable {
+struct Weather: Codable {
     let id: Int
     let main: String
     let description: String
