@@ -8,9 +8,9 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
 
-    let manager = WeatherManager()
+    var manager = WeatherManager()
     
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -21,18 +21,23 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.delegate = self
+        manager.delegate = self
     }
+    
 
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
         return true
     }
+    
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -41,16 +46,25 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
+        // Validate user input
         if let city = searchTextField.text {
-            print("\n\n\(city)")
-            cityLabel.text = city
             manager.fetchWeather(cityName: city)
+            cityLabel.text = city
         }
         
-        // Use searchTextField.text to get the weather for that city.
+        // Reset Search Text Field
         searchTextField.text = ""
     }
+    
+    
+    func didUpdateWeather(weather: WeatherModel) {
+        print(weather) // Kalamazoo
+        
+    }
+    
 }
 
