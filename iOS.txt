@@ -79,6 +79,13 @@
           & close the input section; simply, having the closure trailing at the end of line.
             Ex.
                 let result = calc(n1:2, n2:3) { $0 + $1 }
+        + Computed Properties
+            - A variable of a class or struct that is computed on the fly when it is created.
+            - General syntax is:
+                    var myComputedProperty: Int { return 2+4 }
+        + TypeAlias
+            - Single Protocol that combines multiple Protocols.
+            - Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
     - HIGH LEVEL FUNCTIONS
         + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
             1. Map
@@ -101,6 +108,7 @@
                 - optional?.method()
                 - If the optional is NOT nil, then continue down the chain(.).
     - PROTOCOLS
+        + Convention: Define Protocol in same class file it'll be used in.
         + Defining a protocol
             protocol MyProtocol { /* Define Protocol Requirements. */}
         + Using a protocol
@@ -160,14 +168,20 @@
 
 
 
+
+
 /**********************************************************************************************************************
 ***************************************************      ERRORS      **************************************************
 ***********************************************************************************************************************/
-• 1022  - NSURLErrorDomain
+• 1022 - NSURLErrorDomain
     + Error: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.
     + Fix: Validate URL is 'https://' NOT 'http://'
-
-
+• NAN - NSInvalidArgumentException
+    + Error: Terminating app due to uncaught exception 'NSInvalidArgumentException', 
+    reason: '-[Clima.WeatherViewController oldChange:]: unrecognized selector sent to instance 0x140f0af70'
+    + Fix: There is a disconnect between the Storyboard & VC (View Controller)
+        - In this case, I mapped the same button to two functions and then deleted one of them.
+          Aka it tried to trigger a function in the VC that did not exist.
 
 
 
@@ -340,9 +354,8 @@
         {(n1:Int, n2:Int)->Int in return n1+n2}
 • What does a Model class require if it is going to be used as a JSON object representation?
     - Requires 'Decodable' keyword in definition.
+• What are TypeAlias'?
+    - Protocols that combine more than one Protocol. Ex. 'Codable' combines 'Decodable' & 'Encodable'.
+• 
 
 
-
-
-no_reply@email.apple.com
-do_not_reply@itunes.com
