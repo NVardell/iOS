@@ -15,7 +15,7 @@ struct WeatherModel {
     
     // Computed Properties
     var temperatureString: String {
-        return String(format: "%0.1d", temperature)
+        return String(format: "%0.1f", temperature) 
     }
     
     var conditionName: String {
