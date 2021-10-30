@@ -41,6 +41,7 @@
 
 
 
+
 /**********************************************************************************************************************
 ***************************************************      TERMS      ***************************************************
 ***********************************************************************************************************************/
@@ -52,6 +53,8 @@
 • VC: View Controller
 • Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
 • JSON: JavaScript Object Notation
+
+
 
 
 
@@ -86,6 +89,10 @@
         + TypeAlias
             - Single Protocol that combines multiple Protocols.
             - Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
+    - DATA TYPES
+        + Doubles
+            - Functions 
+                * .round() -> Rounds to whole number.
     - HIGH LEVEL FUNCTIONS
         + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
             1. Map
@@ -140,6 +147,10 @@
         + Defining an Extension
                 extension SomeType { /* Add new functionality! */ }
         + SomeType (From above) can be any existing Class, Struct, or Protocol.
+        + Commonly, used to define default implementations for required protocol methods so that adoptions
+          are no longer required to implement them.
+        + 
+
 
 
 
@@ -169,6 +180,12 @@
         // Most common encoding for web requests is utf8.
         let dataString = String(data: data, encoding: .utf8)
 
+• Protocols
+    + Can be helpful organizing our code; for every DataType, we can create an extension that adopts a diff protocol.
+        extension SomeType: SomeProtocol {
+            // Add new functionality
+        }
+
 
 
 
@@ -177,7 +194,7 @@
 ***************************************************      ERRORS      **************************************************
 ***********************************************************************************************************************/
 • 1022 - NSURLErrorDomain
-    + Error: The resource could not be loaded because the App Transport Security policy requires the use of a secure connection.
+    + Error: The resource could not be loaded because the App Transport Security policy requires secure connection.
     + Fix: Validate URL is 'https://' NOT 'http://'
 • NAN - NSInvalidArgumentException
     + Error: Terminating app due to uncaught exception 'NSInvalidArgumentException', 
@@ -185,6 +202,8 @@
     + Fix: There is a disconnect between the Storyboard & VC (View Controller)
         - In this case, I mapped the same button to two functions and then deleted one of them.
           Aka it tried to trigger a function in the VC that did not exist.
+
+
 
 
 
@@ -359,6 +378,7 @@
     - Requires 'Decodable' keyword in definition.
 • What are TypeAlias'?
     - Protocols that combine more than one Protocol. Ex. 'Codable' combines 'Decodable' & 'Encodable'.
-• 
+• Why would you extend a protocol?
+    - To define default behavior for required protocol methods
 
 
