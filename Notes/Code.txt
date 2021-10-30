@@ -24,7 +24,6 @@
 • Convert JSON Data Object into a String
         // Most common encoding for web requests is utf8.
         let dataString = String(data: data, encoding: .utf8)
-
 • Protocols
     + Can be helpful organizing our code; for every DataType, we can create an extension that adopts a diff protocol.
         extension SomeType: SomeProtocol {
