@@ -38,3 +38,5 @@
         Step 4. locationManager.requestWhenInUseAuthorization()  // Alert User: Request Current Location
         Step 5. locationManager.requestLocation()                // Request: Make actual request to get location
         Step 6. extension MyVC: CLLocationManagerDelegate {...}  // Define required functions
+• Separate single file into multiple sections
+        // MARK: - SectionName
