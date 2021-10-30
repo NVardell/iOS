@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+class WeatherViewController: UIViewController {
 
     var manager = WeatherManager()
     
@@ -30,14 +30,16 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         print(searchTextField.text!)
     }
     
-    
+}
+
+
+// MARK: - UITextFieldDelegate
+extension WeatherViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
         return true
     }
-    
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -46,8 +48,6 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
             return false
         }
     }
-    
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         // Validate user input
@@ -59,8 +59,11 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
         // Reset Search Text Field
         searchTextField.text = ""
     }
-    
-    
+}
+
+
+// MARK: - WeatherManagerDelegate
+extension WeatherViewController: WeatherManagerDelegate {
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
         print(weather) // Kalamazoo
         DispatchQueue.main.async {
@@ -68,10 +71,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManag
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
         }
     }
-    
     func didFailWithError(_ weatherManager: WeatherManager, error: Error) {
         print(error)
     }
-    
 }
-
