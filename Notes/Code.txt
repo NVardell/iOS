@@ -1,6 +1,8 @@
 /**********************************************************************************************************************
 ***********************************************      CODE SNIPPETS      ***********************************************
 ***********************************************************************************************************************/
+• Useful Packages
+        import CoreLocation // Location ~ Use devices location
 • Image Literal
         #imageLiteral(resourceName: "DiceFour")
 • Optional Chaining
@@ -28,3 +30,11 @@
         extension SomeType: SomeProtocol {
             // Add new functionality
         }
+• Setting up Location in application
+        Step 0. Create new key/value pair in info.plist file.    // Privacy - Location :: My Message to User
+        Step 1. import CoreLocation                              // Import required package
+        Step 2. let locationManager = CLLocationManager()        // Core Location Manager
+        Step 3. locationManager.delegate = self                  // Listener: Location Manager
+        Step 4. locationManager.requestWhenInUseAuthorization()  // Alert User: Request Current Location
+        Step 5. locationManager.requestLocation()                // Request: Make actual request to get location
+        Step 6. extension MyVC: CLLocationManagerDelegate {...}  // Define required functions
