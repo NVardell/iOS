@@ -5,8 +5,11 @@
     + Error: The resource could not be loaded because the App Transport Security policy requires secure connection.
     + Fix: Validate URL is 'https://' NOT 'http://'
 • NAN - NSInvalidArgumentException
-    + Error: Terminating app due to uncaught exception 'NSInvalidArgumentException', 
-    reason: '-[Clima.WeatherViewController oldChange:]: unrecognized selector sent to instance 0x140f0af70'
+    + Error: -[Clima.WeatherViewController oldChange:]: unrecognized selector sent to instance 0x140f0af70
     + Fix: There is a disconnect between the Storyboard & VC (View Controller)
         - In this case, I mapped the same button to two functions and then deleted one of them.
           Aka it tried to trigger a function in the VC that did not exist.
+• NAN - NSInternalInconsistencyException
+    + Delegate must respond to locationManager:didFailWithError:
+    + Fix: Forgot to create impl for both Core Location Protocol functions
+    
