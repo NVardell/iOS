@@ -9,6 +9,7 @@
 • VC: View Controller
 • Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
 • JSON: JavaScript Object Notation
+• CL: Core Location
 
 
 
@@ -29,7 +30,7 @@
             * View: User Interface -> Sends input events to Controller
             * Controller: Mediator -> Modifies View & Makes Requests to Models
         + DELEGATE:
-            * Setting up a 
+            * 
 • SWIFT
     - MISC
         + If the last parameter of a function is a Closure, you can omit the last parameter name
@@ -43,6 +44,16 @@
         + TypeAlias
             - Single Protocol that combines multiple Protocols.
             - Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
+        + Location
+            - Requires importing CoreLocation package to access a devices location
+            - Update info.plist file to have message for the internal alert requesting user location
+        + Property List File
+            - .plist 
+            - File that is automatically created with every xCode project.
+            - Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
+            - Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
+                * Ex. Light/Dark Mode is one of these key-value pairs.
+                    key:Status Bar Style, value:String=UIStatusBarStyleLightContent
     - DATA TYPES
         + Doubles
             - Functions 
