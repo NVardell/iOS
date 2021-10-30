@@ -1,0 +1,38 @@
+/**********************************************************************************************************************
+**************************************************      KEYMAPS      **************************************************
+***********************************************************************************************************************/
+• Sublime
+    - Keys
+        + Option = Alt
+        + Command = Super
+    - Find Highlighted Word - Cmd+F & Cmd+E
+    - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
+• OS
+    - Magnet - Window Snapping
+        + Left/Right/Up/Down = Fn+Ctrl+Arrow
+    - Hidden Files = Cmd+Shift+. (While in Finder Window)
+    - Text Selection
+        + Word
+            - Previous Word = Option+Left
+            - Next Word = Option+Right
+        + Line
+            - Start Line = Command+Left
+            - End Line = Command+Right
+        + Paragraph
+            - Start = Option+Up
+            - End = Option+Down
+        + Starts a new line in apps like Messages, Slack, or WYSIWYG editors = Shift+Enter
+• xCode
+    - Editor
+        + Default
+            - Move Lines = Option+Cmd+[ OR Option+Cmd+]
+            - Multiple Cursors = Ctrl+Shift+Up/Down 
+        + Remapped
+            - Move Lines = Option+Cmd+[ OR Option+Cmd+]
+    - View
+        + Hide top toolbar = Opt+Cmd+T
+        + Show Project Files Left Toolbar = Cmd+1
+    - Quick Documentation = Option+Click
+    - Side-by-Side Assistant Editor = Control+Option+Cmd+Enter
+    - Build Clean = Cmd+Ctrl+K
+    - Build = Cmd+B

@@ -1,0 +1,174 @@
+/**********************************************************************************************************************
+****************************************************      Q & A      **************************************************
+***********************************************************************************************************************/
+• What type of file is the Interface Builder?
+    - .Storyboard
+• Name 3 different types of naming conventions.
+    - camelCase (First char lowercase, with every following word Capitalized.)
+    - kebab-case (All Lowercase, separated by dash '-')
+    - snake_case (All Lowercase, separated by underscore '_')
+• How to add some code into the middle of a print string? (Ex. print("Hello World."))
+    - Insert a backslash followed by a set of parentheses including the calculation. Ex '\(5+3)'
+• What is it called when you add a calculation into the middle of a string?
+    - String Interpolation (Ex. print("TEXT \(2+2) TEXT"))
+• What is an Array?
+    - An ordered sequence of items.
+• How do you define a constant?
+    - With the 'let' keyword. (Ex. let x = 10)
+• How do you define a variable?
+    - With the 'var' keyword. (Ex. var x = 10)
+• What is the difference between a constant and a variable?
+    - They have different keywords defining them, let v. var. 
+• What is the difference between a Double & Float?
+    - A Double is double the accuracy of a Float.
+• How many positions does a Float have?
+    - 8 positions, or 32 bits. (Ex. print(Float.pi) // 3.1415925, print(Float.pi * 1000) // 3141.5925)
+• How many positions does a Double have?
+    - 16 positions, or 64 bits. (Ex. print(Double.pi) // 3.141592653589793, print(Double.pi * 1000) // 3141.592653589793)
+• How many data types are there in Swift?
+    - 7 (Int, Float, Double, Array, Bool, String, Dictionary)
+• What is a closed ranged operator?
+    - '...' Includes the lower and upper values.  Used when randomizing numbers in a specific range,
+• Can you have a partially open range operator?
+    - Yes. '..<' Include lower bound and everything less than upper bound.
+• What is the difference between Safe Area and Superview?
+    - Superview is the area at the top/bottom of the phone where default Apple OS gestures and stats appear.
+      Adding UI elements to these areas is frowned upon.  Hence the Safe Area auto sizes things to stay out of that area.
+• Alignment v Pinning
+    - Alignment Constraints force a UI object to a horizontal/vertical rule.
+    - Pinning Constraints force UI objects to be a specific # of pixels from each edge of the display.
+    - Align to the Center & Pin to the bottom.
+• Name 3 different ways to create UI Container Views for objects to sit in.
+    1. Plus button, Search "uiview", Click & Drag "View" object to Builder
+    2. Select UI Objects -> Select 'Editor' menu -> Select 'Embed In' -> Select 'View'
+    3. Select UI Objects -> Click icon in lower right with an arrow in a box -> Select 'View'
+• What views make up the right Inspector Sidebar?
+    1. File
+    2. History
+    3. Quick Help
+    4. Identity
+    5. Attributes
+    6. Size
+    7. Connections
+• What is AVFoundation?
+    - AVFoundation standing for Audio Visual Foundation is a library that you can import in swift to incorporate AV actions.
+• When retrieving data from a Dictionary, what Data Type is the value?
+    - Optional
+• What is the difference between a function & method?
+    - Generically the same thing, but a method is a function defined within a structure; aka only that structure can call it.
+• What is the purpose of an initializer? (init(){})
+    - To reuse a base structure to create a brand new instance of an object with its own unique values.
+• What is a Design Pattern?
+    - A proven solution to a common problem.... (Feel like this is a terrible explanation... xD)
+• Explain the MVC Design Pattern.
+    - Model: Data & Logic -> Sends data to Controller
+    - View: User Interface -> Sends input events to Controller
+    - Controller: Mediator -> Modifies View & Makes Requests to Models
+• What specifically should the Controller be responsible for within the MVC design pattern?
+    - Telling the other components what to do.
+    - Respond to changes in other components.
+    - Handle what to do with user actions from the view.
+    - Tell the view what to display.
+    - Fetch the relevant data from the model.
+    - Tell the model to update itself.
+    - Responsible for delegating tasks to the models & sending updated data to the UI.
+• How do you unwrap an optional?
+    - By adding an exclamation mark at the end of the statement. (Ex. let answer = sender.currentTitle!)
+• What 4 things are required when writing a function with an output?
+    1. Return Arrow '->'
+    2. Return Type
+    3. Return Keyword
+    4. Return Value 
+• What does immutable mean?
+    - Can't be changed.  Created with the 'let' keyword.
+• How do you allow a struct to change the value of an internal immutable field?
+    - Adding the keyword 'mutating' before the function definition inside of the struct. (Ex. mutating func change(){})
+• What is a SuperClass?
+    - A parent class, generically having rudimentary fields & functions.
+    - Inherited by Sub-Classes, and then overrides original definition or is built out with additional fields & functions.
+    - Common Ex. SuperClass=Shape. Sub-Classes=Circle, Square, Triangle...
+• In Swift, how do you specify a classes SuperClass?
+    - In class definition. (Ex. class Square: Shape {...} )
+• Is it possible to call a SuperClass method from a SubClass method?
+    - Yes.  Requires the keyword 'super'. (Ex. super.method())
+• What is the most basic object in Swift?
+    - NSObject. NS standing for Next Step (NeXTSTEP) which was the company that Steve Jobs started when he got booted from Apple.
+• What is the inheritance chain for a simple UIButton?
+    - UIButton -> UIControl -> UIView -> UIResponder -> NSObject
+• Differences between Classes & Structs?
+    - Structs
+        1. Inheritance = FALSE (Can't inherit from a Super class.)
+        2. Init Method = Not Required.
+        3. Immutable = TRUE
+            - A 'mutating' func makes property changes by destroying the original Struct & creating a new one with updated values.
+        4. Passed by = VALUE
+            - You get one & I get one!
+            - Copying a Struct creates an entirely new object. 
+            - We go from 1 object to 2 objects.
+    - Classes
+        1. Inheritance = TRUE (Can inherit from a Super class.)
+        2. Init Method = Required
+        3. Passed by = REFERENCE
+            - Everyone has to share a single object. ):
+            - Copying a Class Object simply creates a new pointer to an existing object.
+• What does Apple advise when creating new object templates? Structs or Classes?
+    - Structs, good when you need a basic blueprint for creating objects.
+• When should you create Classes instead of Structs?
+    1. You need inheritance.
+    2. You need to work with old Objective-C Code
+• What framework is required when creating Controller classes that interact with the UI?
+    - UIKit (import UIKit)
+• When creating new views, what does a new View Controller ALWAYS have?
+    - A View! (Which is what we use to connect the swift controller to the new view.)
+• What keyword is required for Down Casting?
+    - as! (Ex. let destinationVC = segue.destination as! MyViewController)
+• What is a segue?
+    - A relationship between views.
+• When was SF Symbols added?
+    - iOS 13. Set of 1,500 symbols for devs to use in their apps. SF = San Francisco.
+• How do you setup your own Light/Dark Mode colors?
+    - Add new Color Set to project Assets, and then change 'Appearances' to 'Any, Dark'
+• How do you prevent pixelate when zooming images?
+    - Using Vector Images (Udemy has pdf files for this.)
+    - Also need to change Resizing to 'Preserve Vector Data' & change Scales to 'Single Scale'
+• What is required when adding Light/Dark mode assets?
+    - Appearance field in Inspector sidebar needs to be updated to 'Any, Dark' or 'Any, Light, Dark'.
+• How to tap into device keyboard? (Ex. Capturing Enter/Return)
+    - Using UITextFieldDelegate.
+• Structures can't inherit like classes, but can they adopt Protocols?
+    - Yes, Structs & Classes can both adopt Protocols.
+• What is a Protocol?
+    - A Protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or functionality.
+• Can Protocols define implementation?
+    - No, but protocol extensions can; however, generally adopting classes define implementations.
+• What is an API?
+    - An Application Programming Interface (API) is a set of commands, functions, protocols, and objects that programmers 
+    can use to create software o interact with an external system.
+    - It provides developers with standard commands for performing common operations so they do not have to write the code from scratch.
+    - Essentially, it is a contract between the developer and the API provider.
+• When creating a task, what method must you call to initiate the task & why?
+    - The 'resume()' method must be called to start the task because newly created tasks begin in a suspended state.
+• What are the 4 steps to setting up networking in Swift? (Aka API Request.)
+    1. Create URL String
+    2. Create URLSession
+    3. Create Task for URLSession
+    4. Initiate Task (Go Get that data!)
+• What are Closures?
+    - Closures are anonymous functions. 
+    - Could also consider functions as named Closures.
+    - Essentially, they are packages of functionality that can be passed around freely.
+• How do you convert a function into a Closure?
+    1. Remove 'func funcName' 
+    2. Move left brace '{' from end of line to beginning of line.
+    3. Add keyword 'in' where left bracket '{' was.
+    Ex.
+        func sum(n1:Int, n2:Int)->Int{return n1+n2}
+        {(n1:Int, n2:Int)->Int in return n1+n2}
+• What does a Model class require if it is going to be used as a JSON object representation?
+    - Requires 'Decodable' keyword in definition.
+• What are TypeAlias'?
+    - Protocols that combine more than one Protocol. Ex. 'Codable' combines 'Decodable' & 'Encodable'.
+• Why would you extend a protocol?
+    - To define default behavior for required protocol methods
+
+

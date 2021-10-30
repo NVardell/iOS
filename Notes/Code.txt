@@ -1,0 +1,30 @@
+/**********************************************************************************************************************
+***********************************************      CODE SNIPPETS      ***********************************************
+***********************************************************************************************************************/
+• Image Literal
+        #imageLiteral(resourceName: "DiceFour")
+• Optional Chaining
+        optional?.property
+        optional?.method()
+• Nil Coalescing
+        optional ?? defaultValue
+• Delegate: Connect UI Text Field to Controller
+        class MyViewController: UIViewController, UITextFieldDelegate {
+            let textField = UITextField()   // Create a delegate
+            textField.delegate = self       // Connect delegate to current class
+
+            // Define UITextFieldDelegate Protocol required function
+            func textFieldDidBeginEditing() { /* DO STUFF */}
+        }            
+• Convert Int array to String array
+        let array = [1, 2, 3]
+        let newArray = array.map{"\($0)"}
+• Convert JSON Data Object into a String
+        // Most common encoding for web requests is utf8.
+        let dataString = String(data: data, encoding: .utf8)
+
+• Protocols
+    + Can be helpful organizing our code; for every DataType, we can create an extension that adopts a diff protocol.
+        extension SomeType: SomeProtocol {
+            // Add new functionality
+        }
