@@ -12,4 +12,7 @@
 • NAN - NSInternalInconsistencyException
     + Delegate must respond to locationManager:didFailWithError:
     + Fix: Forgot to create impl for both Core Location Protocol functions
-    
+• NAN - NSInternalInconsistencyException
+    + Error: Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.
+    + Error: UILabel.text must be used from main thread only
+    + Fix: Surround UI changes in 'DispatchQueue.main.async {}' block.
