@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let coinManager = CoinManager()
+    var coinManager = CoinManager()
     
     @IBOutlet weak var currencyLabel: UILabel!
-    @IBOutlet weak var bitcoinLabel: UIStackView!
+    @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyPicker: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
+        coinManager.delegate = self
     }
 
 
@@ -50,6 +51,25 @@ extension ViewController: UIPickerViewDelegate {
     }
     // Triggered everytime user selects a row
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(row)
+        print(coinManager.currencyArray[row])
+        let selectedCurrency = coinManager.currencyArray[row]
+        currencyLabel.text = selectedCurrency
+        coinManager.getCoinPrice(for: selectedCurrency)
+    }
+}
+
+
+// MARK: - CoinManagerDelegate
+extension ViewController: CoinManagerDelegate {
+    func didUpdateRate(_ coinManager: CoinManager, rate: Double) {
+        print("VC Got Rate - \(rate)")
+        DispatchQueue.main.async {
+            self.bitcoinLabel.text = String(format: "%.2f", rate)
+        }
+        
+    }
+    
+    func didFailWithError(_ coinManager: CoinManager, error: Error) {
+        print(error)
     }
 }
