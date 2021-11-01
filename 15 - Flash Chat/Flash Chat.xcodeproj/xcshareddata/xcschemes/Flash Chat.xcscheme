@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0B628172235DEE8100E35CAF"
-               BuildableName = "Flash Chat iOS13.app"
+               BuildableName = "Flash Chat.app"
                BlueprintName = "Flash Chat"
                ReferencedContainer = "container:Flash Chat.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B628172235DEE8100E35CAF"
-            BuildableName = "Flash Chat iOS13.app"
+            BuildableName = "Flash Chat.app"
             BlueprintName = "Flash Chat"
             ReferencedContainer = "container:Flash Chat.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B628172235DEE8100E35CAF"
-            BuildableName = "Flash Chat iOS13.app"
+            BuildableName = "Flash Chat.app"
             BlueprintName = "Flash Chat"
             ReferencedContainer = "container:Flash Chat.xcodeproj">
          </BuildableReference>
