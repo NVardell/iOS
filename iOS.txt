@@ -32,6 +32,12 @@
         + DELEGATE:
             * 
 • SWIFT
+    - VIEW CONTROLLER OBJECTS
+        + Segues
+            * Default display is a 'Model Transition', this is more like a pop-up.
+            * It Slides up from the bottom and covers the initial view.
+        + Table Views
+            * View for displaying lists.
     - MISC
         + If the last parameter of a function is a Closure, you can omit the last parameter name
           & close the input section; simply, having the closure trailing at the end of line.
@@ -115,3 +121,20 @@
         + Commonly, used to define default implementations for required protocol methods so that adoptions
           are no longer required to implement them.
         + 
+
+
+/**********************************************************************************************************************
+**************************************************      HOW TO      ***************************************************
+***********************************************************************************************************************/
+• Create a Segue between two View Controllers on a Storyboard
+    + Option #1
+        1. Click box on top of View Controller to select it
+        2. Press & hold 'Control ^' key
+        3. Click the icon furthest to the left in the box above VC & Drag to second VC
+    + Option #2
+        1. Press & hold 'Control ^' key
+        2. Click Button you want to trigger segue
+        3. Drag & drop on VC you want displayed when button is clicked
+• Create Navigation for View Controllers instead of the default modal transitions
+    1. Select Main View Controller
+    2. Go to top menu bar & Editor -> Embed In -> Navigation View
