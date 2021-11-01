@@ -39,3 +39,8 @@
         Step 6. extension MyVC: CLLocationManagerDelegate {...}  // Define required functions
 • Separate single file into multiple sections
         // MARK: - SectionName
+• Basic Loop
+        let fruitBasket = ["Apple, "Orange", "Banana"]
+        for fruit in fruitBasket {
+                print(fruit)
+        }
