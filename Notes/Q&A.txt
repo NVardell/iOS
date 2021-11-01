@@ -170,5 +170,10 @@
     - Protocols that combine more than one Protocol. Ex. 'Codable' combines 'Decodable' & 'Encodable'.
 • Why would you extend a protocol?
     - To define default behavior for required protocol methods
-
+• What is the default segue when connecting view controllers?
+    - Modal Transition - Second view slides up from bottom partially covering initial view. Like a pop-up.
+• What happens when you embed the Main VC in Navigation Controller?
+    - Every subsequent view automatically gets nvaigation buttons added to the top of the view.
+• Why would you want to setup different types of Segues between views?
+    - Some views might be public while others require some form of authentication or verification beforehand.
 
