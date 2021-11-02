@@ -1,0 +1,48 @@
+/**********************************************************************************************************************
+**************************************************      HOW TO      ***************************************************
+***********************************************************************************************************************/
+• Create a Segue between two View Controllers on a Storyboard
+    + Option #1
+        1. Click box on top of View Controller to select it
+        2. Press & hold 'Control ^' key
+        3. Click the icon furthest to the left in the box above VC & Drag to second VC
+    + Option #2
+        1. Press & hold 'Control ^' key
+        2. Click Button you want to trigger segue
+        3. Drag & drop on VC you want displayed when button is clicked
+• Create Navigation for View Controllers instead of the default modal transitions
+    1. Select Main View Controller
+    2. Go to top menu bar & Editor -> Embed In -> Navigation View
+• Setup CocoaPods
+    + General Install (From Udemy Video - Didn't work for me.)
+        1. Open terminal & run
+            sudo gem install cocoapods
+        2. Setup your pod
+            pod setup --verbose
+    + Stack Overflow Install Solution (Worked for me so far, I think...)
+        1. Open terminal and run
+            brew cleanup -d -v
+        2. Then attempt install
+            brew install cocoapods
+        3. Then setup pod like above. (She said it takes FOREVER... Mine was instant.)
+            pod setup --verbose
+    + xCode Project
+        1. Open terminal and cd to project directory, then run:
+            pod init
+        2. Open 'Podfile' created from step one.
+        3. Uncomment platform ios
+        4. Add desired pods (Grab Pod names from CocoaPods.org)
+        5. Save Podfile & Exit out of xCode
+        6. Reopen Terminal in proejct directory, then run:
+            pod install
+        7. Open newly generated xCode Workspace Project file
+        8. Re-Build project & fix any errors introduced by newly added Pods.
+        9. Update any pod versions in Podfile, exit xCode, then re-run:
+            pod install
++ Remove Pods from xCode Project
+    + Some Pods might be HUGE so shipping your app with them might be a bad idea.
+      in order to remove a pod from a project, simply:
+        1. Delete Pod entry in the Podfile
+        2. Save Podfile & Exit xCode
+        3. Open terminal in project dir, then run:
+            pod install
