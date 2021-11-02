@@ -10,6 +10,7 @@
 • Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
 • JSON: JavaScript Object Notation
 • CL: Core Location
+• SPM: Swift Package Manager
 
 
 
@@ -22,6 +23,10 @@
     - Anonymous Parameters
         + Use '$' and an index location to refer to a parameter.
             Ex. $0
+• FIREBASE
+    - Using it in Flash Chat for...
+        + User Registration
+        + 
 • DESIGN PATTERNS
     - A proven solution to a common problem
     - POPULAR PATTERNS
@@ -60,10 +65,48 @@
             - Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
                 * Ex. Light/Dark Mode is one of these key-value pairs.
                     key:Status Bar Style, value:String=UIStatusBarStyleLightContent
+        + Ranges
+            - Half Open: let halfOpenRange = 1..<5
+            - Closed: let closedRange = 1...5
+        + 3rd Party Libraries
+            - Package Dependency Managers
+                * Monitors project packages for changes.
+                * How to know what manager projects support?
+                    + General rule of thumb is... look out for specific file extensions in project root
+                        - *.podspec = CocoaPods
+                        - *.swift = Swift Package Manager
+                * Some Popular Managers are....
+                    + Swift Package Manager
+                        - File -> Swift Packages -> Add Package Dependency
+                    + Carthage
+                        - Angela does not suggest it.
+                    + Cocoa Pods
+                         - Important Files
+                            * Podfile
+                                - User edits to add desired pods
+                            * Podfile.lock
+                                - Generated when running install command
+                                - Contains version numbers for pods
+                            * *.podspec
+                                - Details specifics on the dependency like minimum ios, swift versions, etc.
+                         - All written in Ruby
+                         - Pods used so far...
+                            1. CLTypingLabel ~ Animating~ish Text
+            - Popular Libraries
+                * Alamofire ~ github.com/Alamofire/Alamofire
     - DATA TYPES
+        + Int
+        + Float
         + Doubles
             - Functions 
                 * .round() -> Rounds to whole number.
+        + Bool
+        + String
+        + Array
+            - Example: let array = [ 1, 2, 3 ]
+            - Maintains order.
+        + Dictionary
+            - Example: let contacts = [ "Nate": 123456789, "Michael": 123456789, "Aziz": 123456789 ]
     - HIGH LEVEL FUNCTIONS
         + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
             1. Map
@@ -120,21 +163,8 @@
         + SomeType (From above) can be any existing Class, Struct, or Protocol.
         + Commonly, used to define default implementations for required protocol methods so that adoptions
           are no longer required to implement them.
-        + 
+    - LOOPS
+        + For In Loops
+        + While Loops
 
 
-/**********************************************************************************************************************
-**************************************************      HOW TO      ***************************************************
-***********************************************************************************************************************/
-• Create a Segue between two View Controllers on a Storyboard
-    + Option #1
-        1. Click box on top of View Controller to select it
-        2. Press & hold 'Control ^' key
-        3. Click the icon furthest to the left in the box above VC & Drag to second VC
-    + Option #2
-        1. Press & hold 'Control ^' key
-        2. Click Button you want to trigger segue
-        3. Drag & drop on VC you want displayed when button is clicked
-• Create Navigation for View Controllers instead of the default modal transitions
-    1. Select Main View Controller
-    2. Go to top menu bar & Editor -> Embed In -> Navigation View
