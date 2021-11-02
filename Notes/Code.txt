@@ -44,3 +44,19 @@
         for fruit in fruitBasket {
                 print(fruit)
         }
+• Initiate a Set
+        let fruits: Set = [ "Apple", "Pear", "Orange" ] // Order not maintained like an array is
+• Text 'Animation' - Add a 'Typing' Animation to label text (Not technically animation, but eh.)
+        let titleText = "⚡️FlashChat"
+        var charIndex = 0.0
+        for letter in titleText {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * charIndex, repeats: false) { (timer) in
+                self.titleLabel.text?.append(letter)
+            }
+            charIndex += 1
+        }
+• Add Cocoa Pods to a xCode Project
+        1. Open terminal & cd to project directory, then run:
+                pod init
+        2. Open the newly created 'Podfile', created in step one.
+        3. Add the 'Pods' we want to include in our project.
