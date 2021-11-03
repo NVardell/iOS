@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -18,14 +18,14 @@ class RegisterViewController: UIViewController {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text {
             print("Email = \(email)\t Password = \(password)")
-//            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//                if let e = error {
-//                    print(e.localizedDescription) // Error in language of phone
-//                } else {
-//                    // Successfully registered user - Trigger Seg
-//                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
-//                }
-//            }
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription) // Error in language of phone
+                } else {
+                    // Successfully registered user - Trigger Seg
+                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                }
+            }
         }
         
     }

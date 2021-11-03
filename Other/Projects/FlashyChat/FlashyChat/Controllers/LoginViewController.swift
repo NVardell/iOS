@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -19,13 +19,13 @@ class LoginViewController: UIViewController {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text {
             print("Email = \(email)\t Password = \(password)")
-//            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//                if let e = error {
-//                    print(e)
-//                } else {
-//                    self.performSegue(withIdentifier: "LoginToChat", sender: self)
-//                }
-//            }
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e)
+                } else {
+                    self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                }
+            }
         }
     }
     
