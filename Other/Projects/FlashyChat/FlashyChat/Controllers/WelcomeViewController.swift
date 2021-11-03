@@ -1,9 +1,8 @@
 //
 //  WelcomeViewController.swift
-//  Flash Chat iOS13
+//  FlashyChat
 //
-//  Created by Angela Yu on 21/10/2019.
-//  Copyright © 2019 Angela Yu. All rights reserved.
+//  Created by Nate Vardell on 11/2/21.
 //
 
 import UIKit
