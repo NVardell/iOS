@@ -60,3 +60,10 @@
                 pod init
         2. Open the newly created 'Podfile', created in step one.
         3. Add the 'Pods' we want to include in our project.
+• Constants File
+        // Commonly shortened to 'K'; clearly, cooler than 'C'... smh.
+        struct K {
+                static let appTitle = "Awesome Title"
+                static func typeMethod() { // Do Stuff }
+        }
+• 
