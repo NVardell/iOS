@@ -33,7 +33,7 @@
         3. Uncomment platform ios
         4. Add desired pods (Grab Pod names from CocoaPods.org)
         5. Save Podfile & Exit out of xCode
-        6. Reopen Terminal in proejct directory, then run:
+        6. Reopen Terminal in project directory, then run:
             pod install
         7. Open newly generated xCode Workspace Project file
         8. Re-Build project & fix any errors introduced by newly added Pods.
