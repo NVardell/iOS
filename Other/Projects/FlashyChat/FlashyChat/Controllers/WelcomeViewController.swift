@@ -10,8 +10,6 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    let titleText = "⚡️FlashChat"
-    
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
     override func viewDidLoad() {

@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
                     print(e.localizedDescription) // Error in language of phone
                 } else {
                     // Successfully registered user - Trigger Seg
-                    self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                    self.performSegue(withIdentifier: K.registerSegue, sender: self)
                 }
             }
         }
