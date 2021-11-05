@@ -46,3 +46,49 @@
         2. Save Podfile & Exit xCode
         3. Open terminal in project dir, then run:
             pod install
+• Setup Table View Cell xib Design File
+    1. Right click 'Views' Directory & select 'New File'
+        - File: Cocoa Touch Class
+        - Subclass: UITableViewCell
+        - CHECK: Also Create XIB File
+        - Language: Swift
+    2. Open xib file generated in Step #1
+        - Attributes Inspector: Set Identifier Name ('ReusableCell' for this example.)
+            + IMPORTANT - Need this identifier in Step #5
+    ## NOTE | Below is setup specific to Flashy Chat Message Cells
+        - Add: UIView (Resize to fit left 2/3)
+            + Add: UILabel (Inside View^)
+                * Attributes: Lines = 0 (For displaying long chat messages without truncation.)
+        - Add: UIImageView (Resize to fit left 1/3)
+        - Select Both UIView & UIImageView
+            + Embed: Stack View
+                * Attribute: Alignment = Top
+                * Attribute: Spacing = 20
+        - Constraints
+            + Label: 10 (ALL)
+            + ImageView: 40x40 (HxW)
+            + StackView: 10 (ALL - Relative to Content View)
+        - Resize: Message Cell - To Fit Constraints defined above.
+    3. Open Assistant View to view corresponding Swift file
+    4. Create IBOutlets (Ctrl+Drag)
+        - View: messageBubble
+        - Label: messageText
+        - Image: rightImageView
+    5. Register new xib Custom Design file in viewDidLoad
+        - Open VC: Whichever Controller displaying Table View
+            + ChatViewController for this example
+        - Code:
+            tableView.register(UINib(nibName: K.cellNibName, forCellReuseIdentifier: K.cellIdentifier))
+    6. Replacing Prototype UITableViewCell with our new Custom Design MessageCell.xib
+        - Open: ChatViewController
+        - GoTo: Extension UITableViewDataSource ~ tableView(..., cellForRowAt: xx, ...)
+            + Add to Old: 
+                let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+                cell.textLabel?.text = messages[indexPath.row].body
+            + Adding:
+                *** = ***.***(***: ***, ***: ***) as! MessageCell // Casting Reusable Cell to our Custom Cell 
+                ***.messageLabel.*** = ***[***.***].*** // Or whatever UILabel IBOutlet was named
+            + New:
+                let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
+                cell.messageLabel.text = messages[indexPath.row].body
+    7. Remove deprecated Prototype Reusable TableViewCell from Main.Storyboard
