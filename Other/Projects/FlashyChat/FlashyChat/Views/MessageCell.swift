@@ -9,9 +9,18 @@ import UIKit
 
 class MessageCell: UITableViewCell {
 
+    @IBOutlet weak var messageBubble: UIView!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var rightImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code: Called for every row in Table View
+        // Make Message Bubble have rounded courners
+        //      - Not static radius for long winded messages with larger height values
+        messageBubble.layer.cornerRadius = messageBubble.frame.size.height / 5
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
