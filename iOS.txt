@@ -11,6 +11,8 @@
 • JSON: JavaScript Object Notation
 • CL: Core Location
 • SPM: Swift Package Manager
+• PM: Package Manager
+• SwiftPM: Swift Package Manager
 
 
 
@@ -29,11 +31,11 @@
                 }
                 print(K.appTitle) // Awesome Title
                 K.typeMethod()
-• GENERIC
-    - Main.Storyboard AKA Interface Builder.
-    - Anonymous Parameters
-        + Use '$' and an index location to refer to a parameter.
-            Ex. $0
+• FILES
+    - *.Storyboard
+        + Interface Builder - Main.Storyboard
+    - *.xib
+        + Design file for UI ~ Used to be *.Nib (I think...)
 • FIREBASE
     - Using it in Flash Chat for...
         + User Registration
@@ -73,69 +75,72 @@
         + Navigation
             * Pop to Root = Redirect View to Home View
     - MISC
+        + Anonymous Parameters
+            * Use '$' and an index location to refer to a parameter.
+                Ex. $0
         + If the last parameter of a function is a Closure, you can omit the last parameter name
           & close the input section; simply, having the closure trailing at the end of line.
             Ex.
                 let result = calc(n1:2, n2:3) { $0 + $1 }
         + Computed Properties
-            - A variable of a class or struct that is computed on the fly when it is created.
-            - General syntax is:
+            * A variable of a class or struct that is computed on the fly when it is created.
+            * General syntax is:
                     var myComputedProperty: Int { return 2+4 }
         + TypeAlias
-            - Single Protocol that combines multiple Protocols.
-            - Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
+            * Single Protocol that combines multiple Protocols.
+            * Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
         + Location
-            - Requires importing CoreLocation package to access a devices location
-            - Update info.plist file to have message for the internal alert requesting user location
+            * Requires importing CoreLocation package to access a devices location
+            * Update info.plist file to have message for the internal alert requesting user location
         + Property List File
-            - .plist 
-            - File that is automatically created with every xCode project.
-            - Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
-            - Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
+            * .plist 
+            * File that is automatically created with every xCode project.
+            * Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
+            * Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
                 * Ex. Light/Dark Mode is one of these key-value pairs.
                     key:Status Bar Style, value:String=UIStatusBarStyleLightContent
         + Ranges
-            - Half Open: let halfOpenRange = 1..<5
-            - Closed: let closedRange = 1...5
+            * Half Open: let halfOpenRange = 1..<5
+            * Closed: let closedRange = 1...5
         + 3rd Party Libraries
-            - Package Dependency Managers
-                * Monitors project packages for changes.
-                * How to know what manager projects support?
+            * Package Dependency Managers
+                - Monitors project packages for changes.
+                - How to know what manager projects support?
                     + General rule of thumb is... look out for specific file extensions in project root
-                        - *.podspec = CocoaPods
-                        - *.swift = Swift Package Manager
-                * Some Popular Managers are....
+                        ~ *.podspec = CocoaPods
+                        ~ *.swift = Swift Package Manager
+                - Some Popular Managers are....
                     + Swift Package Manager
-                        - File -> Swift Packages -> Add Package Dependency
+                        * File -> Swift Packages -> Add Package Dependency
                     + Carthage
-                        - Angela does not suggest it.
+                        * Angela does not suggest it.
                     + Cocoa Pods
-                         - Important Files
-                            * Podfile
-                                - User edits to add desired pods
-                            * Podfile.lock
-                                - Generated when running install command
-                                - Contains version numbers for pods
-                            * *.podspec
-                                - Details specifics on the dependency like minimum ios, swift versions, etc.
-                         - All written in Ruby
-                         - Pods used so far...
+                        * Important Files
+                            - Podfile
+                                + User edits to add desired pods
+                            - Podfile.lock
+                                + Generated when running install command
+                                + Contains version numbers for pods
+                            - *.podspec
+                                + Details specifics on the dependency like minimum ios, swift versions, etc.
+                         * All written in Ruby
+                         * Pods used so far...
                             1. CLTypingLabel ~ Animating~ish Text
-            - Popular Libraries
+            * Popular Libraries
                 * Alamofire ~ github.com/Alamofire/Alamofire
     - DATA TYPES
         + Int
         + Float
         + Doubles
-            - Functions 
-                * .round() -> Rounds to whole number.
+            * Functions 
+                - .round() -> Rounds to whole number.
         + Bool
         + String
         + Array
-            - Example: let array = [ 1, 2, 3 ]
-            - Maintains order.
+            * Example: let array = [ 1, 2, 3 ]
+            * Maintains order.
         + Dictionary
-            - Example: let contacts = [ "Nate": 123456789, "Michael": 123456789, "Aziz": 123456789 ]
+            * Example: let contacts = [ "Nate": 123456789, "Michael": 123456789, "Aziz": 123456789 ]
     - HIGH LEVEL FUNCTIONS
         + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
             1. Map
