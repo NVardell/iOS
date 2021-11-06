@@ -66,4 +66,5 @@
                 static let appTitle = "Awesome Title"
                 static func typeMethod() { // Do Stuff }
         }
-• 
+• Retrieve from dictionary
+        let valueForMyKey = dictionary["Key"]

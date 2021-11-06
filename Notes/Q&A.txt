@@ -176,4 +176,5 @@
     - Every subsequent view automatically gets navigation buttons added to the top of the view.
 • Why would you want to setup different types of Segues between views?
     - Some views might be public while others require some form of authentication or verification beforehand.
-
+• What does Upcasting require?
+    - Keyword 'as' & must inherit from the SuperClass.

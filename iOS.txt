@@ -22,15 +22,44 @@
 ***********************************************************************************************************************/
 • KEYWORDS
     - Static
-        * Makes a variable a 'Type Property', so it that it's associated with the structs Data Type.
-        * Doesn't require an instance to access property value
-            + Example - Constants
+        + Makes a variable a 'Type Property', so it that it's associated with the structs Data Type.
+        + Doesn't require an instance to access property value
+            * Example - Constants
                 struct K { 
                     static let appTitle="Awesome Title" 
                     static func typeMethod() { // Do Stuff }
                 }
                 print(K.appTitle) // Awesome Title
                 K.typeMethod()
+    - AS
+        + Used in Type Casting
+            * Type Casting is a way to check the type of an instance, or to treat that instance as a different
+              SuperClass or SubClass from somewhere else in its own Class Hierarchy.
+            Implemented in Swift with the 'is' & 'as' operators.
+        + Variations 
+            * as = Upcast 
+                - Not used very often.
+                - Raises object to its SuperClass Type
+                - Does NOT require a ? or ! because it is guaranteed to succeed. (Won't Build otherwise, lol.)
+                - Requires the object being Upcasted to be inheriting the SuperClass.
+                - Example
+                    let newCell = messageCell as UITableViewCell
+            * as? = Optional(?) Downcast
+                - Safe option.  Only continue if the Downcast is successful, unlike ! forcing the Downcast and failing.
+                - Example
+                    if let fish = neighbors[1] as? Fish { fish.swim() }
+            * as! = Forced Downcast
+                - Problems with Forcing a downcast is it compiles, but easily triggers runtime exception if cast fails.
+                - Example
+                    let messageCell = cell as! MessageCell
+            * is
+    - Any
+        + Encompasses ALL Data Types
+    - AnyObject
+        + Objects derived from classes
+    - NSObject
+        + Foundation Objects
+        + 
 • FILES
     - *.Storyboard
         + Interface Builder - Main.Storyboard
@@ -38,8 +67,11 @@
         + Design file for UI ~ Used to be *.Nib (I think...)
 • FIREBASE
     - Using it in Flash Chat for...
-        + User Registration
-        + 
+        + Authentication
+            * User Registration
+            * User Login/Logout
+        + Firestore
+            * Created Database
 • DESIGN PATTERNS
     - A proven solution to a common problem
     - POPULAR PATTERNS
@@ -50,6 +82,13 @@
         + DELEGATE:
             * 
 • SWIFT
+    - LIBRARIES
+        + Apple
+            * Foundation
+                - NSString, NSNumber, NSData, NSDate, JSONSerialization, DateFormatter, FileManager
+        + 3rd Party
+            * IQKeyboardManager
+                 - https://github.com/hackiftekhar/IQKeyboardManager
     - STORYBOARD VIEW CONTROLLER OBJECTS
         + Segues
             * Default display is a 'Model Transition', this is more like a pop-up.
@@ -200,5 +239,8 @@
     - LOOPS
         + For In Loops
         + While Loops
-
+    - TYPE CASTING
+            * Type Casting is a way to check the type of an instance, or to treat that instance as a different
+              SuperClass or SubClass from somewhere else in its own Class Hierarchy.
+            Implemented in Swift with the 'is' & 'as' operators.
 
