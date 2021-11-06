@@ -24,6 +24,7 @@ class ChatViewController: UIViewController {
         Message(sender: "Michael", body: "Read receipt.")
     ]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -34,6 +35,7 @@ class ChatViewController: UIViewController {
         // Grab all messages from Firestore DB
         loadMessages()
     }
+    
     
     func loadMessages() {
         // Add Listener to Messages Collection & Trigger on Change
@@ -54,12 +56,14 @@ class ChatViewController: UIViewController {
                             // Altering UI inside Closure ~ Need to access Main Queue to do it.
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                self.tableView.scrollToRow(at: IndexPath(row: self.messages.count-1, section: 0), at: .top, animated: true)
                             }
                     }
                 }
             }}
         }
     }
+    
     
     @IBAction func sendPressed(_ sender: UIButton) {
 
@@ -71,11 +75,18 @@ class ChatViewController: UIViewController {
                                     K.FStore.bodyField: messageBody,
                                     K.FStore.dateField: Date().timeIntervalSince1970]) {
                     (error) in
-                        if let e = error { print("There was an issue saving data to firestore. Error: \(e)")
-                        } else { print("Database saved succesfully.") }
+                        if let e = error { print("There was an issue saving data to firestore. Error: \(e)") }
+                        else {
+                            print("Database saved succesfully.")
+                            
+                            DispatchQueue.main.async {
+                                self.messageTextfield.text = ""  // Clear out user input from message box
+                            }
+                        }
                     }
         }
     }
+    
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -98,26 +109,24 @@ extension ChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Table View ~ Cell for Row At: \(indexPath.row)")
-        return horizontalFlipTableViewRow(cellForRowAt: indexPath)
-    }
-    
-    /**
-     * Quick & dirty solution to making chat messages appear on opposing sides dependant on sender.
-     *
-     * - Parameter indexPath: Row index of table view
-     * - Returns: MessageCell for displaying in table view
-     */
-    func horizontalFlipTableViewRow(cellForRowAt indexPath: IndexPath) -> MessageCell {
+        
         let message = messages[indexPath.row]
+        let currentUserEmail = Auth.auth().currentUser?.email
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
-        
-        if message.sender != "Aziz" {
-            cell.transform = CGAffineTransform(scaleX: -1, y: 1)
-            cell.messageBubble.transform = CGAffineTransform(scaleX: -1, y: 1)
-            cell.rightImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
-        }
-        
         cell.messageLabel.text = message.body
+        
+        // Message from current user ~ Hide left user image
+        if message.sender == currentUserEmail {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lightPurple)
+            cell.messageLabel.textColor = UIColor(named: K.BrandColors.purple)
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.lighBlue)
+            cell.messageLabel.textColor = UIColor(named: K.BrandColors.blue)
+        }
         
         return cell
     }

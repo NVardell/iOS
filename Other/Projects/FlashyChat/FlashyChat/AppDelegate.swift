@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()         // Initialize Firebase SDK to configure APIs
         let db = Firestore.firestore()  // Initialize Firebase's Cloud Firestore Database
         print(db)
+        IQKeyboardManager.shared.enable = true  // Enable Keyboard Manager Dependency
+        IQKeyboardManager.shared.enableAutoToolbar = false  // Hide Toolbar at top of Keyboard View
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true  // Auto-hide Keyboard if touched outside text field
+        
         return true
     }
 
