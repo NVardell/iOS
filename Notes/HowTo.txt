@@ -92,3 +92,33 @@
                 let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
                 cell.messageLabel.text = messages[indexPath.row].body
     7. Remove deprecated Prototype Reusable TableViewCell from Main.Storyboard
+• Google Firebase ~ Cloud Firestore: Creating a new Database
+    1. Go to Database section in Firebase Project
+        - FlashyChat: https://console.firebase.google.com/project/flashychat-58017/firestore/data/~2F
+    2. Click 'Create database'
+        - Check: Start in test mode
+        - Location: Default Selection (Only really matters for high traffic apps where closer is better.)
+    3. Add Firestore dependency to package manager
+        - CocoaPods: pod 'Firebase/Firestore'
+        - SwiftPM: File -> Add packages... -> https://github.com/firebase/firebase-ios-sdk.git -> Select FireStore Mod
+    4. Initialize Cloud FireStore
+        - Open: AppDelegate.swift
+            + Method: Application(..., didFinishLaunching, ...)
+                * Add: let db = Firestore.firestore()
+
+• Google Firebase ~ Cloud Firestore: Updating Rules after Testing
+    1. Go to Database section in Firebase Project
+        - FlashyChat: https://console.firebase.google.com/project/flashychat-58017/firestore/data/~2F
+    2. Click 'Rules' tab
+    3. Delete default rules code & paste rules from FireStore Security Docs
+        - Link: https://firebase.google.com/docs/firestore/security/get-started
+        - Rule: Any used who is logged in can access it
+            // Allow read/write access on all documents to any user signed in to the application
+            service cloud.firestore {
+              match /databases/{database}/documents {
+                match /{document=**} {
+                  allow read, write: if request.auth != null;
+                }
+              }
+            }
+    4. Click 'Publish'
