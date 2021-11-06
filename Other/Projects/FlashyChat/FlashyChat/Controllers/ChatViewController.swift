@@ -7,11 +7,15 @@
 
 import UIKit
 import Firebase
+import CoreMedia
 
 class ChatViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
+    
+    
+    let db = Firestore.firestore()
     
     var messages: [Message] = [
         Message(sender: "Aziz", body: "Blah, blah, blah!"),
@@ -26,9 +30,51 @@ class ChatViewController: UIViewController {
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
         navigationItem.hidesBackButton = true
         title = K.appName
+        
+        // Grab all messages from Firestore DB
+        loadMessages()
+    }
+    
+    func loadMessages() {
+        // Add Listener to Messages Collection & Trigger on Change
+        db.collection(K.FStore.collectionName)
+            .order(by: K.FStore.dateField)
+            .addSnapshotListener { querySnapshot, error in
+            
+                self.messages = []
+                if let e = error { print("There was an error retrieving data from Firestore. Error: \(e)") }
+                else { if let snapDocs = querySnapshot?.documents {
+                    for snap in snapDocs {
+                        let data = snap.data()
+                        if let sender = data[K.FStore.senderField] as? String,
+                           let message = data[K.FStore.bodyField] as? String {
+                            let newMessage = Message(sender: sender, body: message)
+                            self.messages.append(newMessage)
+                            
+                            // Altering UI inside Closure ~ Need to access Main Queue to do it.
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                    }
+                }
+            }}
+        }
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
+
+        // If there is a new message,& we have a current User; grab the message they entered & grab their email.
+        if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
+            print("Sender: \(messageSender)\tMessage: \(messageBody)")
+            db.collection(K.FStore.collectionName)
+                .addDocument(data: [K.FStore.senderField: messageSender,
+                                    K.FStore.bodyField: messageBody,
+                                    K.FStore.dateField: Date().timeIntervalSince1970]) {
+                    (error) in
+                        if let e = error { print("There was an issue saving data to firestore. Error: \(e)")
+                        } else { print("Database saved succesfully.") }
+                    }
+        }
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
