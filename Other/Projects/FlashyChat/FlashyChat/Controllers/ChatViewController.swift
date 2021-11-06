@@ -56,6 +56,7 @@ class ChatViewController: UIViewController {
                             // Altering UI inside Closure ~ Need to access Main Queue to do it.
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                // Scroll TableView to bottom automatically
                                 self.tableView.scrollToRow(at: IndexPath(row: self.messages.count-1, section: 0), at: .top, animated: true)
                             }
                     }
@@ -66,7 +67,6 @@ class ChatViewController: UIViewController {
     
     
     @IBAction func sendPressed(_ sender: UIButton) {
-
         // If there is a new message,& we have a current User; grab the message they entered & grab their email.
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
             print("Sender: \(messageSender)\tMessage: \(messageBody)")
