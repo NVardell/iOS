@@ -16,9 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()         // Initialize Firebase SDK to configure APIs
-        let db = Firestore.firestore()  // Initialize Firebase's Cloud Firestore Database
-        print(db)
+        
+        // Firebase Setup
+        FirebaseApp.configure()                    // Initialize Firebase SDK to configure APIs
+        let db = Firestore.firestore(); print(db)  // Initialize Firebase's Cloud Firestore Database
+        
+        // Keyboard Manager Setup
         IQKeyboardManager.shared.enable = true  // Enable Keyboard Manager Dependency
         IQKeyboardManager.shared.enableAutoToolbar = false  // Hide Toolbar at top of Keyboard View
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true  // Auto-hide Keyboard if touched outside text field
