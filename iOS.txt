@@ -88,11 +88,17 @@
                 - NSString, NSNumber, NSData, NSDate, JSONSerialization, DateFormatter, FileManager
         + 3rd Party
             * IQKeyboardManager
-                 - https://github.com/hackiftekhar/IQKeyboardManager
+                - Manages Keyboard and UI so buttons & inputs are not covered up.
+                - https://github.com/hackiftekhar/IQKeyboardManager
+            * Alamofire
+                - Elegant HTTP networking library
+                - https://github.com/Alamofire/Alamofire
     - STORYBOARD VIEW CONTROLLER OBJECTS
         + Segues
             * Default display is a 'Model Transition', this is more like a pop-up.
             * It Slides up from the bottom and covers the initial view.
+        + Navigation Controller
+            * Changes here will be reflected across all of the views.
         + Table Views & Table View Cells
             * View for displaying a scrollable list of rows like Messages, emails, etc.
             * CELL
@@ -165,8 +171,6 @@
                          * All written in Ruby
                          * Pods used so far...
                             1. CLTypingLabel ~ Animating~ish Text
-            * Popular Libraries
-                * Alamofire ~ github.com/Alamofire/Alamofire
     - DATA TYPES
         + Int
         + Float
