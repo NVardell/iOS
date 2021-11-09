@@ -3,16 +3,19 @@
 ***********************************************************************************************************************/
 • API: Application Programming Interface
 • CG: Core Graphic
+• CL: Core Location
 • IB: Interface Builder
 • IBOutlet: Interface Builder Outlet (Code version that references an object we added to UI.)
-• MVC: Model, View, Controller
-• VC: View Controller
-• Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
 • JSON: JavaScript Object Notation
-• CL: Core Location
-• SPM: Swift Package Manager
+• MVC: Model, View, Controller
 • PM: Package Manager
+• SPM: Swift Package Manager
 • SwiftPM: Swift Package Manager
+• Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
+• VC: View Controller
+• GCD: Grand Central Dispatch AKA 'LibDispatch' Framework
+
+
 
 
 
@@ -20,58 +23,21 @@
 /**********************************************************************************************************************
 ***************************************************      NOTES      ***************************************************
 ***********************************************************************************************************************/
-• KEYWORDS
-    - Static
-        + Makes a variable a 'Type Property', so it that it's associated with the structs Data Type.
-        + Doesn't require an instance to access property value
-            * Example - Constants
-                struct K { 
-                    static let appTitle="Awesome Title" 
-                    static func typeMethod() { // Do Stuff }
-                }
-                print(K.appTitle) // Awesome Title
-                K.typeMethod()
-    - AS
-        + Used in Type Casting
-            * Type Casting is a way to check the type of an instance, or to treat that instance as a different
-              SuperClass or SubClass from somewhere else in its own Class Hierarchy.
-            Implemented in Swift with the 'is' & 'as' operators.
-        + Variations 
-            * as = Upcast 
-                - Not used very often.
-                - Raises object to its SuperClass Type
-                - Does NOT require a ? or ! because it is guaranteed to succeed. (Won't Build otherwise, lol.)
-                - Requires the object being Upcasted to be inheriting the SuperClass.
-                - Example
-                    let newCell = messageCell as UITableViewCell
-            * as? = Optional(?) Downcast
-                - Safe option.  Only continue if the Downcast is successful, unlike ! forcing the Downcast and failing.
-                - Example
-                    if let fish = neighbors[1] as? Fish { fish.swim() }
-            * as! = Forced Downcast
-                - Problems with Forcing a downcast is it compiles, but easily triggers runtime exception if cast fails.
-                - Example
-                    let messageCell = cell as! MessageCell
-            * is
-    - Any
-        + Encompasses ALL Data Types
-    - AnyObject
-        + Objects derived from classes
-    - NSObject
-        + Foundation Objects
-        + 
-• FILES
-    - *.Storyboard
-        + Interface Builder - Main.Storyboard
-    - *.xib
-        + Design file for UI ~ Used to be *.Nib (I think...)
-• FIREBASE
-    - Using it in Flash Chat for...
-        + Authentication
-            * User Registration
-            * User Login/Logout
-        + Firestore
-            * Created Database
+• LIFECYCLES
+    - Application Lifecycle
+        1. 
+    - ViewController Lifecycle
+        1. View Loads -> viewDidLoad()
+            - Only happens once!
+        2. Before View Displays -> viewWillAppear()
+            - Good place to make UI changes before presenting to user 
+        3. View Appears on Screen -> viewDidAppear()
+            - Good time to start timers/animations or anything the user can visually see
+        4. Before View Disappears -> viewWillDisappear()
+            - User triggered event to go back/forward/away from the current view being displayed
+            - Good time to stop animations or hide/unhide UI elements like NavBars.
+        5. View Went ByeBye -> viewDidDisappear()
+            - Doesn't mean it was destroyed; user just can't see it anymore.
 • DESIGN PATTERNS
     - A proven solution to a common problem
     - POPULAR PATTERNS
@@ -81,170 +47,11 @@
             * Controller: Mediator -> Modifies View & Makes Requests to Models
         + DELEGATE:
             * 
-• SWIFT
-    - LIBRARIES
-        + Apple
-            * Foundation
-                - NSString, NSNumber, NSData, NSDate, JSONSerialization, DateFormatter, FileManager
-        + 3rd Party
-            * IQKeyboardManager
-                - Manages Keyboard and UI so buttons & inputs are not covered up.
-                - https://github.com/hackiftekhar/IQKeyboardManager
-            * Alamofire
-                - Elegant HTTP networking library
-                - https://github.com/Alamofire/Alamofire
-    - STORYBOARD VIEW CONTROLLER OBJECTS
-        + Segues
-            * Default display is a 'Model Transition', this is more like a pop-up.
-            * It Slides up from the bottom and covers the initial view.
-        + Navigation Controller
-            * Changes here will be reflected across all of the views.
-        + Table Views & Table View Cells
-            * View for displaying a scrollable list of rows like Messages, emails, etc.
-            * CELL
-                - Table View Cell, aka UITableViewCell, aka Prototype Cell is a single template cell for 
-                  all rows in table view.
-                - Create new Cocoa Touch File for Table View Call & Check the 'XIB' box, so that a *.xib
-                  file is also generated, along side the *.swift file.
-                    + XIB: Design file
-            * ROWS
-                - Each row in a table view is a UITableViewCell object.
-                - Rows can be grouped into sections, and the sections can optionally have headers/footers.
-            * INTERACTIONS
-                - User can edit a table view by inserting, deleting, and reordering table cells.
-            * PROTOCOLS
-                - UITableViewDataSource: Responsible for telling TableView how many cells it needs & populating them.
-                    + Returns # of rows & Provides a Cell object for every row.
-                - UITableViewDelegate: Responsible for managing table interactions like selection, deleting, etc.
-    - CONTROLLERS
-        + Navigation
-            * Pop to Root = Redirect View to Home View
-    - MISC
-        + Anonymous Parameters
-            * Use '$' and an index location to refer to a parameter.
-                Ex. $0
-        + If the last parameter of a function is a Closure, you can omit the last parameter name
-          & close the input section; simply, having the closure trailing at the end of line.
-            Ex.
-                let result = calc(n1:2, n2:3) { $0 + $1 }
-        + Computed Properties
-            * A variable of a class or struct that is computed on the fly when it is created.
-            * General syntax is:
-                    var myComputedProperty: Int { return 2+4 }
-        + TypeAlias
-            * Single Protocol that combines multiple Protocols.
-            * Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
-        + Location
-            * Requires importing CoreLocation package to access a devices location
-            * Update info.plist file to have message for the internal alert requesting user location
-        + Property List File
-            * .plist 
-            * File that is automatically created with every xCode project.
-            * Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
-            * Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
-                * Ex. Light/Dark Mode is one of these key-value pairs.
-                    key:Status Bar Style, value:String=UIStatusBarStyleLightContent
-        + Ranges
-            * Half Open: let halfOpenRange = 1..<5
-            * Closed: let closedRange = 1...5
-        + 3rd Party Libraries
-            * Package Dependency Managers
-                - Monitors project packages for changes.
-                - How to know what manager projects support?
-                    + General rule of thumb is... look out for specific file extensions in project root
-                        ~ *.podspec = CocoaPods
-                        ~ *.swift = Swift Package Manager
-                - Some Popular Managers are....
-                    + Swift Package Manager
-                        * File -> Swift Packages -> Add Package Dependency
-                    + Carthage
-                        * Angela does not suggest it.
-                    + Cocoa Pods
-                        * Important Files
-                            - Podfile
-                                + User edits to add desired pods
-                            - Podfile.lock
-                                + Generated when running install command
-                                + Contains version numbers for pods
-                            - *.podspec
-                                + Details specifics on the dependency like minimum ios, swift versions, etc.
-                         * All written in Ruby
-                         * Pods used so far...
-                            1. CLTypingLabel ~ Animating~ish Text
-    - DATA TYPES
-        + Int
-        + Float
-        + Doubles
-            * Functions 
-                - .round() -> Rounds to whole number.
-        + Bool
-        + String
-        + Array
-            * Example: let array = [ 1, 2, 3 ]
-            * Maintains order.
-        + Dictionary
-            * Example: let contacts = [ "Nate": 123456789, "Michael": 123456789, "Aziz": 123456789 ]
-    - HIGH LEVEL FUNCTIONS
-        + Apple has 3 of them, and they can be extremely helpful and reduce a lot of useless code.
-            1. Map
-            2. Reduce
-            3. Filter     
-    - OPTIONALS
-        + Ways to work with them?
-            1. (!) Force Unwrapping
-                - Arguably, the least safe option.
-                - Essentially, tells xCode that I promise it will never be nil.
-            2. Check nil
-                - If check. Kinda dumb cause ya still gotta force unwrap.
-            3. Optional Binding
-                - if let safeOptional = optional { safeOptional .... }
-            4. (??) Nil Coalescing Operator
-                - optional ?? defaultValue
-                - Supplies a default value for the optional preventing nil errors. 
-            5. Optional Chaining
-                - optional?.property
-                - optional?.method()
-                - If the optional is NOT nil, then continue down the chain(.).
-    - PROTOCOLS
-        + Convention: Define Protocol in same class file it'll be used in.
-        + Defining a protocol
-            protocol MyProtocol { /* Define Protocol Requirements. */}
-        + Using a protocol
-            struct MyStruct: MyProtocol {}
-        + Structures & classes can adopt protocols.
-    - NETWORKING (3rd PARTY APIs)
-        + Steps to setup networking
-            1. Create a URL
-            2. Create a URLSession
-            3. Give URLSession a task
-            4. Start the task
-    - CLOSURES
-        + Closures are anonymous functions. 
-        + Provide anonymous parameter names ($0...)
-        + Provide Type Inference so explicit data typing is not required.
-        + Converting a function to a closure takes a couple modifications.
-                1. Remove 'func funcName' 
-                2. Move left brace '{' from end of line to beginning of line.
-                3. Add keyword 'in' where left bracket '{' was.
-                Ex.
-                    func sum(n1:Int, n2:Int) -> Int{ return n1 + n2 }
-                    { (n1:Int, n2:Int) -> Int in return n1 + n2 }
-                    { (n1, n2) -> in return n1 + n2 }
-                    { $0 + $1 }
-        + Generic Closure Syntax
-            { ('parameters') -> 'return type' in 'statements' }
-        + If a Closure is an input in a function, you can highlight it in xCode and hit enter to auto insert.
-    - EXTENSIONS
-        + Defining an Extension
-                extension SomeType { /* Add new functionality! */ }
-        + SomeType (From above) can be any existing Class, Struct, or Protocol.
-        + Commonly, used to define default implementations for required protocol methods so that adoptions
-          are no longer required to implement them.
-    - LOOPS
-        + For In Loops
-        + While Loops
-    - TYPE CASTING
-            * Type Casting is a way to check the type of an instance, or to treat that instance as a different
-              SuperClass or SubClass from somewhere else in its own Class Hierarchy.
-            Implemented in Swift with the 'is' & 'as' operators.
-
+• FIREBASE
+    - Using it in Flash Chat for...
+        + Authentication
+            * User Registration
+            * User Login/Logout
+        + Firestore
+            * Created Database
+• 

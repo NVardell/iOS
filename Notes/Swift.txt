@@ -1,0 +1,120 @@
+/**********************************************************************************************************************
+***************************************************      LINKS      ***************************************************
+***********************************************************************************************************************/
+• REPOS
+    - 3rd PARTY
+        + Alamofire: https://github.com/Alamofire/Alamofire
+        + IQKeyboardManager: https://github.com/hackiftekhar/IQKeyboardManager
+• CORE LIBRARIES
+    - https://www.swift.org/core-libraries/
+
+
+
+/**********************************************************************************************************************
+*********************************************      GENERAL PRACTICES      *********************************************
+***********************************************************************************************************************/
+• PROTOCOLS
+    - Define Protocol in same class file it'll be used in.
+
+
+/**********************************************************************************************************************
+***************************************************      NOTES      ***************************************************
+***********************************************************************************************************************/
+• FILES
+    - *.Storyboard: User Interface File, Opens in Interface Builder Editor - Main.Storyboard
+    - *.xib: Design file for UI ~ Old name was *.Nib (I think...)
+    - *.swift: Project Files: App's Source Code Implementations
+• TYPES
+    - CORE
+        + Int
+        + Double
+            - Methods
+                + .round() -> Rounds to whole number.
+        + Float
+        + Bool
+        + String
+    - COLLECTIONS
+        + Array
+            - Maintains Order
+            - Ex. let array = [ 1, 2, 3 ]
+        + Set
+            - Does NOT Maintain Order
+            - Stores Distinct Values Of The Same Type
+            - Ex. var musicSet: Set = ["Rock", "Classical", "Hip hop"]
+        + Dictionary
+            - Stores Associations Between Keys & Values of the Same Type
+            - Ex. var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+• KEYWORDS
+    - ANY
+    - ANYOBJECT
+    - AS
+    - CATCH
+    - DO
+    - EXTENSION
+    - FUNC
+    - IS
+    - LET
+    - PROTOCOL
+        + Defining a protocol
+            protocol MyProtocol { /* Define Protocol Requirements. */}
+        + Using a protocol
+            struct MyStruct: MyProtocol {}
+        + Structures & classes can adopt protocols.
+    - STATIC
+    - THROWS
+    - TRY
+    - TYPEALIAS
+    - VAR
+• LIBRARIES
+    - APPLE
+        + Foundation
+            - The Foundation framework defines a base layer of functionality that's required for almost all apps.
+            - Common Objects found in Foundation Library:
+                + NSString, NSNumber, NSData, NSDate, JSONSerialization, DateFormatter, FileManager
+        + LibDispatch
+            - Grand Central Dispatch (GCD or libdispatch)
+            - Provides comprehensive support for concurrent code execution on multi-core hardware.
+        + XCTest
+            - The XCTest library provides a common framework for writing unit tests in Swift.
+    - 3rd PARTY
+        + Alamofire
+            - Elegant HTTP networking library
+        + IQKeyboardManager
+            - Manages Keyboard and UI so buttons & inputs are not covered up.
+• PACKAGE MANAGERS
+    - Monitors project packages for changes.
+    - Different packages support different managers.
+        + How to know what manager projects support?
+            - General rule of thumb is... look out for specific file extensions in project root
+                + *.podspec = CocoaPods
+                + *.swift = Swift Package Manager
+    - Most common managers
+        + SwiftPM
+            - File -> Swift Packages -> Add Package Dependency (Old Version - Will add new when I remember.)
+        + CocoaPods
+            - Probs most popular
+            - CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects. 
+            - It has over 86 thousand libraries and is used in over 3 million apps. 
+            - CocoaPods is built with Ruby and is installable with the default Ruby available on macOS.
+            - Important Files
+                + Podfile
+                    - User edits to add desired pods
+                + Podfile.lock
+                    - Generated when running install command
+                    - Contains version numbers for pods
+                + *.podspec
+                    - Details specifics on the dependency like minimum ios, swift versions, etc.
+        + Carthage
+            - Angela HATES it with undying passion; does not suggest it.
+• 
+• 
+
+
+
+
+• NETWORKING
+    - General Steps for interacting with APIs
+        1. Create a URL
+        2. Create a URLSession
+        3. Give URLSession a task
+        4. Start the task
