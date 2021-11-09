@@ -105,7 +105,8 @@
         - Open: AppDelegate.swift
             + Method: Application(..., didFinishLaunching, ...)
                 * Add: let db = Firestore.firestore()
-
+    5. Throw a print in there to dismiss the annoying warning about unused variables.
+        - print(db)
 • Google Firebase ~ Cloud Firestore: Updating Rules after Testing
     1. Go to Database section in Firebase Project
         - FlashyChat: https://console.firebase.google.com/project/flashychat-58017/firestore/data/~2F
@@ -122,3 +123,7 @@
               }
             }
     4. Click 'Publish'
+• What to do when the 3rd party package you want to use is currently failing to build?
+    ### NOTE ~ Importing package with a failing build will make your build fail too.
+    1. Go to CocoaPods & find the package ya want
+    2. 
