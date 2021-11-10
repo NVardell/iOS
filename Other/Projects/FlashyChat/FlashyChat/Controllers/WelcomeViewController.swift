@@ -17,6 +17,7 @@ class WelcomeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
+    // Unhide NavBar before loading next view
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
