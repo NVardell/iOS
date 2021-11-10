@@ -61,7 +61,7 @@ build/
 # Swift Package Manager
 #
 # Avoid checking in source code from Swift Package Manager dependencies.
-*.xcodeproj
+# *.xcodeproj
 .build/
 .swiftpm
 Package.pins
