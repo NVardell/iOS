@@ -178,3 +178,17 @@
     - Some views might be public while others require some form of authentication or verification beforehand.
 • What does Upcasting require?
     - Keyword 'as' & must inherit from the SuperClass.
+• Name the 5 lifecycle methods of a View.
+    1. viewDidLoad()
+    2. viewWillAppear()
+    3. viewDidAppear()
+    4. viewWillDissapear()
+    5. viewDidDissapear()
+• What is the lifecycle of an app?
+    1. 
+
+
+
+
+
+
