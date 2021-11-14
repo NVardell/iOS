@@ -20,10 +20,16 @@
 /**********************************************************************************************************************
 ***************************************************      NOTES      ***************************************************
 ***********************************************************************************************************************/
-• FILES
+• FILE TYPES
     - *.Storyboard: User Interface File, Opens in Interface Builder Editor - Main.Storyboard
     - *.xib: Design file for UI ~ Old name was *.Nib (I think...)
     - *.swift: Project Files: App's Source Code Implementations
+• IMPORTANT FILES
+    - AppDelegate.swift
+        + Handles changes to the app like launching.
+    - SceneDelegate.swift
+        + For more modern versions of apps commonly for iPad, where you can have more than one app open at a time.
+        + The display of the open app is set in this 'scene'
 • TYPES
     - CORE
         + Int
