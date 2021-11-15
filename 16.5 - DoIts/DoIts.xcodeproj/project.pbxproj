@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF36356C2741B920009FB687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF36356B2741B920009FB687 /* AppDelegate.swift */; };
 		AF36356E2741B920009FB687 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF36356D2741B920009FB687 /* SceneDelegate.swift */; };
-		AF3635702741B920009FB687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF36356F2741B920009FB687 /* ViewController.swift */; };
+		AF3635702741B920009FB687 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF36356F2741B920009FB687 /* ToDoListViewController.swift */; };
 		AF3635732741B920009FB687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3635712741B920009FB687 /* Main.storyboard */; };
 		AF3635752741B920009FB687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3635742741B920009FB687 /* Assets.xcassets */; };
 		AF3635782741B920009FB687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3635762741B920009FB687 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		AF3635682741B920009FB687 /* DoIts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoIts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF36356B2741B920009FB687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF36356D2741B920009FB687 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF36356F2741B920009FB687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF36356F2741B920009FB687 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		AF3635722741B920009FB687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF3635742741B920009FB687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF3635772741B920009FB687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +56,31 @@
 		AF36356A2741B920009FB687 /* DoIts */ = {
 			isa = PBXGroup;
 			children = (
+				AF3635792741B920009FB687 /* Info.plist */,
 				AF36356B2741B920009FB687 /* AppDelegate.swift */,
 				AF36356D2741B920009FB687 /* SceneDelegate.swift */,
-				AF36356F2741B920009FB687 /* ViewController.swift */,
-				AF3635712741B920009FB687 /* Main.storyboard */,
 				AF3635742741B920009FB687 /* Assets.xcassets */,
-				AF3635762741B920009FB687 /* LaunchScreen.storyboard */,
-				AF3635792741B920009FB687 /* Info.plist */,
+				AFB7D7A12741BD6E0079CF99 /* View */,
+				AFB7D7A02741BD500079CF99 /* Controller */,
 			);
 			path = DoIts;
+			sourceTree = "<group>";
+		};
+		AFB7D7A02741BD500079CF99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF36356F2741B920009FB687 /* ToDoListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFB7D7A12741BD6E0079CF99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF3635762741B920009FB687 /* LaunchScreen.storyboard */,
+				AF3635712741B920009FB687 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF3635702741B920009FB687 /* ViewController.swift in Sources */,
+				AF3635702741B920009FB687 /* ToDoListViewController.swift in Sources */,
 				AF36356C2741B920009FB687 /* AppDelegate.swift in Sources */,
 				AF36356E2741B920009FB687 /* SceneDelegate.swift in Sources */,
 			);
@@ -292,6 +308,7 @@
 				DEVELOPMENT_TEAM = RQ4T89ZULU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DoIts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Do Its";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,6 +338,7 @@
 				DEVELOPMENT_TEAM = RQ4T89ZULU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DoIts/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Do Its";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
