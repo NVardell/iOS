@@ -17,6 +17,7 @@
     - Define Protocol in same class file it'll be used in.
 
 
+
 /**********************************************************************************************************************
 ***************************************************      NOTES      ***************************************************
 ***********************************************************************************************************************/
@@ -27,10 +28,26 @@
 • IMPORTANT FILES
     - AppDelegate.swift
         + Handles changes to the app like launching.
+        + Handles application interactions, such as...
+            - User swipes app close
+                + application
     - SceneDelegate.swift
         + For more modern versions of apps commonly for iPad, where you can have more than one app open at a time.
         + The display of the open app is set in this 'scene'
-• TYPES
+        + Handles any interruptions that might occur outside of the application, such as...
+            - Getting a phone call = Pause Music, Video, User Animation/Data Entry
+            - User drags up from bottom to open Multi-tasking View 
+                + sceneWillResignActive(_ scene: UIScene)
+                    - Called before user switches
+                + sceneDidEnterBackground(_ scene: UIScene)
+                    - User selected a different app & yous went into background
+            - User switches between apps = Save current state
+                + sceneWillEnterForeground(_ scene: UIScene)
+                + sceneWillEnterBackground(_ scene: UIScene)
+            - Loading app initially
+                + sceneWillEnterForeground(_ scene: UIScene)
+                + sceneWillBecomeActive(_ scene: UIScene)
+• DATA TYPES
     - CORE
         + Int
         + Double
@@ -87,6 +104,8 @@
             - Elegant HTTP networking library
         + IQKeyboardManager
             - Manages Keyboard and UI so buttons & inputs are not covered up.
+        + Realm
+            - Data Persistence. Udemy favorite.
 • PACKAGE MANAGERS
     - Monitors project packages for changes.
     - Different packages support different managers.
@@ -112,7 +131,14 @@
                     - Details specifics on the dependency like minimum ios, swift versions, etc.
         + Carthage
             - Angela HATES it with undying passion; does not suggest it.
-• 
+• PERSISTENCE
+    - Data can be persisted locally by...
+        + User Defaults
+            - For small bits of data.
+        + Quotable (?)
+            - Access Docs folder on device
+        + Core Data
+            - SQL ~ish backend DB
 • 
 
 
