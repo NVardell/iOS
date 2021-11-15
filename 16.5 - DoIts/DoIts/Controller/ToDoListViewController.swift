@@ -9,7 +9,7 @@ import UIKit
 
 class ToDoListViewController: UITableViewController {
 
-    let netflixBest = ["Stranger Things", "The Witcher", "Lost in Space"]
+    var netflixBest = ["Stranger Things", "The Witcher", "Lost in Space"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,28 @@ class ToDoListViewController: UITableViewController {
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
+    }
+    
+    
+    // MARK: - Add New Items
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add new todo item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            // What happens when the user clicks the Add Item button on our UIAlert.
+            self.netflixBest.append(textField.text!)
+            print("\nSuccessfully added item: \(String(describing: textField.text))")
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { alerTextField in
+            alerTextField.placeholder = "Create new item"
+            textField = alerTextField
+            print("Finished Add Alert Text Closure")
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 }
 
