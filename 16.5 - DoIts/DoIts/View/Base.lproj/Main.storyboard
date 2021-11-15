@@ -33,7 +33,14 @@
                             <outlet property="delegate" destination="uyj-Jt-0M8" id="7xR-8a-nXW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Do Its" id="P9K-Kx-LOc"/>
+                    <navigationItem key="navigationItem" title="Do Its" id="P9K-Kx-LOc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MUL-Cn-XwL">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="uyj-Jt-0M8" id="OrI-jZ-TWd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVP-c7-AF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
