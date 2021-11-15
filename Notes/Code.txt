@@ -68,3 +68,9 @@
         }
 • Retrieve from dictionary
         let valueForMyKey = dictionary["Key"]
+• Make table view row flash when selected instead of the default gray highlight.
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
+                tableView.deselectRow(at: indexPath, animated: true)
+        }
+• 
+• 
