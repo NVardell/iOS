@@ -186,7 +186,12 @@
     5. viewDidDissapear()
 • What is the lifecycle of an app?
     1. 
-
+What is User Defaults & what is it most commonly used for?
+    - Device Storage/Database most commonly used for storing User Preferences
+        Ex. 
+            let defaults = UserDefaults.standard            // Get User Defaults
+            defaults.set(0.24, forKey: "Volume")            // Set User Preference
+            let volume = defaults.float(forKey: "Volume")   // Retrieve Volume from User Defaults
 
 
 
