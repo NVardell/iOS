@@ -72,5 +72,8 @@
         override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {        
                 tableView.deselectRow(at: indexPath, animated: true)
         }
-• 
+• Persist/Save data or user preferences in UserDefaults
+        let defaults = UserDefaults.standard            // Get User Defaults
+        defaults.set(0.24, forKey: "Volume")            // Set User Preference
+        let volume = defaults.float(forKey: "Volume")   // Retrieve Volume from User Defaults
 • 
