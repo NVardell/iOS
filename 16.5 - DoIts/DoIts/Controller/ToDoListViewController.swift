@@ -31,15 +31,18 @@ class ToDoListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Setup object being used in cell
+        let item = netflixBest[indexPath.row]
+        
+        // Setup row cell for display in TableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        
+        // Set cell attributes based on the attribute values of our item
         cell.textLabel?.text = netflixBest[indexPath.row].title
+        cell.accessoryType = item.done ? .checkmark : .none
         
-        if netflixBest[indexPath.row].done == true {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
-        
+        // Return cell for display in TableView
         return cell
     }
     
@@ -50,6 +53,7 @@ class ToDoListViewController: UITableViewController {
         print("Selected Row At = \(indexPath.row)")
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // Swithes the done state of an item for alternating checked/unchecked on UI
         netflixBest[indexPath.row].done = !netflixBest[indexPath.row].done
     }
     
