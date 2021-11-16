@@ -127,3 +127,9 @@
     ### NOTE ~ Importing package with a failing build will make your build fail too.
     1. Go to CocoaPods & find the package ya want
     2. 
+• How to find the UserDefaults file so we can verify our data has persisted.
+    1. Need 3 things:
+        1. File path of simulator our app is running in
+        2. ID of the Simulator
+        3. ID of our App
+    2. AppDelegate/
