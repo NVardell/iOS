@@ -14,6 +14,7 @@
 • Trailing Closure: Function call that end with a Closure, so it is pulled out and placed after function.
 • VC: View Controller
 • GCD: Grand Central Dispatch AKA 'LibDispatch' Framework
+• UUID: Universally Unique IDentifier
 
 
 
@@ -54,4 +55,16 @@
             * User Login/Logout
         + Firestore
             * Created Database
-• 
+• XCODE
+    - TRICKS
+        + When a functions placeholders ends with a function placeholder,
+            Example: 
+                alert.addTextField(configurationHandler: ((UITextField) -> Void)?)
+          Selecting the placeholder & pressing 'Enter' will automatically insert that closure. 
+            Example:
+                // Changes above example into:
+                alert.addTextField { (UITextField) in <#code#> }
+• SECURITY
+    - Sandboxing
+        + Apps are sandboxed on iOS so that they can't access other apps or operating system files
+
