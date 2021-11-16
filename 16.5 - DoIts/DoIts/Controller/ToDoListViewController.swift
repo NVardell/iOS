@@ -50,11 +50,7 @@ class ToDoListViewController: UITableViewController {
         print("Selected Row At = \(indexPath.row)")
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if netflixBest[indexPath.row].done == false {
-            netflixBest[indexPath.row].done = true
-        } else {
-            netflixBest[indexPath.row].done = false
-        }
+        netflixBest[indexPath.row].done = !netflixBest[indexPath.row].done
     }
     
     
