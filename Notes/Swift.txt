@@ -25,12 +25,19 @@
     - *.Storyboard: User Interface File, Opens in Interface Builder Editor - Main.Storyboard
     - *.xib: Design file for UI ~ Old name was *.Nib (I think...)
     - *.swift: Project Files: App's Source Code Implementations
+    - *.plist: Stores values in Key:Value pairs.
 • IMPORTANT FILES
     - AppDelegate.swift
         + Handles changes to the app like launching.
         + Handles application interactions, such as...
-            - User swipes app close
-                + application
+            - Application Opens
+                + application(..., didFinishLaunchingWithOptions: launchOptions,...)
+            - App Switching
+                + applicationDidEnterBackground(...)
+            - App Closes
+                + applicationWillTerminate(...)
+                    - Trigger: User swiping app away
+                    - Trigger: OS reclaiming memory (Might need it for some mem intensive gaming app.)
     - SceneDelegate.swift
         + For more modern versions of apps commonly for iPad, where you can have more than one app open at a time.
         + The display of the open app is set in this 'scene'
@@ -67,6 +74,10 @@
         + Dictionary
             - Stores Associations Between Keys & Values of the Same Type
             - Ex. var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+    - OTHER
+        + Singleton
+            - Singletons provide a globally accessible, shared instance of an object.
+            - Only one copy exists and can be shared across all of your classes & objects.
 • KEYWORDS
     - ANY
     - ANYOBJECT
@@ -134,7 +145,16 @@
 • PERSISTENCE
     - Data can be persisted locally by...
         + User Defaults
-            - For small bits of data.
+            - UserDefaults is an interface for the users plist file, where you store key:value pairs
+              persistently across launches of your app.
+            - Saved in a plist file.
+            - Commonly used for saving User Preferences
+            - Should really only be used to store very small bits of data.
+            - It is not a database and should NOT be used like one by shoving a million things into it.
+            - The entire UserDefaults plist file has to be loaded up before launching the app,
+              so the larger it is, the more time it takes to launch and more storage it takes up on their phone.
+            - A Singleton
+            - Does not allow custom objects to be stored in it.
         + Quotable (?)
             - Access Docs folder on device
         + Core Data
