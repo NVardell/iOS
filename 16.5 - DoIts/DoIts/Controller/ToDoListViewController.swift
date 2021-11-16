@@ -9,33 +9,51 @@ import UIKit
 
 class ToDoListViewController: UITableViewController {
 
-    var netflixBest = ["Stranger Things", "The Witcher", "Lost in Space"]
+    // var netflixBest = ["Stranger Things", "The Witcher", "Lost in Space"]
+    var netflixBest = [Item]()
     
     let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let items = defaults.array(forKey: "ToDoListArray") as? [String] { netflixBest = items }
+        
+        netflixBest.append(Item(t: "Stranger Things"))
+        netflixBest.append(Item(t: "The Witcher"))
+        netflixBest.append(Item(t: "Lost in Space"))
+        // if let items = defaults.array(forKey: "ToDoListArray") as? [String] { netflixBest = items }
     }
 
+    
+    
+    // MARK: - TableView Datasource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return netflixBest.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = netflixBest[indexPath.row]
+        cell.textLabel?.text = netflixBest[indexPath.row].title
+        
+        if netflixBest[indexPath.row].done == true {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
     }
     
+    
+    
+    // MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected Row At = \(indexPath.row)")
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        if netflixBest[indexPath.row].done == false {
+            netflixBest[indexPath.row].done = true
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            netflixBest[indexPath.row].done = false
         }
     }
     
@@ -49,8 +67,11 @@ class ToDoListViewController: UITableViewController {
         // Create user interaction piece of the UIAlert being displayed to user
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
+            // Setup new item to add to list
+            // let newItem = Item(t: textField.text!)
+            
             // What happens when the user clicks the Add Item button on our UIAlert.
-            self.netflixBest.append(textField.text!)
+            self.netflixBest.append(Item(t: textField.text!))
             print("\nSuccessfully added item: \(String(describing: textField.text))")
             
             // Add updated list to User Defaults database to persist new ToDo list items
