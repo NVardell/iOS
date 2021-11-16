@@ -14,6 +14,7 @@
 		AF3635752741B920009FB687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3635742741B920009FB687 /* Assets.xcassets */; };
 		AF3635782741B920009FB687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3635762741B920009FB687 /* LaunchScreen.storyboard */; };
 		AF426DE027434B55005452F7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF426DDF27434B55005452F7 /* Item.swift */; };
+		AF5F2406274454BF0051BBBE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5F2404274454BF0051BBBE /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AF3635772741B920009FB687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF3635792741B920009FB687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF426DDF27434B55005452F7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AF5F2405274454BF0051BBBE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AF426DDF27434B55005452F7 /* Item.swift */,
+				AF5F2404274454BF0051BBBE /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF3635702741B920009FB687 /* ToDoListViewController.swift in Sources */,
+				AF5F2406274454BF0051BBBE /* DataModel.xcdatamodeld in Sources */,
 				AF426DE027434B55005452F7 /* Item.swift in Sources */,
 				AF36356C2741B920009FB687 /* AppDelegate.swift in Sources */,
 				AF36356E2741B920009FB687 /* SceneDelegate.swift in Sources */,
@@ -400,6 +404,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF5F2404274454BF0051BBBE /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF5F2405274454BF0051BBBE /* DataModel.xcdatamodel */,
+			);
+			currentVersion = AF5F2405274454BF0051BBBE /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AF3635602741B920009FB687 /* Project object */;
 }
