@@ -78,6 +78,7 @@
 		AF426DDE27434B0C005452F7 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				AF3635762741B920009FB687 /* LaunchScreen.storyboard */,
 				AF36356B2741B920009FB687 /* AppDelegate.swift */,
 				AF36356D2741B920009FB687 /* SceneDelegate.swift */,
 				AF3635742741B920009FB687 /* Assets.xcassets */,
@@ -96,7 +97,6 @@
 		AFB7D7A12741BD6E0079CF99 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AF3635762741B920009FB687 /* LaunchScreen.storyboard */,
 				AF3635712741B920009FB687 /* Main.storyboard */,
 			);
 			path = View;
