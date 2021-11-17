@@ -87,6 +87,10 @@
     - EXTENSION
     - FUNC
     - IS
+    - LAZY
+        + Identical to lazy people; task only gets done the moment it is needed.
+        + Loads the value when it gets called and is required to exist.
+        + Beneficial because it saves on memory.
     - LET
     - PROTOCOL
         + Defining a protocol
@@ -99,6 +103,9 @@
     - TRY
     - TYPEALIAS
     - VAR
+• OPERATORS
+    - Ternary Operator
+        + Follows the form of: value = condition ? valueIfTrue : valueIfFalse
 • LIBRARIES
     - APPLE
         + Foundation
@@ -155,10 +162,49 @@
               so the larger it is, the more time it takes to launch and more storage it takes up on their phone.
             - A Singleton
             - Does not allow custom objects to be stored in it.
-        + Quotable (?)
+            - Quickly persist small bits of data like... nickname, top score, clan tag, ect.
+        + Codable (Protocol for Encoding/Decoding)
+            - Flash freeze custom objects (Since  UserDefaults does not allow custom objects.)
             - Access Docs folder on device
+            - Plist file should ALWAYS be under 100kb (kilobytes)
+        + Keychain
+            - API that allows us to save small bits of data securely inside a table
+        + SQLite
+            - Persist large amounts of data & query it
+            - A very large percent of apps use this on the backend.
+            - Been around for a long long time
+        + FBDB
+            - Udemy mentioned to check it out.
         + Core Data
-            - SQL ~ish backend DB
+            - Notes
+                + SQL~ish Object-Oriented database
+                + Can use SQLite as the database
+                + Arguably not a database, because it allows for so much more.  
+                    - Allows converting individual database tables into objects that you can easily manipulate using code.
+                    - Things that SQLite can't, such as monitoring changes in the database.
+            - xCode Setup Notes
+                + Data Model File = *.xcdatamodeld
+                + Entities ≈ DB Tables
+                    - Attributes: The fields that make up the entity & their Data Type
+                    - IMPORTANT NOTE: In Entity Inspector make sure "Class:Module" is changed to 'Current Product Module'.
+                    - Class:CodeGen
+                        + Class Definition: Auto Generates Classes from Entities
+                            - Generates 2 different files
+                                + CoreData Class Swift File
+                                + CoreData Properties Swift File
+                        + Category/Extension: Most used.  
+                            - When you want to add additional code to Model. 
+                            - Requires us to make our own Model with matching name.
+                            - Models must inherit NSManagedObject in order to work.
+                        + Manual/None: Least used.  We do everything as far as setting up models goes.  xCode generates nothing.
+                + NSPersistentContainer
+                    - Default persistent container is a SQLite database.
+                    - Yes it can be other things, such as XML, but most generically it will always be SQLite database.
+        + Realm
+            - A faster & easier database solution
+            - Open-source framework
+            - Faster & Easier database solution compared to Core Data.
+            - Quickly, becoming one of the most popular ways of persisting data locally on device.
 • 
 
 
