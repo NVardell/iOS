@@ -70,7 +70,12 @@ class ToDoListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
             // What happens when the user clicks the Add Item button on our UIAlert.
-            self.netflixBest.append(Item(t: textField.text!))
+            // self.netflixBest.append(Item(t: textField.text!))
+            
+            let newItem = Item(context: self.context)
+            newItem.title = textField.text!
+            newItem.done = false
+//            let newItem = Item(context: context)
             
             // Save updated list to persist newly added items
             self.saveItems()
@@ -93,23 +98,23 @@ class ToDoListViewController: UITableViewController {
     
     func saveItems() {
         do {
-            let data = try PropertyListEncoder().encode(self.netflixBest)
-            try data.write(to: self.dataFilePath!)
+            // Persist list changes to Core Data's SQLite Datebase
+            try context.save()
+            print("Saved Data Successfully!")
             
             // Reload the TableView so the updated item will appear in TableView
             tableView.reloadData()
         } catch {
-            print("Error encoding array. Error: \(error)")
+            print("Error saving Context. Error: \(error)")
         }
     }
     
     func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            do {
-                netflixBest = try PropertyListDecoder().decode([Item].self, from: data)
-            } catch {
-                print("Error decoding item array. Error: \(error)")
-            }
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            netflixBest = try context.fetch(request)
+        } catch {
+            print("Error fetching date.  Error: \(error)")
         }
     }
 }
