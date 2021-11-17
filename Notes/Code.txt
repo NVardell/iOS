@@ -76,4 +76,5 @@
         let defaults = UserDefaults.standard            // Get User Defaults
         defaults.set(0.24, forKey: "Volume")            // Set User Preference
         let volume = defaults.float(forKey: "Volume")   // Retrieve Volume from User Defaults
-• 
+• Ternary Operator Example
+        cell.accessoryType = item.done ? .checkmark : .none  // (Un)Check Cell Row in TableView
