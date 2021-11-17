@@ -6,16 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class ToDoListViewController: UITableViewController {
 
     var netflixBest = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Data File Path = \(dataFilePath!)")
+        print("Data File Path = \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))")
         
         loadItems()
     }
