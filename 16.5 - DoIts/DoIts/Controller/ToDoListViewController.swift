@@ -48,7 +48,7 @@ class ToDoListViewController: UITableViewController {
     // MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Swithes the done state of an item for alternating checked/unchecked on UI
+        // Switches the done state of an item for alternating checked/unchecked on UI
         netflixBest[indexPath.row].done = !netflixBest[indexPath.row].done
         
         // Save updated checkmarks
@@ -98,7 +98,7 @@ class ToDoListViewController: UITableViewController {
     
     func saveItems() {
         do {
-            // Persist list changes to Core Data's SQLite Datebase
+            // Persist list changes to Core Data's SQLite Database
             try context.save()
             print("Saved Data Successfully!")
             
