@@ -108,12 +108,6 @@ class ToDoListViewController: UITableViewController {
         // Switches the done state of an item for alternating checked/unchecked on UI
         itemArray[x].done = !itemArray[x].done
 
-        // Remove selected row from context before saving changes
-        // context.delete(itemArray[x])
-
-        // Remove selected row from array being used to fill TableView
-        // itemArray.remove(at: x)
-
         // Save updated checkmarks
         saveItems()
 
