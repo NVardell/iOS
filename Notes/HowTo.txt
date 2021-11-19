@@ -133,3 +133,9 @@
         2. ID of the Simulator
         3. ID of our App
     2. AppDelegate/
+• Setup new landing view for Navigation Controller
+    1. Add new view to storyboard
+    2. Delete link between Navigation Controller & home view
+    3. Control click yellow icon above Nav View & drag to new view
+    4. Select 'Relationship Segue: Root View COntroller'
+• 
