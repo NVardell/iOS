@@ -10,55 +10,16 @@ import CoreData
 
 class ToDoListViewController: UITableViewController {
 
-    var netflixBest = [Item]()
+    var itemArray = [Item]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Data File Path = \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))")
+        print("\nData File Path = \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))\n")
         
         loadItems()
     }
-
-    
-    
-    // MARK: - TableView Datasource Methods
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return netflixBest.count
-    }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // Setup object being used in cell
-        let item = netflixBest[indexPath.row]
-        
-        // Setup row cell for display in TableView
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        
-        // Set cell attributes based on the attribute values of our item
-        cell.textLabel?.text = netflixBest[indexPath.row].title
-        cell.accessoryType = item.done ? .checkmark : .none
-        
-        // Return cell for display in TableView
-        return cell
-    }
-    
-    
-    
-    // MARK: - TableView Delegate Methods
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // Switches the done state of an item for alternating checked/unchecked on UI
-        netflixBest[indexPath.row].done = !netflixBest[indexPath.row].done
-        
-        // Save updated checkmarks
-        saveItems()
-        
-        // Prevent row from staying selected/shaded
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    
     
     // MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
@@ -75,7 +36,6 @@ class ToDoListViewController: UITableViewController {
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
             newItem.done = false
-//            let newItem = Item(context: context)
             
             // Save updated list to persist newly added items
             self.saveItems()
@@ -88,7 +48,6 @@ class ToDoListViewController: UITableViewController {
         alert.addTextField { alerTextField in
             alerTextField.placeholder = "Create new item"
             textField = alerTextField
-            print("Finished Add Alert Text Closure")
         }
         
         // Display newly created alert
@@ -97,25 +56,88 @@ class ToDoListViewController: UITableViewController {
     
     
     func saveItems() {
-        do {
-            // Persist list changes to Core Data's SQLite Database
-            try context.save()
-            print("Saved Data Successfully!")
-            
-            // Reload the TableView so the updated item will appear in TableView
-            tableView.reloadData()
-        } catch {
-            print("Error saving Context. Error: \(error)")
-        }
+        // Persist list changes to Core Data's SQLite Database
+        do { try context.save() } catch { print("Error saving Context. Error: \(error)") }
+        
+        // Reload view with updated items
+        loadItems()
     }
     
-    func loadItems() {
-        let request: NSFetchRequest<Item> = Item.fetchRequest()
-        do {
-            netflixBest = try context.fetch(request)
-        } catch {
-            print("Error fetching date.  Error: \(error)")
-        }
+    func loadItems(with req: NSFetchRequest<Item> = Item.fetchRequest()) {
+        // Attempt to fetch request for TableView Data
+        do { itemArray = try context.fetch(req) } catch { print("Error fetching date.  Error: \(error)") }
+        
+        // Reload the TableView so updated items will appear
+        tableView.reloadData()
+    }
+    
+    
+    
+    // MARK: - TableView | DataSource Methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemArray.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Setup object being used in cell
+        let item = itemArray[indexPath.row]
+        
+        // Setup row cell for display in TableView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        
+        // Set cell attributes based on the attribute values of our item
+        cell.textLabel?.text = itemArray[indexPath.row].title
+        cell.accessoryType = item.done ? .checkmark : .none
+        
+        // Return cell for display in TableView
+        return cell
+    }
+    
+    
+    
+    // MARK: - TableView Delegate Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Row Index
+        let x = indexPath.row
+        
+        // Switches the done state of an item for alternating checked/unchecked on UI
+        itemArray[x].done = !itemArray[x].done
+        
+        // Remove selected row from context before saving changes
+        // context.delete(itemArray[x])
+        
+        // Remove selected row from array being used to fill TableView
+        // itemArray.remove(at: x)
+        
+        // Save updated checkmarks
+        saveItems()
+        
+        // Prevent row from staying selected/shaded
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+
+
+
+// MARK: - Search Bar Methods
+extension ToDoListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Searching for: \(searchBar.text!)")
+        let req: NSFetchRequest<Item> = Item.fetchRequest()
+        req.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        req.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        loadItems(with: req)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
+}
