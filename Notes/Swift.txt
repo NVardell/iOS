@@ -10,11 +10,16 @@
 
 
 
+
 /**********************************************************************************************************************
 *********************************************      GENERAL PRACTICES      *********************************************
 ***********************************************************************************************************************/
 • PROTOCOLS
     - Define Protocol in same class file it'll be used in.
+• DELEGATES
+    - In place of coding delegates, from Storyboard you can Control drag object to the most left yellow icon atop view,
+      and then select 'Delegate' from the mini popup menu that appears
+
 
 
 
@@ -182,7 +187,7 @@
                 + Arguably not a database, because it allows for so much more.  
                     - Allows converting individual database tables into objects that you can easily manipulate using code.
                     - Things that SQLite can't, such as monitoring changes in the database.
-            - xCode Setup Notes
+            - Usage Notes
                 + Data Model File = *.xcdatamodeld
                 + Entities ≈ DB Tables
                     - Attributes: The fields that make up the entity & their Data Type
@@ -200,6 +205,8 @@
                 + NSPersistentContainer
                     - Default persistent container is a SQLite database.
                     - Yes it can be other things, such as XML, but most generically it will always be SQLite database.
+                + NSPredicate
+                    - In order to query Core Data, NSPredicate is required
         + Realm
             - A faster & easier database solution
             - Open-source framework
