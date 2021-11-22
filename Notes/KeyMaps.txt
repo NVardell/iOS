@@ -8,6 +8,8 @@
     - Find Highlighted Word - Cmd+F & Cmd+E
     - Move Cursor Lines Up/Down = Cmd+Ctrl+Up/Down
 • OS
+    - Finder
+        + Open dialog for entering in file path - Cmd+Shift+G
     - Magnet - Window Snapping
         + Left/Right/Up/Down = Fn+Ctrl+Arrow
     - Hidden Files = Cmd+Shift+. (While in Finder Window)

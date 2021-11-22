@@ -65,6 +65,9 @@
         struct K {
                 static let appTitle = "Awesome Title"
                 static func typeMethod() { // Do Stuff }
+                struct Segue {
+                        static let toSomeRandomView = "toSomeRandomView"
+                }
         }
 • Retrieve from dictionary
         let valueForMyKey = dictionary["Key"]
