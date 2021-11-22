@@ -89,6 +89,11 @@
     - AS
     - CATCH
     - DO
+    - DYNAMIC
+        + Makes a property dynamic as opposed to static.
+        + Allows the property to be monitored for change at runtime
+        + Modifier from Objective-C, so '@objc' is required in definition.
+            - Ex. @objc dynamic var age: Int = 0
     - EXTENSION
     - FUNC
     - IS
