@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("\nAppDelegate: application(..., didFinishLaunchingWithOptions, ...)")
         // Prints filepath of our Applications UserData File Location within the current Simulator
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        print("\n\nRealm Location: \(Realm.Configuration.defaultConfiguration.fileURL!)\n\n")
+        
+        
+        
+        let data = Data()
+        data.name = "Me"
+        data.age = 123
+        
+        let dat2 = Data()
+        dat2.age = 100
+        dat2.name = "Old Man"
+        
+        // Init Realm
+        do { let realm = try Realm()
+            try realm.write { realm.add(data) }
+            try realm.write { realm.add(dat2) }
+        } catch { print("Error init'int Realm.  Error: \(error)") }
+        
+        
         return true
     }
     
