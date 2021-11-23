@@ -87,3 +87,13 @@
         // Call function multiple ways...
         loadItems() // Forces use of default value
         loadItems(with: request) // Passing in some request we manually setup with sorts n such
+• Print location of UserDefaults File Path
+
+• Print location of Realm File Path
+        
+• Valid Array Inits
+        let array = [1, 2, 3]                  // Init Using Type Inference
+        let array = [Int]()                    // Init Empty Array of Integers
+        let array: [Int] = [1, 2, 3]           // Init Array of type Integer equal to 1, 2, 3
+        let array: Array<Int> = [1, 2, 3]      // Init Array of type Integer equal to 1, 2, 3
+        let array = Array<Int>()               // Init Empty Array of Integers
