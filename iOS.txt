@@ -64,6 +64,7 @@
             Example:
                 // Changes above example into:
                 alert.addTextField { (UITextField) in <#code#> }
+        + Cmd+Click Variable name to refactor with a rename.
 • SECURITY
     - Sandboxing
         + Apps are sandboxed on iOS so that they can't access other apps or operating system files
