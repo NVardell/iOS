@@ -6,21 +6,20 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class ToDoListViewController: UITableViewController {
 
-    var itemArray = [Item]()
-    var selectedCat : Category? {
+    let realm = try! Realm()
+    var todoItems: Results<Item>?
+    var selectedCat: Category? {
         didSet {
             loadItems()
         }
     }
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\nData File Path = \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))\n")
     }
 
     // MARK: - Add New Items
@@ -32,16 +31,20 @@ class ToDoListViewController: UITableViewController {
         // Create user interaction piece of the UIAlert being displayed to user
         let action = UIAlertAction(title: "Add Item", style: .default) { (_) in
 
-            // What happens when the user clicks the Add Item button on our UIAlert.
-            // self.itemArray.append(Item(t: textField.text!))
-
-            let newItem = Item(context: self.context)
-            newItem.title = textField.text!
-            newItem.done = false
-            newItem.parentCategory = self.selectedCat
-
-            // Save updated list to persist newly added items
-            self.saveItems()
+            if let currentCat = self.selectedCat {
+                // Save updated list to persist newly added items
+                do {
+                    try self.realm.write {
+                        let newItem = Item()
+                        newItem.title = textField.text!
+                        newItem.dateCreated = Date()
+                        currentCat.items.append(newItem)
+                    }
+                } catch { print("Error saving Context. Error: \(error)") }
+            }
+            
+            // Update TableView to display newest item
+            self.tableView.reloadData()
         }
 
         // Add newly created UIAlertAction to our Alert we want to display
@@ -57,43 +60,29 @@ class ToDoListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    func saveItems() {
-        // Persist list changes to Core Data's SQLite Database
-        do { try context.save() } catch { print("Error saving Context. Error: \(error)") }
-
-        // Reload view with updated items
-        loadItems()
-    }
-
-    func loadItems(with req: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
-        
-        // Create predicate requiring search results to have current category as parent
-        let catPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCat!.name!)
-        if let searchPredicate = predicate { req.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [catPredicate, searchPredicate]) }
-        else { req.predicate = catPredicate}
-        
-        // Attempt to fetch request for TableView Data
-        do { itemArray = try context.fetch(req) } catch { print("Error fetching date.  Error: \(error)") }
-
-        // Reload the TableView so updated items will appear
+    func loadItems() {
+        todoItems = selectedCat?.items.sorted(byKeyPath: "dateCreated")
         tableView.reloadData()
     }
 
+    
     // MARK: - TableView | DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        itemArray.count
+        print("\n\nLoading Items for Category: \(todoItems?.count ?? 1)\n\n")
+        return todoItems?.count ?? 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        // Setup object being used in cell
-        let item = itemArray[indexPath.row]
 
         // Setup row cell for display in TableView
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.toDoItems, for: indexPath)
 
-        // Set cell attributes based on the attribute values of our item
-        cell.textLabel?.text = item.title
-        cell.accessoryType = item.done ? .checkmark : .none
+        // Setup cell attributes based on the attribute values of our item
+        if let item = todoItems?[indexPath.row] {
+            cell.textLabel?.text = item.title
+            cell.accessoryType = item.done ? .checkmark : .none
+        } else {
+            cell.textLabel?.text = "Empty List"
+        }
 
         // Return cell for display in TableView
         return cell
@@ -102,34 +91,32 @@ class ToDoListViewController: UITableViewController {
     // MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        // Row Index
-        let x = indexPath.row
-
         // Switches the done state of an item for alternating checked/unchecked on UI
-        itemArray[x].done = !itemArray[x].done
+        if let item = todoItems?[indexPath.row] {
+            do { try realm.write { item.done = !item.done } }
+            catch { print("Error updating item status.  Error: \(error)") }
+        }
 
-        // Remove selected row from context before saving changes
-        // context.delete(itemArray[x])
-
-        // Remove selected row from array being used to fill TableView
-        // itemArray.remove(at: x)
-
-        // Save updated checkmarks
-        saveItems()
-
+        // Reload Table View to show updated Item
+        tableView.reloadData()
+        
         // Prevent row from staying selected/shaded
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+
+
 // MARK: - Search Bar Methods
 extension ToDoListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("Searching for: \(searchBar.text!)")
-        let req: NSFetchRequest<Item> = Item.fetchRequest()
-        req.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-
-        loadItems(with: req, predicate: NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!))
+        
+        // Get search results
+        todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title")
+        
+        // Refresh view
+        tableView.reloadData()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
