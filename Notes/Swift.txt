@@ -79,7 +79,7 @@
         + Dictionary
             - Stores Associations Between Keys & Values of the Same Type
             - Ex. var airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
-    - OTHER
+    - MODELS
         + Singleton
             - Singletons provide a globally accessible, shared instance of an object.
             - Only one copy exists and can be shared across all of your classes & objects.
@@ -116,6 +116,11 @@
 • OPERATORS
     - Ternary Operator
         + Follows the form of: value = condition ? valueIfTrue : valueIfFalse
+    - Optional (?)
+    - Force Unwrap (!)
+    - Nil Coalescing Operator (??)
+        + Used when the left side could be nil.  Assigning right value if it is.
+        + Ex.  return categories?.count ?? 1 // If Categories is nil, return 1
 • LIBRARIES
     - APPLE
         + Foundation
