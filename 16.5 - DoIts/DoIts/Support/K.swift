@@ -14,10 +14,15 @@ struct K {
     struct Cells {
         static let category = "CategoryCell"
         static let toDoItems = "ToDoItemCell"
+        static let swipeCell = "SwipeCell"
     }
     
     struct Relationship {
         static let category = "items"
         static let items = "parentCategory"
+    }
+    
+    struct TableView {
+        static let rowHeight = 85.0
     }
 }
