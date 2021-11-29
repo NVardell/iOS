@@ -7,8 +7,9 @@
 
 import UIKit
 import RealmSwift
+import RandomColor
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     var categories: Results<Category>?
@@ -29,6 +30,12 @@ class CategoryViewController: UITableViewController {
         categories = realm.objects(Category.self)  // Fetch Categories List
         tableView.reloadData()  // Reload Table View
     }
+    override func updateModel(at indexPath: IndexPath) {
+        if let categoryForDeletion = self.categories?[indexPath.row] {
+            do { try self.realm.write { self.realm.delete(categoryForDeletion) }  }
+            catch { print("Error deleting category.  Error: \(error)") }
+        }
+    }
 
 
     // MARK: - Add New Categories
@@ -41,6 +48,7 @@ class CategoryViewController: UITableViewController {
             // Setup new Category
             let newCategory = Category()
             newCategory.name = alertInputText.text!
+            newCategory.backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
             // Save new Category
             self.saveCats(category: newCategory)
         })
@@ -62,9 +70,25 @@ class CategoryViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("Loading Cell for Row #\(indexPath.row)")
-        // Setup reusable cell to display in Table View
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.category, for: indexPath)
         
+        // Get new cell from Super Class
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        
+        
+        if let cellBack = categories?[indexPath.row].backgroundHex {
+            print("\n\nCell Background is = \(cellBack)\n\n")
+//
+//            if cellBack == "" {
+//                categories![indexPath.row].backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
+//            }
+            // cell.backgroundColor = UIColor(hexString: cellBack)
+        } else {
+            // categories![indexPath.row].backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
+            // cell.backgroundColor = UIColor(hexString: categories![indexPath.row].backgroundHex)
+        }
+        
+        let bg = UIColor(hexString: categories?[indexPath.row].backgroundHex ?? "#89c6f4")
+        cell.backgroundColor = bg
         // Setup cell attributes from current row category
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added"
         
@@ -90,3 +114,6 @@ class CategoryViewController: UITableViewController {
         }
     }
 }
+
+
+

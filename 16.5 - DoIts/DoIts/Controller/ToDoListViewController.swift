@@ -7,8 +7,9 @@
 
 import UIKit
 import RealmSwift
+import RandomColor
 
-class ToDoListViewController: UITableViewController {
+class ToDoListViewController: SwipeTableViewController {
 
     let realm = try! Realm()
     var todoItems: Results<Item>?
@@ -38,6 +39,7 @@ class ToDoListViewController: UITableViewController {
                         let newItem = Item()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
+                        newItem.backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
                         currentCat.items.append(newItem)
                     }
                 } catch { print("Error saving Context. Error: \(error)") }
@@ -64,25 +66,32 @@ class ToDoListViewController: UITableViewController {
         todoItems = selectedCat?.items.sorted(byKeyPath: "dateCreated")
         tableView.reloadData()
     }
+    override func updateModel(at indexPath: IndexPath) {
+        if let itemForDeletion = self.todoItems?[indexPath.row] {
+            do { try self.realm.write { self.realm.delete(itemForDeletion) }  }
+            catch { print("Error deleting item.  Error: \(error)") }
+        }
+    }
 
     
     // MARK: - TableView | DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("\n\nLoading Items for Category: \(todoItems?.count ?? 1)\n\n")
-        return todoItems?.count ?? 1
+        todoItems?.count ?? 1
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        // Setup row cell for display in TableView
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cells.toDoItems, for: indexPath)
+        // Get new cell from Super Class
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
 
         // Setup cell attributes based on the attribute values of our item
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
             cell.accessoryType = item.done ? .checkmark : .none
+            cell.backgroundColor = UIColor(hexString: item.backgroundHex)
         } else {
             cell.textLabel?.text = "Empty List"
         }
+        
 
         // Return cell for display in TableView
         return cell
