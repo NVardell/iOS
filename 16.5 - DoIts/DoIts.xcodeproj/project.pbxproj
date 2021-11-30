@@ -16,6 +16,7 @@
 		AF3635702741B920009FB687 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF36356F2741B920009FB687 /* ToDoListViewController.swift */; };
 		AF3635732741B920009FB687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF3635712741B920009FB687 /* Main.storyboard */; };
 		AF3635752741B920009FB687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF3635742741B920009FB687 /* Assets.xcassets */; };
+		AF9F9EC327558CA200BCBEE0 /* DynamicColor in Frameworks */ = {isa = PBXBuildFile; productRef = AF9F9EC227558CA200BCBEE0 /* DynamicColor */; };
 		AFA75C692748195A00F13CBA /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA75C682748195A00F13CBA /* K.swift */; };
 		AFA75C6B27481A3100F13CBA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA75C6A27481A3100F13CBA /* CategoryViewController.swift */; };
 		AFB19C6E2753E31C007A471D /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = AFB19C6D2753E31C007A471D /* SwipeCellKit */; };
@@ -48,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFF209492749CA5A00EE5409 /* RealmSwift in Frameworks */,
+				AF9F9EC327558CA200BCBEE0 /* DynamicColor in Frameworks */,
 				AFB19C6E2753E31C007A471D /* SwipeCellKit in Frameworks */,
 				AF001572275410630071FB84 /* RandomColor in Frameworks */,
 				AFF209472749CA5A00EE5409 /* Realm in Frameworks */,
@@ -146,6 +148,7 @@
 				AFF209482749CA5A00EE5409 /* RealmSwift */,
 				AFB19C6D2753E31C007A471D /* SwipeCellKit */,
 				AF001571275410630071FB84 /* RandomColor */,
+				AF9F9EC227558CA200BCBEE0 /* DynamicColor */,
 			);
 			productName = DoIts;
 			productReference = AF3635682741B920009FB687 /* DoIts.app */;
@@ -179,6 +182,7 @@
 				AFF209452749CA5A00EE5409 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				AFB19C6C2753E31C007A471D /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
 				AF001570275410630071FB84 /* XCRemoteSwiftPackageReference "RandomColorSwift" */,
+				AF9F9EC127558CA200BCBEE0 /* XCRemoteSwiftPackageReference "DynamicColor" */,
 			);
 			productRefGroup = AF3635692741B920009FB687 /* Products */;
 			projectDirPath = "";
@@ -443,6 +447,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		AF9F9EC127558CA200BCBEE0 /* XCRemoteSwiftPackageReference "DynamicColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yannickl/DynamicColor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		AFB19C6C2753E31C007A471D /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
@@ -466,6 +478,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AF001570275410630071FB84 /* XCRemoteSwiftPackageReference "RandomColorSwift" */;
 			productName = RandomColor;
+		};
+		AF9F9EC227558CA200BCBEE0 /* DynamicColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF9F9EC127558CA200BCBEE0 /* XCRemoteSwiftPackageReference "DynamicColor" */;
+			productName = DynamicColor;
 		};
 		AFB19C6D2753E31C007A471D /* SwipeCellKit */ = {
 			isa = XCSwiftPackageProductDependency;
