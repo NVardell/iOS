@@ -23,6 +23,7 @@ struct K {
     }
     
     struct TableView {
-        static let rowHeight = 85.0
+        static let rowHeight = 80.0
+        static let defaultBackgroundHex = "#89c6f4"
     }
 }
