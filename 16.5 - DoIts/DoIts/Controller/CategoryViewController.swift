@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import RandomColor
+import DynamicColor
 
 class CategoryViewController: SwipeTableViewController {
 
@@ -16,7 +17,7 @@ class CategoryViewController: SwipeTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadCats()  // Load Categories
+        loadCats()
     }
 
 
@@ -24,7 +25,8 @@ class CategoryViewController: SwipeTableViewController {
     func saveCats(category: Category) {
         // Save Category changes
         do { try realm.write{ realm.add(category) } } catch { print("Error saving Category changes.  Error: \(error)") }
-        loadCats()  // Reload view
+        // Reload view
+        loadCats()
     }
     func loadCats() {
         categories = realm.objects(Category.self)  // Fetch Categories List
@@ -74,23 +76,13 @@ class CategoryViewController: SwipeTableViewController {
         // Get new cell from Super Class
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
+        // Setup cell background
+        let cellBackground = categories?[indexPath.row].backgroundHex ?? K.TableView.defaultBackgroundHex
+        cell.backgroundColor = UIColor(hexString: cellBackground)
         
-        if let cellBack = categories?[indexPath.row].backgroundHex {
-            print("\n\nCell Background is = \(cellBack)\n\n")
-//
-//            if cellBack == "" {
-//                categories![indexPath.row].backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
-//            }
-            // cell.backgroundColor = UIColor(hexString: cellBack)
-        } else {
-            // categories![indexPath.row].backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
-            // cell.backgroundColor = UIColor(hexString: categories![indexPath.row].backgroundHex)
-        }
-        
-        let bg = UIColor(hexString: categories?[indexPath.row].backgroundHex ?? "#89c6f4")
-        cell.backgroundColor = bg
         // Setup cell attributes from current row category
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories Added"
+        cell.textLabel?.textColor = DynamicColor(hexString: cellBackground).lighter()
         
         // Return Row Cell to be displayed in TableView
         return cell

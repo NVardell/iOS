@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import RandomColor
+import DynamicColor
 
 class ToDoListViewController: SwipeTableViewController {
 
@@ -86,6 +87,7 @@ class ToDoListViewController: SwipeTableViewController {
         // Setup cell attributes based on the attribute values of our item
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
+            cell.textLabel?.textColor = DynamicColor(hexString: item.backgroundHex).lighter()
             cell.accessoryType = item.done ? .checkmark : .none
             cell.backgroundColor = UIColor(hexString: item.backgroundHex)
         } else {
@@ -97,6 +99,8 @@ class ToDoListViewController: SwipeTableViewController {
         return cell
     }
 
+    
+    
     // MARK: - TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
