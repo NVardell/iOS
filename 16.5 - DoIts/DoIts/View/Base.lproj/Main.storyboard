@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="yuB-4Z-719" customClass="CategoryViewController" customModule="DoIts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4ca-0a-lDD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -55,7 +55,7 @@
             <objects>
                 <tableViewController id="uyj-Jt-0M8" customClass="ToDoListViewController" customModule="DoIts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="DDl-TI-mO1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -103,8 +103,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6PN-jZ-SnS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5RO-4U-utb">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="5RO-4U-utb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="AccentColor"/>
                         <color key="tintColor" systemColor="labelColor"/>
@@ -126,6 +126,7 @@
             <point key="canvasLocation" x="284" y="138"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.61599999666213989" green="0.70999997854232788" blue="0.71799999475479126" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
