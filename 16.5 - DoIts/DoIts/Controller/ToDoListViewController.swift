@@ -23,6 +23,18 @@ class ToDoListViewController: SwipeTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation Controller DNE") }
+        
+        if let hexColor = selectedCat?.backgroundHex {
+            print("Setting NavBar Color")
+            navBar.barTintColor = UIColor(hexString: hexColor).darkened()
+            navBar.backgroundColor = UIColor(hexString: hexColor).darkened()
+//            navBar.tintColor = UIColor(hexString: hexColor).darkened()  // Changes color of NavBar Text
+        }
+    }
 
     // MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
