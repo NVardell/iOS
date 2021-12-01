@@ -8,6 +8,7 @@
 import UIKit
 import SwipeCellKit
 import RandomColor
+import DynamicColor
 
 class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegate {
 
@@ -51,8 +52,21 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     
     
     // MARK: - Stub Methods for SubClass Overrides
-    func updateModel(at indexPath: IndexPath) {
-        // Update our data model
+    func updateModel(at indexPath: IndexPath) {  /**  Update our data model classes.  */  }
+    func updateNavBarColor(backgroundColor: String) {
+        guard let navBar = navigationController?.navigationBar else { fatalError("NavigationController does not exist") }
+        
+        let contrastOfBackgroundColor = DynamicColor(hexString: backgroundColor).desaturated()
+        // Small title colors: (also shown when large title collapses by scrolling down)
+        navBar.barTintColor = UIColor(hexString: backgroundColor)
+        navBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: contrastOfBackgroundColor]
+        
+        // Large title colors:
+        navBar.backgroundColor = UIColor(hexString: backgroundColor)
+        navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: contrastOfBackgroundColor]
+        
+        // Color the back button and icons: (both small and large title)
+        navBar.tintColor = contrastOfBackgroundColor
     }
 }
 

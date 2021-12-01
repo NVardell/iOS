@@ -12,30 +12,40 @@ import DynamicColor
 
 class ToDoListViewController: SwipeTableViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     let realm = try! Realm()
     var todoItems: Results<Item>?
-    var selectedCat: Category? {
-        didSet {
-            loadItems()
-        }
-    }
+    var selectedCat: Category? {   didSet { loadItems() }   }
 
+    // MARK: - View Load Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        guard let navBar = navigationController?.navigationBar else { fatalError("Navigation Controller DNE") }
-        
-        if let hexColor = selectedCat?.backgroundHex {
-            print("Setting NavBar Color")
-            navBar.barTintColor = UIColor(hexString: hexColor).darkened()
-            navBar.backgroundColor = UIColor(hexString: hexColor).darkened()
-//            navBar.tintColor = UIColor(hexString: hexColor).darkened()  // Changes color of NavBar Text
-        }
+            if let categoryColor = selectedCat?.backgroundHex {
+                title = selectedCat!.name + "'s Items"
+                updateNavBarColor(backgroundColor: categoryColor)
+                searchBar.barTintColor = UIColor(hexString: categoryColor)
+            }
     }
 
+    
+    
+    // MARK: - Model Methods
+    func loadItems() {
+        todoItems = selectedCat?.items.sorted(byKeyPath: "dateCreated")
+        tableView.reloadData()
+    }
+    override func updateModel(at indexPath: IndexPath) {
+        if let itemForDeletion = self.todoItems?[indexPath.row] {
+            do { try self.realm.write { self.realm.delete(itemForDeletion) }  }
+            catch { print("Error deleting item.  Error: \(error)") }
+        }
+    }
+    
     // MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
 
@@ -47,14 +57,12 @@ class ToDoListViewController: SwipeTableViewController {
 
             if let currentCat = self.selectedCat {
                 // Save updated list to persist newly added items
-                do {
-                    try self.realm.write {
+                do { try self.realm.write {
                         let newItem = Item()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
                         newItem.backgroundHex = randomColor(hue: .blue, luminosity: .light).toHexString()
-                        currentCat.items.append(newItem)
-                    }
+                        currentCat.items.append(newItem) }
                 } catch { print("Error saving Context. Error: \(error)") }
             }
             
@@ -75,22 +83,10 @@ class ToDoListViewController: SwipeTableViewController {
         present(alert, animated: true, completion: nil)
     }
 
-    func loadItems() {
-        todoItems = selectedCat?.items.sorted(byKeyPath: "dateCreated")
-        tableView.reloadData()
-    }
-    override func updateModel(at indexPath: IndexPath) {
-        if let itemForDeletion = self.todoItems?[indexPath.row] {
-            do { try self.realm.write { self.realm.delete(itemForDeletion) }  }
-            catch { print("Error deleting item.  Error: \(error)") }
-        }
-    }
 
     
     // MARK: - TableView | DataSource Methods
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        todoItems?.count ?? 1
-    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {  todoItems?.count ?? 1  }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         // Get new cell from Super Class
@@ -102,11 +98,8 @@ class ToDoListViewController: SwipeTableViewController {
             cell.textLabel?.textColor = DynamicColor(hexString: item.backgroundHex).lighter()
             cell.accessoryType = item.done ? .checkmark : .none
             cell.backgroundColor = UIColor(hexString: item.backgroundHex)
-        } else {
-            cell.textLabel?.text = "Empty List"
-        }
+        } else {  cell.textLabel?.text = "Empty List"  }
         
-
         // Return cell for display in TableView
         return cell
     }
@@ -143,13 +136,10 @@ extension ToDoListViewController: UISearchBarDelegate {
         // Refresh view
         tableView.reloadData()
     }
-
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text?.count == 0 {
             loadItems()
-            DispatchQueue.main.async {
-                searchBar.resignFirstResponder()
-            }
+            DispatchQueue.main.async {  searchBar.resignFirstResponder()  }
         }
     }
 }
