@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalcViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
     
