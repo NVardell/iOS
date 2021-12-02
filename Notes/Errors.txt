@@ -16,3 +16,12 @@
     + Error: Modifications to the layout engine must not be performed from a background thread after it has been accessed from the main thread.
     + Error: UILabel.text must be used from main thread only
     + Fix: Surround UI changes in 'DispatchQueue.main.async {}' block.
+• BUILD
+    + Cannot assign to value
+        - Is a get-only property
+            + Error: Triggered when tryig to assign a new value to a calculated property.
+            + Fix: Create a 'set' section to calc'd value.
+            + Ex.
+                var numOfSlices: Int { 
+                    set { ... }
+                }

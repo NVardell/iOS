@@ -190,7 +190,11 @@
             let defaults = UserDefaults.standard            // Get User Defaults
             defaults.set(0.24, forKey: "Volume")            // Set User Preference
             let volume = defaults.float(forKey: "Volume")   // Retrieve Volume from User Defaults
-
+• What do you call a Computed Property without a 'set'?
+    - A read-only property.  
+• What do you call a property that you want to 'watch' for changes?
+    - Observed Property
+        + Contains either a 'willSet{newValue}' or 'didSet{oldValue}' block that will run when value is changed.
 
 
 

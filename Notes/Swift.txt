@@ -331,30 +331,48 @@
         3. Give URLSession a task
         4. Start the task
 • MISC
-    + Anonymous Parameters
+    - Anonymous Parameters
         * Use '$' and an index location to refer to a parameter.
             Ex. $0
-    + If the last parameter of a function is a Closure, you can omit the last parameter name
+    - If the last parameter of a function is a Closure, you can omit the last parameter name
       & close the input section; simply, having the closure trailing at the end of line.
         Ex.
             let result = calc(n1:2, n2:3) { $0 + $1 }
-    + Computed Properties
+    - Computed Properties
         * A variable of a class or struct that is computed on the fly when it is created.
         * General syntax is:
                 var myComputedProperty: Int { return 2+4 }
-    + TypeAlias
+    - TypeAlias
         * Single Protocol that combines multiple Protocols.
         * Common example is 'Codable' which includes 'Decodable' & 'Encodable' for en/decoding to JSON.
-    + Location
-        * Requires importing CoreLocation package to access a devices location
-        * Update info.plist file to have message for the internal alert requesting user location
-    + Property List File
-        * .plist 
-        * File that is automatically created with every xCode project.
-        * Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
-        * Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
+    - Location
+        + Requires importing CoreLocation package to access a devices location
+        + Update info.plist file to have message for the internal alert requesting user location
+    - Property List File
+        + .plist 
+        + File that is automatically created with every xCode project.
+        + Stores configuration info for the app at runtime. (When the app is running.... OBVIOUSLY...)
+        + Info is stored in key/value pairs, similar to a Dictionary; key = property name & value = config
             * Ex. Light/Dark Mode is one of these key-value pairs.
                 key:Status Bar Style, value:String=UIStatusBarStyleLightContent
-    + Ranges
-        * Half Open: let halfOpenRange = 1..<5
-        * Closed: let closedRange = 1...5
+    - Ranges
+        + Half Open: let halfOpenRange = 1..<5
+        + Closed: let closedRange = 1...5
+    - Properties
+        + Stored
+            - Manually set values
+                + Constant: let name = "Name"
+                + Variable: var name = "Name"
+        + Computed
+            - Takes a stored value and uses it to automatically calculate additional properties.
+            - Kind of like a formula in an excel sheet.
+            - Requires type declaration. 
+                Ex. var numOfSlices: Int { return pizzaInches-4 }
+            - Requires being a var. (NOT a let.)
+        + Observed
+            - Arguably a type of Computed Property due to the fact that it contains logic; however, it doesn't 
+            require an explicit type declaration
+
+
+
+
