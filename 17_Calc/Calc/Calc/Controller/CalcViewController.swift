@@ -1,9 +1,8 @@
 //
-//  ViewController.swift
+//  CalcViewController.swift
 //  Calculator
 //
-//  Created by Angela Yu on 10/09/2019.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Nate V. on 12/02/2021.
 //
 
 import UIKit
