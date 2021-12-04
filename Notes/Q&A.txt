@@ -105,12 +105,14 @@
             - You get one & I get one!
             - Copying a Struct creates an entirely new object. 
             - We go from 1 object to 2 objects.
+        5. Memory = Stack (FILO)
     - Classes
         1. Inheritance = TRUE (Can inherit from a Super class.)
         2. Init Method = Required
         3. Passed by = REFERENCE
             - Everyone has to share a single object. ):
             - Copying a Class Object simply creates a new pointer to an existing object.
+        4. Memory = Heap (W/ a reference to it in Stack)
 • What does Apple advise when creating new object templates? Structs or Classes?
     - Structs, good when you need a basic blueprint for creating objects.
 • When should you create Classes instead of Structs?
@@ -195,7 +197,16 @@
 • What do you call a property that you want to 'watch' for changes?
     - Observed Property
         + Contains either a 'willSet{newValue}' or 'didSet{oldValue}' block that will run when value is changed.
-
+• How many Swift Access Levels are there? What are they?
+    1. Private ~ Only accessible within current braces
+    2. File Private ~ Only accessible within current file
+    3. Internal ~ Default. Only accessible within current app module
+    4. Public ~ Accessible within other modules. (More for Frameworks, Libraries, SDKs.)
+    5. Open ~ Everything is accessible & modifiable. (Can be overridden, Public makes this not possible.)
+• 
+• 
+• 
+• 
 
 
 
