@@ -9,10 +9,21 @@ import UIKit
 
 class CalcViewController: UIViewController {
     
-    var currentTotal = "0"
-    var finishedTyping = true
     @IBOutlet weak var displayLabel: UILabel!
+    private var finishedTyping = true
     
+    // Current Label Value
+    private var displayValue: Double {
+        get {
+            guard let number = Double(displayLabel.text!) else {
+                fatalError("Cannot convert display label text to a Double!")
+            }
+            return number
+        }
+        set {
+            displayLabel.text = String(newValue)
+        }
+    }
     
     
     @IBAction func calcButtonPressed(_ sender: UIButton) {
@@ -20,16 +31,11 @@ class CalcViewController: UIViewController {
         // Reset Finished Typing
         finishedTyping = true
         
-        
         //What should happen when a non-number button is pressed
         if let operation = sender.currentTitle {
-            switch operation {
-                case "AC":
-                    currentTotal = "0"
-                    displayLabel.text = currentTotal
-                default:
-                    displayLabel.text = "0"
-            }
+            print("Operation is: \(operation)")
+            let calc = CalculatorLogic(number: displayValue)
+            displayValue = calc.operationOperations(computation: operation)
         }
         
         
@@ -40,11 +46,25 @@ class CalcViewController: UIViewController {
         
         //What should happen when a number is entered into the keypad
         if let numValue = sender.currentTitle {
-
-            if finishedTyping && numValue != "0" {
+            print("NumValue Clicked")
+            if finishedTyping && numValue == "0" && numValue != "." {
+                print("\tFinished Typing && NumValue==0.  NumValue = \(numValue)")
+                displayLabel.text = "0"
+            } else if finishedTyping {
+                print("\tFinishedTyping. NumValue = \(numValue)")
                 displayLabel.text = numValue
                 finishedTyping = false
             } else {
+                print("\tElse. NumValue = \(numValue)")
+                if numValue == "." {
+                    print("\tElse & '.'.  NumValue = \(numValue)")
+                    
+                    let isInt = floor(displayValue) == displayValue
+                    
+                    if !isInt {
+                        print("\tElse. isInt = \(isInt)")
+                        return }
+                }
                 displayLabel.text = displayLabel.text! + numValue
             }
         }
