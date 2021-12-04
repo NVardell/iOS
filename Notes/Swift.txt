@@ -372,7 +372,13 @@
         + Observed
             - Arguably a type of Computed Property due to the fact that it contains logic; however, it doesn't 
             require an explicit type declaration
-
+    - Access Levels
+        1. Private ~ Only accessible within current braces
+            + Main goal for private is preventing value mods from outside classes than it is actually used.
+        2. File Private ~ Only accessible within current file
+        3. Internal ~ Default. Only accessible within current app module
+        4. Public ~ Accessible within other modules. (More for Frameworks, Libraries, SDKs.)
+        5. Open ~ Everything is accessible & modifiable. (Can be overridden, Public makes this not possible.)
 
 
 
