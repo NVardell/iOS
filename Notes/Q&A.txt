@@ -203,8 +203,16 @@
     3. Internal ~ Default. Only accessible within current app module
     4. Public ~ Accessible within other modules. (More for Frameworks, Libraries, SDKs.)
     5. Open ~ Everything is accessible & modifiable. (Can be overridden, Public makes this not possible.)
-• 
-• 
+• Struct Pros
+    1. Simpler
+    2. Faster (Because they are stored in Stack.)
+    3. Deep Copies (Not passed by Reference)
+    4. True Immutability (Can't change values.)
+    5. No memory leaks
+    6. Threadsafe
+• Classes Pros
+    1. Has Inheritance
+    2. Works with Objective-C Code
 • 
 • 
 

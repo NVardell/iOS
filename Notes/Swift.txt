@@ -132,6 +132,7 @@
                 - Example
                     let messageCell = cell as! MessageCell
     - CATCH
+    - CLASS
     - DO
     - DYNAMIC
         + Makes a property dynamic as opposed to static.
@@ -151,6 +152,9 @@
         + Loads the value when it gets called and is required to exist.
         + Beneficial because it saves on memory.
     - LET
+    - MUTATING
+        + Required when altering value of a Struct due to the immutability of Structs
+        + Tells Swift compiler that it needs to create a brand new copy of the struct with the updated value.
     - PROTOCOL
         + Defining a protocol
             protocol MyProtocol { /* Define Protocol Requirements. */}
@@ -167,6 +171,9 @@
                 }
                 print(K.appTitle) // Awesome Title
                 K.typeMethod()
+    - STRUCT
+        + Value Type ~ Copied whenever it is used. 
+        + Concept ~ Your changes won't appear for me on my copy & my changes won't appear for you on your copy.
     - THROWS
     - TRY
     - TYPEALIAS
