@@ -97,3 +97,55 @@
         let array: [Int] = [1, 2, 3]           // Init Array of type Integer equal to 1, 2, 3
         let array: Array<Int> = [1, 2, 3]      // Init Array of type Integer equal to 1, 2, 3
         let array = Array<Int>()               // Init Empty Array of Integers
+• Display Basic Alert to User
+        class Alert {
+                class func showBasic(title: String, message: String, vc: UIViewController) {
+                        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        vc.present(alert, animated: true)
+                }
+        }
+• 
+• 
+
+
+
+
+/**********************************************************************************************************************
+********************************************      EXTENSION SNIPPETS      *********************************************
+***********************************************************************************************************************/
+• extension UIColor {
+    convenience init(hexString: String, alpha: CGFloat = 1.0) {
+        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let scanner = Scanner(string: hexString)
+        if (hexString.hasPrefix("#")) {
+            scanner.scanLocation = 1
+        }
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+        let red   = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue  = CGFloat(b) / 255.0
+        self.init(red:red, green:green, blue:blue, alpha:alpha)
+    }
+    func toHexString() -> String {
+        var r:CGFloat = 0
+        var g:CGFloat = 0
+        var b:CGFloat = 0
+        var a:CGFloat = 0
+        getRed(&r, green: &g, blue: &b, alpha: &a)
+        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
+        return String(format:"#%06x", rgb)
+    }
+}
+• extension String {
+        var isValidEmail: Bool {
+                let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-Z]{2,64}"
+                let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+                return emailPredicate.evaluate(with: self)
+        }
+}
