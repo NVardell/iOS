@@ -31,5 +31,18 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func login() throws {
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        
+        if email.isEmpty || password.isEmpty { throw LoginError.incompleteForm }
+        if !email.isValidEmail { throw LoginError.invalidEmail }
+        if password.count < 8 { throw LoginError.incorrectPasswordLength }
+        
+        // Pretend credentials are ALWAYS AMAZING
+        // It's truly amazing magically...
+        
+    }
 }
 
