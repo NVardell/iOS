@@ -4,7 +4,8 @@
 • SEAN ALLEN VIDEOS
     - ERROR HANDLING
         + Do, Try, Catch Blocks
-            - Look for keyword 'Throws'
+            - Look for keyword 'Throws', if a function has it, then it requires a Do, Try, Catch BLOCK
+            - Only need to add Throws to your functions if they can actually throw an error.
             - Common tasks with it...
                 1. Retrieving image Data
                     let imageData = Data(contentsOf: URL(fileURLWithPath: "myFilePath"))
