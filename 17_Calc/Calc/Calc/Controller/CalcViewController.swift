@@ -38,10 +38,10 @@ class CalcViewController: UIViewController {
         //What should happen when a non-number button is pressed
         if let operation = sender.currentTitle {
             print("Operation is: \(operation)")
-            guard let result = calc.operationOperations(computation: operation) else {
-                fatalError("The result of the calculation is nil.")
+            if let result = calc.operationOperations(computation: operation) {
+                displayValue = result
             }
-            displayValue = result
+            
         }
         
         // Quick n dirty tuple test
