@@ -101,10 +101,11 @@
 		AFED601427600B240096107A /* DoTryCatch */ = {
 			isa = PBXGroup;
 			children = (
-				AFED604527600B330096107A /* Support */,
+				AFED602327600B250096107A /* Info.plist */,
+				AFED604627600C9C0096107A /* String_Extensions.swift */,
 				AFED601927600B240096107A /* ViewController.swift */,
 				AFED601B27600B240096107A /* Main.storyboard */,
-				AFED604627600C9C0096107A /* String_Extensions.swift */,
+				AFED604527600B330096107A /* Support */,
 			);
 			path = DoTryCatch;
 			sourceTree = "<group>";
@@ -133,7 +134,6 @@
 				AFED601727600B240096107A /* SceneDelegate.swift */,
 				AFED601E27600B250096107A /* Assets.xcassets */,
 				AFED602027600B250096107A /* LaunchScreen.storyboard */,
-				AFED602327600B250096107A /* Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
