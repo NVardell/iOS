@@ -52,31 +52,19 @@ class CalcViewController: UIViewController {
         if let numValue = sender.currentTitle {
             print("NumValue Clicked")
             if finishedTyping && numValue == "0" && numValue != "." {
-                print("\tFinished Typing && NumValue==0.  NumValue = \(numValue)")
                 displayLabel.text = "0"
             } else if finishedTyping {
-                print("\tFinishedTyping. NumValue = \(numValue)")
                 displayLabel.text = numValue
                 finishedTyping = false
             } else {
-                print("\tElse. NumValue = \(numValue)")
                 if numValue == "." {
-                    print("\tElse & '.'.  NumValue = \(numValue)")
                     
                     let isInt = floor(displayValue) == displayValue
                     
-                    if !isInt {
-                        print("\tElse. isInt = \(isInt)")
-                        return }
+                    if !isInt { return }
                 }
                 displayLabel.text = displayLabel.text! + numValue
             }
         }
     }
-    
-    func updateTotalLabel() {
-        print("Updating Total.")
-    }
-
 }
-
