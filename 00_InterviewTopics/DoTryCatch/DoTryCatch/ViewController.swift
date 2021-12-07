@@ -9,14 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     enum LoginError: Error {
         case incompleteForm
         case invalidEmail
         case incorrectPasswordLength
     }
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,16 @@ class ViewController: UIViewController {
 
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         do {
-            let imageData = try Data(contentsOf: URL(fileURLWithPath: "filePathHere"))
-            // Do whatever you want with ImageData because the try succeeded
-        } catch {
-            // Handle the error
-            print(error.localizedDescription)
-        }
+            try login()
+        } // Handle errors
+        catch LoginError.incompleteForm {
+            Alert.showBasic(title: "Incomplete Form", message: "Please fill out both email & password.", vc: self) }
+        catch LoginError.invalidEmail {
+            Alert.showBasic(title: "Invalid Email", message: "Please make sure email is in correct format.", vc: self) }
+        catch LoginError.incorrectPasswordLength {
+            Alert.showBasic(title: "Password Length", message: "Password should be at least 8 characters.", vc: self) }
+        catch {
+            Alert.showBasic(title: "Unable to Login", message: "There was an error when logging in.", vc: self) }
     }
     
     func login() throws {
@@ -40,8 +44,8 @@ class ViewController: UIViewController {
         if !email.isValidEmail { throw LoginError.invalidEmail }
         if password.count < 8 { throw LoginError.incorrectPasswordLength }
         
-        // Pretend credentials are ALWAYS AMAZING
-        // It's truly amazing magically...
+        // Pretend credentials are AMAZING
+        // It's truly a magical login...
         
     }
 }

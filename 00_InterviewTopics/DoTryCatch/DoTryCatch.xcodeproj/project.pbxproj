@@ -17,6 +17,7 @@
 		AFED603727600B250096107A /* DoTryCatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED603627600B250096107A /* DoTryCatchUITests.swift */; };
 		AFED603927600B250096107A /* DoTryCatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED603827600B250096107A /* DoTryCatchUITestsLaunchTests.swift */; };
 		AFED604727600C9C0096107A /* String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED604627600C9C0096107A /* String_Extensions.swift */; };
+		AFED604927601CC50096107A /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFED604827601CC50096107A /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AFED603627600B250096107A /* DoTryCatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoTryCatchUITests.swift; sourceTree = "<group>"; };
 		AFED603827600B250096107A /* DoTryCatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoTryCatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AFED604627600C9C0096107A /* String_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_Extensions.swift; sourceTree = "<group>"; };
+		AFED604827601CC50096107A /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AFED601927600B240096107A /* ViewController.swift */,
 				AFED601B27600B240096107A /* Main.storyboard */,
 				AFED604527600B330096107A /* Support */,
+				AFED604827601CC50096107A /* Action.swift */,
 			);
 			path = DoTryCatch;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				AFED604727600C9C0096107A /* String_Extensions.swift in Sources */,
 				AFED601A27600B240096107A /* ViewController.swift in Sources */,
 				AFED601627600B240096107A /* AppDelegate.swift in Sources */,
+				AFED604927601CC50096107A /* Action.swift in Sources */,
 				AFED601827600B240096107A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
