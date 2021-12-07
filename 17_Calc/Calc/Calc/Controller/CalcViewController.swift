@@ -9,8 +9,9 @@ import UIKit
 
 class CalcViewController: UIViewController {
     
-    @IBOutlet weak var displayLabel: UILabel!
     private var finishedTyping = true
+    private var calc = CalculatorLogic()
+    @IBOutlet weak var displayLabel: UILabel!
     
     // Current Label Value
     private var displayValue: Double {
@@ -31,14 +32,22 @@ class CalcViewController: UIViewController {
         // Reset Finished Typing
         finishedTyping = true
         
+        // Set number in Calculator Struct
+        calc.setNum(displayValue)
+        
         //What should happen when a non-number button is pressed
         if let operation = sender.currentTitle {
             print("Operation is: \(operation)")
-            let calc = CalculatorLogic(number: displayValue)
-            displayValue = calc.operationOperations(computation: operation)
+            guard let result = calc.operationOperations(computation: operation) else {
+                fatalError("The result of the calculation is nil.")
+            }
+            displayValue = result
         }
         
-        
+        // Quick n dirty tuple test
+        let t3: (name:String, age:Int)
+        t3 = ("Nate", 21)
+        print(t3.name)
     }
 
     
