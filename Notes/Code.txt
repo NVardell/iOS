@@ -40,7 +40,7 @@
 • Separate single file into multiple sections
         // MARK: - SectionName
 • Basic Loop
-        let fruitBasket = ["Apple, "Orange", "Banana"]
+        let fruitBasket = ["Apple", "Orange", "Banana"]
         for fruit in fruitBasket {
                 print(fruit)
         }
