@@ -43,11 +43,6 @@ class CalcViewController: UIViewController {
             }
             
         }
-        
-        // Quick n dirty tuple test
-        let t3: (name:String, age:Int)
-        t3 = ("Nate", 21)
-        print(t3.name)
     }
 
     
