@@ -213,7 +213,11 @@
 • Classes Pros
     1. Has Inheritance
     2. Works with Objective-C Code
-• 
+• WTF is a tuple?! 
+    Quick & Dirty approach to creating a struct/class like object on the fly. 
+    Ex. 
+        let touple = ("nate", 1)
+        let touple = (name:"nate", age:1)
 • 
 
 
