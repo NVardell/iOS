@@ -12,35 +12,25 @@ struct CalculatorLogic {
     private var number: Double?
     private var intermediateCalculation: (n1:Double, operation:String)?
     
-    mutating func setNum(_ number: Double) {
-        print("Setting Calculator Number = \(number)")
-        self.number = number
-    }
+    mutating func setNum(_ number: Double) {  self.number = number  }
     
     mutating func operationOperations(computation symbol: String) -> Double? {
-        print("Operation is: \(symbol)")
         
         if let n = number {
             switch symbol {
                 case "AC":
-                    print("\tCase: AC")
-                    return 0.0
+                    return 0
                 case "+/-":
-                    print("\tCase: +/-")
                     return n * -1
                 case "%":
-                    print("\tCase: %")
                     return n * 0.01
                 case "=":
-                    print("\tCase: =")
                     return performCalculation(n2: n)
                 default:
-                    print("\tCase: Default")
-                    return nil
+                    intermediateCalculation = (n1: n, operation:symbol)
+                    return 0
             }
-        } else {
-            return nil
-        }
+        } else {  return nil  }
     }
     
     mutating private func performCalculation(n2: Double) -> Double? {
@@ -49,21 +39,16 @@ struct CalculatorLogic {
             
             switch operation {
                 case "+":
-                    print("\t\tCase: +")
                     return n1 + n2
                 case "-":
-                    print("\t\tCase: -")
                     return n1 - n2
                 case "×":
-                    print("\t\tCase: ×")
                     return n1 * n2
                 case "÷":
-                    print("\t\tCase: ÷")
                     return n1 / n2
                 default:
-                    fatalError("")
+                    fatalError("Unknown operation!")
             }
-        }
-        return 0.0
+        } else { return nil }
     }
 }
