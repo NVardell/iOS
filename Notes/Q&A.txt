@@ -214,11 +214,13 @@
     1. Has Inheritance
     2. Works with Objective-C Code
 • WTF is a tuple?! 
-    Quick & Dirty approach to creating a struct/class like object on the fly. 
+    - Quick & Dirty approach to creating a struct/class like object on the fly. 
     Ex. 
         let touple = ("nate", 1)
         let touple = (name:"nate", age:1)
-• 
+• When to use 'guard let' over 'if let'
+    - When the odds of an issue occurring there is slim to none, cause if it did everything would break.
+    - The other 9/10 occasions would be 'if let'.  We accept a nil, but generally we expect it to work.
 
 
 
