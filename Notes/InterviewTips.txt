@@ -2,6 +2,27 @@
 ***************************************************      NOTES      ***************************************************
 ***********************************************************************************************************************/
 • SEAN ALLEN VIDEOS
+    - QUESTIONS TO ASK INTERVIEWERS
+        + TO
+            - Technology Stack: If they are doing like all objective-C with no plans to switch to Swift, then you can save time.
+            - Knowledge Expansion - Ask carefully because that is clearly not what they are hiring me for.
+                + The more you know about the entire stack helps you develop your own part in the stack.
+            - Ask about the team!
+                + How big is the team?
+                + Experience spectrum - is there a lot of senior people or is it nice a diverse?
+                    - Having a diverse experience allows for learning and teaching.
+            - Growth within the position
+                + If they promote from within, then cool cause generally want to grow with the company.
+                + 
+            - Where is the product at in its lifecycle?
+                + Is it a brand new app or is it more mature?
+                + On the edge of a lot of migrations/changes?
+            - Is UI mainly done in code or Storyboard?
+                + If it is storyboard, followups
+                    - What do you do to avoid common pitfalls of using storyboard iun a larger team
+            - Final Interview
+                + Above & Beyond
+                    - Creep on all of the people - See if they have done any conferences or such and then ask them about it.
     - LIFECYCLES
         + UIViewController
             - ViewDidLoad
