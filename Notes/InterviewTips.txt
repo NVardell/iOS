@@ -64,7 +64,35 @@
             - Common tasks with it...
                 1. Retrieving image Data
                     let imageData = Data(contentsOf: URL(fileURLWithPath: "myFilePath"))
-    - BOUNDS VS. FRAMES ON UIVIEW
+    - BOUNDS VS FRAMES ON UIVIEW
+        + Bounds
+            - Always on their own coordinate system with (0,0)(x,y) being the top left corner
+            - Height & Width values remain the same on transform/rotation
+        + Frame
+            - Minimum space required for fitting the UIView on the screen
+            - 
+    - CONCURRENCY & THREADS
+        + Main thread
+            - Runs the UI View
+        + Apple has created Grand Central Dispatch (GCD) & NSOperation Queues to help manage tasks
+        + Queues
+            - Default
+                + Every App Automatically
+                    1x Serial Queue
+                        - Main
+                    4x Concurrent Queues
+                        - Background
+            - Pros & Cons
+                + Serial ~ Predictable & Slow
+                + Concurrent ~ Unpredictable & Faster
+            - Serial
+                + Tasks happen 1 at a time, in order.
+                + Predictable.  We like this.
+                + Slower because Task#2 can't start until #1 finishes.
+            - Concurrent
+                + Tasks don't have to wait for prior tasks to complete.
+                + No guarantees that Task #1 will finish first.
+                + Faster than serial because multiple tasks are happening simultaneously.
         + 
 
 
