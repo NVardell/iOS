@@ -2,6 +2,8 @@
 ***************************************************      NOTES      ***************************************************
 ***********************************************************************************************************************/
 • SEAN ALLEN VIDEOS
+    - LIFECYCLES
+        + 
     - ERROR HANDLING
         + Do, Try, Catch Blocks
             - Look for keyword 'Throws', if a function has it, then it requires a Do, Try, Catch BLOCK
