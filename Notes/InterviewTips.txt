@@ -43,7 +43,8 @@
             - Common tasks with it...
                 1. Retrieving image Data
                     let imageData = Data(contentsOf: URL(fileURLWithPath: "myFilePath"))
-
+    - BOUNDS VS. FRAMES ON UIVIEW
+        + 
 
 
 
