@@ -97,11 +97,11 @@
 
 
 
-
 /**********************************************************************************************************************
 ***************************************************      Q & A      ***************************************************
 ***********************************************************************************************************************/
 • Difference between Frames & Bounds?
+    - Very similar until we start rotating/transforming
     - Frames position relative to its SuperView
     - Bounds position relative to its own coordinate system
     - Frame is the position in reference to its parent view or its SuperView
