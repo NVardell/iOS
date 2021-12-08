@@ -93,6 +93,7 @@
                 + Tasks don't have to wait for prior tasks to complete.
                 + No guarantees that Task #1 will finish first.
                 + Faster than serial because multiple tasks are happening simultaneously.
+    - OPTIONALS
         + 
 
 
