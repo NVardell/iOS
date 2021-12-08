@@ -121,5 +121,18 @@
 
     - Bounds has its own coordinate system
         + Top left is 0,0 (x,y)
+            - X,Y is always 0,0 since the bound is on its own coordinates 
         + The coordinates remain the same on transformation
         + No matter what the box will always have the same HxW
+• What is concurrency?
+    - Multitasking; doing multiple tasks at the same time.  
+    - More cores ya got, more concurrent tasks you can run.
+• What's a queue?
+    - First In, First Out
+• What types of queue are there?
+    1. Serial - Tasks happen 1 at a time, in order.
+    2. Concurrent - Tasks don't have to wait for prior tasks to complete.
+• How would you used Grand Central Dispatch?
+    - By grabbing the main thread to update the UI, for say reloading the data in a table view.
+• 
+• 
