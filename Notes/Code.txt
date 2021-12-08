@@ -64,7 +64,7 @@
         // Commonly shortened to 'K'; clearly, cooler than 'C'... smh.
         struct K {
                 static let appTitle = "Awesome Title"
-                static func typeMethod() { // Do Stuff }
+                static func typeMethod() { /** Do Stuff */ }
                 struct Segue {
                         static let toSomeRandomView = "toSomeRandomView"
                 }
