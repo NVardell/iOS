@@ -90,7 +90,7 @@
 • Print location of UserDefaults File Path
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
 • Print location of Realm File Path
-        
+        print("\n\nRealm Location: \(Realm.Configuration.defaultConfiguration.fileURL!)\n\n")
 • Valid Array Inits
         let array = [1, 2, 3]                  // Init Using Type Inference
         let array = [Int]()                    // Init Empty Array of Integers
