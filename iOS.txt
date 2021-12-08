@@ -15,6 +15,7 @@
 • VC: View Controller
 • GCD: Grand Central Dispatch AKA 'LibDispatch' Framework
 • UUID: Universally Unique IDentifier
+• QOS: Quality of Service
 
 
 
