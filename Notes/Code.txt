@@ -88,7 +88,7 @@
         loadItems() // Forces use of default value
         loadItems(with: request) // Passing in some request we manually setup with sorts n such
 • Print location of UserDefaults File Path
-
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
 • Print location of Realm File Path
         
 • Valid Array Inits
