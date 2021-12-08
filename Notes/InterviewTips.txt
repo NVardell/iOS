@@ -51,5 +51,25 @@
 /**********************************************************************************************************************
 ***************************************************      Q & A      ***************************************************
 ***********************************************************************************************************************/
-• 
+• Difference between Frames & Bounds?
+    - Frames position relative to its SuperView
+    - Bounds position relative to its own coordinate system
+    - Frame is the position in reference to its parent view or its SuperView
+        + Has the smallest dimensions required for fitting the view
+        + Has an (x,y) & (h,w) for UIView 
+            Example:
+                _____________                   |||     _____________   DIFF   SAME  
+                |     |     |   FRAME  BOUND    |||     |           |   FRAME  BOUND
+                |     |     |   Y=4    W=3      |||     |           |   Y=4    W=3  
+                |     Y     |   X=5    H=4      |||     |           |   X=7    H=4  
+                |-- X __W__ |   W=3             |||     |           |   W=9         
+                |     |   | |   H=4             |||     |           |   H=6         
+                |   | |   | |                   |||     |           |               
+                |   H |   | |                   |||     |           |               
+                |   | |___| |                   |||     |           |               
+                |___________|                   |||     |___________|               
 
+    - Bounds has its own coordinate system
+        + Top left is 0,0 (x,y)
+        + The coordinates remain the same on transformation
+        + No matter what the box will always have the same HxW
