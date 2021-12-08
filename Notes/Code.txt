@@ -105,8 +105,10 @@
                         vc.present(alert, animated: true)
                 }
         }
-• 
-• 
+• Update TableView on UI (Requires Main Thread to Update UI)
+        DispatchQueue.main.async {  self.tableView.reloadData()  }
+• Run code on background Thread
+        DispatchQueue.global(qos: .background).async {  /** Code to run on background queue. */  }
 
 
 
