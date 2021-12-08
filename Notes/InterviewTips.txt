@@ -6,18 +6,36 @@
         + UIViewController
             - ViewDidLoad
                 + Called when content view is created in memory
+                + Has nothing to do with what is being displayed on the screen
+                + Allows up to force unwrap our outlets
+                + Called once initially, but is not called again throughout navigation because it is already present in the view hierarchy
             - ViewWillAppear
-                + 
+                + Called every time right before the content view is added to the apps view hierarchy
+                + AKA just before it shows on the screen
+                + Used when a view is being 'reused'
+                + Common use cases
+                    - Clearing out a text/search field
+                    - Setting navigation bars to hidden for landing pages
             - ViewDidAppear
-                + 
+                + Called after the content view is added to apps view hierarchy
+                + Use cases
+                    - Animations: Only want them to start when the user is actually able to see them.
             - ViewWillDissapear
-                + 
+                + Called before the content view is removed form the apps view hierarchy
+                + Use cases:
+                    - Committing saved changes for forms.
             - ViewDidDissapear
-                + 
-            - ViewWillLayoutSubviews
-                + 
-            - ViewDidLayoutSubviews
-                + 
+                + Called after the content view is removed form the apps views hierarchy.
+                + Use Cases:
+                    - No examples given outside of stuff you'd want to do after the view is removed... Cool.
+            - NO DEFAULT IMPLS
+                + Simply, exist for us programmers to access the app at this specific point in time.
+                + ViewWillLayoutSubviews
+                    - Called when the content views bounds change, but BEFORE the lays out its subviews!
+                    - Use Cases:
+                        + I think... When you swap from portrait to landscape mode. After rotation, but before it displays.
+                + ViewDidLayoutSubviews
+                    - Called when the content views bounds change but AFTER it lays out its subviews!
     - ERROR HANDLING
         + Do, Try, Catch Blocks
             - Look for keyword 'Throws', if a function has it, then it requires a Do, Try, Catch BLOCK
@@ -34,3 +52,4 @@
 ***************************************************      Q & A      ***************************************************
 ***********************************************************************************************************************/
 • 
+
