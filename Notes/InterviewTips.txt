@@ -144,7 +144,9 @@
                     if let devicePrice = devicePrice {
                         print("My total price = \(devicePrice * 1.06)")
                     }
+    - FILTER, MAP, REDUCE
         + 
+
 
 
 
