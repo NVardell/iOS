@@ -94,6 +94,56 @@
                 + No guarantees that Task #1 will finish first.
                 + Faster than serial because multiple tasks are happening simultaneously.
     - OPTIONALS
+        + An optional allows you to write more flexible and safer code and is denoted by a question mark.
+            - Safer & more flexible because it won't crash our app if the variable is nil.
+            - Image we have a box that is the parameter and the value inside is either:
+                + Nil - Our box is empty
+                + Value - Box has a value of required Data Type.
+        + UNWRAPPING
+            1. If Let
+                + Safely unwraps an optional value by creating a temporary variable if optional isn't nil.
+                + Example:
+                    if let number - optionalNumber {
+                        print("I have a value, it is \(number)")
+                    } else {
+                        print("I do not have a value, just nil")
+                    }
+            2. Guard Let
+                + Guard statements provide an early exit out of the function if something happens to be nil. 
+                + Perfect choice when the code of the function requires a value that isn't nil.
+                + Used in functions to make an early exit!
+                + Example:
+                    func tripleNumber(number Int?) {
+                        guard let number = number else {
+                            print("Exiting Function")
+                            return
+                        }
+                        print("My tripled number is \(3*number)")
+                    }
+            3. Force Unwrapping (!)
+                + General rule - Don't do this.  
+                + 90% of the time there is probably a better solution.  If force unwrap is nil, app crashes 100%.
+                + Example:
+                    let optionalNumber: Int?
+                    let forcedUnwrap = optionalNumber! // Error because optional is nil.
+            4. Optional Chaining
+                + Optional chaining is very similar to Force Unwrapping, but it allows for your app to fail gracefully
+                  without crashing the entire app due to a single variable not having a value.
+                + Only used on objects that have properties.
+                + Example:
+                    struct Device {
+                        var type: String
+                        var price: Float
+                        var color: String
+                    }
+
+
+                    var myPhone: Device?
+                    let devicePrice = myPhone?.price // Optional Chaining - If my phone exists, grab the price.
+                                                     // Optional Chaining - Automatically makes let an optional
+                    if let devicePrice = devicePrice {
+                        print("My total price = \(devicePrice * 1.06)")
+                    }
         + 
 
 
