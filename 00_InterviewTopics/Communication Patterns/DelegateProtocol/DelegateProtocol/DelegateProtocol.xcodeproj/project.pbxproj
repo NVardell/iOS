@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		AF9C9F69276677460067EB70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F68276677460067EB70 /* AppDelegate.swift */; };
 		AF9C9F6B276677460067EB70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F6A276677460067EB70 /* SceneDelegate.swift */; };
-		AF9C9F6D276677460067EB70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F6C276677460067EB70 /* ViewController.swift */; };
+		AF9C9F6D276677460067EB70 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F6C276677460067EB70 /* BaseController.swift */; };
 		AF9C9F70276677460067EB70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9C9F6E276677460067EB70 /* Main.storyboard */; };
 		AF9C9F72276677470067EB70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF9C9F71276677470067EB70 /* Assets.xcassets */; };
 		AF9C9F75276677470067EB70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9C9F73276677470067EB70 /* LaunchScreen.storyboard */; };
 		AF9C9F80276677470067EB70 /* DelegateProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F7F276677470067EB70 /* DelegateProtocolTests.swift */; };
 		AF9C9F8A276677470067EB70 /* DelegateProtocolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F89276677470067EB70 /* DelegateProtocolUITests.swift */; };
 		AF9C9F8C276677470067EB70 /* DelegateProtocolUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C9F8B276677470067EB70 /* DelegateProtocolUITestsLaunchTests.swift */; };
+		AFA8CE4F2766790200A21EEF /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8CE4E2766790200A21EEF /* SelectionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		AF9C9F65276677460067EB70 /* DelegateProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DelegateProtocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9C9F68276677460067EB70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9C9F6A276677460067EB70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF9C9F6C276677460067EB70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF9C9F6C276677460067EB70 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		AF9C9F6F276677460067EB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF9C9F71276677470067EB70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF9C9F74276677470067EB70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		AF9C9F85276677470067EB70 /* DelegateProtocolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DelegateProtocolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9C9F89276677470067EB70 /* DelegateProtocolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProtocolUITests.swift; sourceTree = "<group>"; };
 		AF9C9F8B276677470067EB70 /* DelegateProtocolUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProtocolUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AFA8CE4E2766790200A21EEF /* SelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,9 @@
 		AF9C9F67276677460067EB70 /* DelegateProtocol */ = {
 			isa = PBXGroup;
 			children = (
-				AF9C9F68276677460067EB70 /* AppDelegate.swift */,
-				AF9C9F6A276677460067EB70 /* SceneDelegate.swift */,
-				AF9C9F6C276677460067EB70 /* ViewController.swift */,
+				AFA8CE4D276678BB00A21EEF /* Support */,
+				AFA8CE502766790B00A21EEF /* Controller */,
 				AF9C9F6E276677460067EB70 /* Main.storyboard */,
-				AF9C9F71276677470067EB70 /* Assets.xcassets */,
-				AF9C9F73276677470067EB70 /* LaunchScreen.storyboard */,
 				AF9C9F76276677470067EB70 /* Info.plist */,
 			);
 			path = DelegateProtocol;
@@ -125,6 +124,26 @@
 				AF9C9F8B276677470067EB70 /* DelegateProtocolUITestsLaunchTests.swift */,
 			);
 			path = DelegateProtocolUITests;
+			sourceTree = "<group>";
+		};
+		AFA8CE4D276678BB00A21EEF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C9F68276677460067EB70 /* AppDelegate.swift */,
+				AF9C9F6A276677460067EB70 /* SceneDelegate.swift */,
+				AF9C9F71276677470067EB70 /* Assets.xcassets */,
+				AF9C9F73276677470067EB70 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		AFA8CE502766790B00A21EEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C9F6C276677460067EB70 /* BaseController.swift */,
+				AFA8CE4E2766790200A21EEF /* SelectionController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF9C9F6D276677460067EB70 /* ViewController.swift in Sources */,
+				AF9C9F6D276677460067EB70 /* BaseController.swift in Sources */,
 				AF9C9F69276677460067EB70 /* AppDelegate.swift in Sources */,
+				AFA8CE4F2766790200A21EEF /* SelectionController.swift in Sources */,
 				AF9C9F6B276677460067EB70 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
