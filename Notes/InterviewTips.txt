@@ -145,8 +145,38 @@
                         print("My total price = \(devicePrice * 1.06)")
                     }
     - FILTER, MAP, REDUCE
-        + 
+        + Used to iterate over a collection, making changes, and creating a new array.
+        + Filter
+            - Evaluates a specific object attribute returning a new array of objects that satisfy that condition.
+        + Map
+            - Preforms an operation, generally math, on an object attribute returning a new array with the updated values.
+        + Reduce
+            - Combines all of your values into a single value
+        + Essentially, a FOR loop, bit simplified for out convenience.
+                + Example:
+                    var myiMacPro     = Device(type: "iMac Pro",    price: 4999.0,  color: "Space Gray")
+                    var myiPhone6Plus = Device(type: "iPhone",      price: 799.0,   color: "White")
+                    var myiPhone7     = Device(type: "iPhone",      price: 699.0,   color: "Black")
+                    var myiPadPrd     = Device(type: "iPad",        price: 599.0,   color: "Space Gray")
+                    var myApleWatch   = Device(type: "Apple Watch", price: 349.0,   color: "Space Gray")
+                    var myAppleTV4k   = Device(type: "Apple TV",    price: 199.0,   color: "Black")
 
+                    let devices = [ myiMacPro, myiPhone6Plus, myiPhone7, myiPadPrd, myApleWatch, myAppleTV4k ]
+                    
+                    // OLD FILTER w/ FOR LOOP                    
+                    var myPhones: [Device] = []
+                    for device in myDevices {   
+                        if device.type == "iPhone" { myPhones.append(device) }
+                    }
+
+                    // FILTER WAY
+                    let iPhones = myDevices.filter({return $0.type == "iPhone"})
+
+                    // MAP
+                    let canadianPrices: [FLoat] = myDevices.map({ return $0.price * 1.2 })
+
+                    // RECUCE                              Initial Value=↯  Op=↯   
+                    let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
 
 
 
