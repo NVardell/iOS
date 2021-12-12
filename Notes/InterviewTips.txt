@@ -177,6 +177,11 @@
 
                     // RECUCE                              Initial Value=↯  Op=↯   
                     let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
+    - COMMUNICATION PATTERNS
+        + PART #1 ~ DELEGATES & PROTOCOLS
+            - Delegates 
+            - Protocols
+        + PART #2 ~
 
 
 
