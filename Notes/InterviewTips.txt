@@ -179,9 +179,11 @@
                     let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
     - COMMUNICATION PATTERNS
         + PART #1 ~ DELEGATES & PROTOCOLS
+            - One-to-One (O2O) Communication ~ One view communicating with another view.
             - Delegates 
             - Protocols
-        + PART #2 ~
+        + PART #2 ~ NOTIFICATIONS & OBSERVERS
+            - One-to-Many (O2M) Communication ~ Can have many notifications pionting to a single Observer
 
 
 
@@ -222,5 +224,17 @@
     2. Concurrent - Tasks don't have to wait for prior tasks to complete.
 • How would you used Grand Central Dispatch?
     - By grabbing the main thread to update the UI, for say reloading the data in a table view.
+• What are the primary communication patters for UIViews?
+    1. Delegates & Protocols (One-to-One)
+    2. Notifications & Observers (One-to-Many)
+• What are some of Apples predefined helper fuinctions?
+    1. Filter
+    2. Reduce
+    3. Map
 • 
 • 
+• 
+• 
+• 
+
+
