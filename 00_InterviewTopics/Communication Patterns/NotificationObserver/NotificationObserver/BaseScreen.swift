@@ -26,6 +26,8 @@ class BaseScreen: UIViewController {
     /// Our Notifications
     let light = Notification.Name(rawValue: lightNotificationKey)
     let dark = Notification.Name(rawValue: darkNotificationKey)
+    
+    /// Button Pressed UIAction
     @IBAction func chooseButtonTapped(_ sender: UIButton) {
         let selectionVC = storyboard?.instantiateViewController(withIdentifier: "SelectionScreen") as! SelectionScreen
         present(selectionVC, animated: true, completion: nil)
