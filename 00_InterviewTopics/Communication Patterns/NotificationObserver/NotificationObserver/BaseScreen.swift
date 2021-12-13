@@ -7,6 +7,10 @@
 
 import UIKit
 
+/// Unique Identifiers for our Notifications
+let lightNotificationKey = "lightSide"
+let darkNotificationKey = "darkSide"
+
 class BaseScreen: UIViewController {
 
     @IBOutlet weak var mainImageView: UIImageView!
