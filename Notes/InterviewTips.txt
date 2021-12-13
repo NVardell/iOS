@@ -199,6 +199,9 @@
                 + Sitting around waiting for the notification(s) to be triggered
                 + Best practice is to remove them when they are no longer necessary. Like closing file after reading.
                     - Hosuekeeping.
+    - GESTURE RECOGNIZERS
+        + 
+
 
 
 /**********************************************************************************************************************
