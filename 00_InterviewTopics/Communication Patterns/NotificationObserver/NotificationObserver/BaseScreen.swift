@@ -21,7 +21,11 @@ class BaseScreen: UIViewController {
         super.viewDidLoad()
         chooseButton.layer.cornerRadius = chooseButton.frame.size.height/2
     }
-
+    
+    
+    /// Our Notifications
+    let light = Notification.Name(rawValue: lightNotificationKey)
+    let dark = Notification.Name(rawValue: darkNotificationKey)
     @IBAction func chooseButtonTapped(_ sender: UIButton) {
         let selectionVC = storyboard?.instantiateViewController(withIdentifier: "SelectionScreen") as! SelectionScreen
         present(selectionVC, animated: true, completion: nil)
