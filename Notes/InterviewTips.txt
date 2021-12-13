@@ -192,8 +192,13 @@
                 + 
             - Notifications
                 + Commonly triggered in methods such as ViewDidLoad, ViewDidAppear, etc.
+                + It is possible to pass information through notifications; commonly User info.
+                + Example
+                    NotificationCenter.default.post(name: _, object: _)
             - Observers
                 + Sitting around waiting for the notification(s) to be triggered
+                + Best practice is to remove them when they are no longer necessary. Like closing file after reading.
+                    - Hosuekeeping.
 
 
 /**********************************************************************************************************************
