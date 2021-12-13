@@ -19,7 +19,8 @@
 • DELEGATES
     - In place of coding delegates, from Storyboard you can Control drag object to the most left yellow icon atop view,
       and then select 'Delegate' from the mini popup menu that appears
-
+• OBSERVERS
+    - Remove them when they are no longer necessary.
 
 
 
