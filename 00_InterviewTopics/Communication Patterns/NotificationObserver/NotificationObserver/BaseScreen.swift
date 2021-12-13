@@ -27,6 +27,12 @@ class BaseScreen: UIViewController {
     let light = Notification.Name(rawValue: lightNotificationKey)
     let dark = Notification.Name(rawValue: darkNotificationKey)
     
+    
+    /// Remove Observers ~ De-Initialize
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     /// Button Pressed UIAction
     @IBAction func chooseButtonTapped(_ sender: UIButton) {
         let selectionVC = storyboard?.instantiateViewController(withIdentifier: "SelectionScreen") as! SelectionScreen
