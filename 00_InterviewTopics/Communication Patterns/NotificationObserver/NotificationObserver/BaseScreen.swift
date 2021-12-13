@@ -46,4 +46,34 @@ class BaseScreen: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(BaseScreen.updateCharacterName(notification:)), name: dark, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BaseScreen.updateBackground(notification:)), name: dark, object: nil)
     }
+    
+    /// Update our UI based on the notifications our Observers receive
+    @objc func updateCharacterImage(notification: NSNotification) {
+        
+        let isLight = notification.name == light
+    
+        // What Side?
+        let image = isLight ? UIImage(named: "luke")! : UIImage(named: "vader")!
+        
+        // Set Image
+        mainImageView.image = image
+    }
+    @objc func updateCharacterName(notification: NSNotification) {
+        let isLight = notification.name == light
+        
+        // What Side?
+        let characterName = isLight ? "Luke" : "Darth Vader"
+        
+        // Set Name On UI
+        nameLabel.text = characterName
+    }
+    @objc func updateBackground(notification: NSNotification) {
+        let isLight = notification.name == light
+        
+        // What Side?
+        let backgroundColor = isLight ? UIColor.cyan : UIColor.red
+        
+        // Set Background On UI
+        view.backgroundColor = backgroundColor
+    }
 }
