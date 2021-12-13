@@ -179,12 +179,21 @@
                     let totalCanadianPrice: Float = canadianPrices.reduce(0.0, +)
     - COMMUNICATION PATTERNS
         + PART #1 ~ DELEGATES & PROTOCOLS
-            - One-to-One (O2O) Communication ~ One view communicating with another view.
             - Delegates 
             - Protocols
+            - Both
+                + One-to-One (O2O) Communication ~ One view communicating with another view.
+                + Kind of like a Boss/Intern relationship.
+                    - The boss defines the protocol & is the one who delegates tasks to the surfs.
+                    - The intern gets to do the actual work by assigning it'self' to implementing the protocol.
         + PART #2 ~ NOTIFICATIONS & OBSERVERS
-            - One-to-Many (O2M) Communication ~ Can have many notifications pionting to a single Observer
-
+            - Both
+                + One-to-Many (O2M) Communication ~ Can have many notifications pionting to a single Observer
+                + 
+            - Notifications
+                + Commonly triggered in methods such as ViewDidLoad, ViewDidAppear, etc.
+            - Observers
+                + Sitting around waiting for the notification(s) to be triggered
 
 
 /**********************************************************************************************************************
