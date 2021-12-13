@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Screen we will be using to post our notifications
 class SelectionScreen: UIViewController {
     
     override func viewDidLoad() {
