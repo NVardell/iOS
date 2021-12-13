@@ -20,6 +20,7 @@ class BaseScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chooseButton.layer.cornerRadius = chooseButton.frame.size.height/2
+        createObservers()
     }
     
     
