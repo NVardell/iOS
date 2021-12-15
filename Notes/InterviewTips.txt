@@ -200,7 +200,7 @@
                     - Housekeeping.
     - GESTURE RECOGNIZERS
         + Pan Gesture
-            - TranslationL: Property of UIPan that tracks the location & velocity of the movement of the pan.
+            - Translation: Property of UIPan that tracks the location & velocity of the movement of the pan.
 
 
 
