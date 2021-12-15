@@ -50,10 +50,8 @@ class ViewController: UIViewController {
                     // Remove File Icon from View
                     removeImageFromView(view: fileView)
                 } else {
-                    UIView.animate(withDuration: 0.3) {
-                        self.fileImageView.frame.origin = self.fileViewOrigin
-                    }
                     // Move File Icon back to Origin
+                    returnImageViewToOrigin(view: fileView)
                 }
             default:
                 print("Default Case")
@@ -76,5 +74,11 @@ class ViewController: UIViewController {
             view.alpha = 0.0
         }
     }
+    func returnImageViewToOrigin(view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.frame.origin = self.fileViewOrigin
+        }
+    }
+    
 }
 
