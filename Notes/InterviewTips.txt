@@ -188,8 +188,7 @@
                     - The intern gets to do the actual work by assigning it'self' to implementing the protocol.
         + PART #2 ~ NOTIFICATIONS & OBSERVERS
             - Both
-                + One-to-Many (O2M) Communication ~ Can have many notifications pionting to a single Observer
-                + 
+                + One-to-Many (O2M) Communication ~ Can have many notifications pointing to a single Observer
             - Notifications
                 + Commonly triggered in methods such as ViewDidLoad, ViewDidAppear, etc.
                 + It is possible to pass information through notifications; commonly User info.
