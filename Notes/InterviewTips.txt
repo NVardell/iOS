@@ -201,6 +201,54 @@
     - GESTURE RECOGNIZERS
         + Pan Gesture
             - Translation: Property of UIPan that tracks the location & velocity of the movement of the pan.
+    - MISC. TOPICS
+        + Automatic Reference Counting
+            - Apples solution to handling Memory Management of objects for us.
+            - Maintains a count of references to our objects that we create.
+            - Example ~ I own multiple devices.  I can't be deleted or set to nil because my devices all reference me.
+            - Code Example
+                class Person {
+                    let name: String
+                    var macbook: MacBook?
+
+                    init(name: String, macbook: MacBook) {  self.name=name; self.macbook=macbook  }
+                    deinit {  print("\(name) is being deinitialized. Dun, dun, dunnnn!")  }
+                }
+                class MacBook {
+                    let name: String
+                    var Owner: Person?
+
+                    init(name: String, owner: Person) {  self.name=name; self.owner=owner  }
+                    deinit {  print("\(name) the MacBook is being deinitialized! Dun, dun, dunnnn!")  }
+                }
+                class PlayWithOurObjects: UIViewController {
+                    var nate: Person?
+                    var matilda: MacBook?
+
+                    override func viewDidLoad() {
+                        super.viewDidLoad()
+                        createObjects()
+                        testObjectReferences()
+                        buyMatilda()
+                    }
+
+                    func testObjectReferences() {
+                        // Triggers DeInit if only 1 Strong Reference Exists in memory
+                        nate = nil; matilda = nil
+                    }
+
+                    func createObjects() {
+                        nate = Person(name: "Nate", macbook: nil) // Too poor to buy her.
+                        matilda = MacBook(name: "Matilda", owner: nil) // Haven't bought her yet...
+                    }
+                    func buyMatilda() {
+                        nate?.macbook = matilda
+                        matilda?.owner = nate
+                    }
+
+                }
+        + Memory Leak
+            - Objects remain in memory if there is more than 1 strong reference to them, even if they are set to nil.
 
 
 
