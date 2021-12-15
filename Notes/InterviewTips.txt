@@ -199,7 +199,8 @@
                 + Best practice is to remove them when they are no longer necessary. Like closing file after reading.
                     - Housekeeping.
     - GESTURE RECOGNIZERS
-        + 
+        + Pan Gesture
+            - TranslationL: Property of UIPan that tracks the location & velocity of the movement of the pan.
 
 
 
