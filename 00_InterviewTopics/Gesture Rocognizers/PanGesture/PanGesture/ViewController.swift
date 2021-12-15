@@ -43,11 +43,7 @@ class ViewController: UIViewController {
         
         switch sender.state {
             case .began, .changed:
-                fileView.center = CGPoint(
-                    x: fileView.center.x + trans.x,
-                    y: fileView.center.y + trans.y)
-                
-                sender.setTranslation(CGPoint.zero, in: view)
+                moveViewWithPan(view: fileView, sender: sender)
             case .ended:
                 print("Ended Case")
                 // 1. Check if File Icon Overlaps our Trash Icon
@@ -65,6 +61,18 @@ class ViewController: UIViewController {
             default:
                 print("Default Case")
         }
+    }
+    
+    
+    /// Pan | Helper Methods
+    func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
+        let trans = sender.translation(in: view)
+        
+        view.center = CGPoint(
+            x: view.center.x + trans.x,
+            y: view.center.y + trans.y)
+        
+        sender.setTranslation(CGPoint.zero, in: view)
     }
 }
 
