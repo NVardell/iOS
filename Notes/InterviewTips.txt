@@ -197,7 +197,7 @@
             - Observers
                 + Sitting around waiting for the notification(s) to be triggered
                 + Best practice is to remove them when they are no longer necessary. Like closing file after reading.
-                    - Hosuekeeping.
+                    - Housekeeping.
     - GESTURE RECOGNIZERS
         + 
 
@@ -243,7 +243,7 @@
 • What are the primary communication patters for UIViews?
     1. Delegates & Protocols (One-to-One)
     2. Notifications & Observers (One-to-Many)
-• What are some of Apples predefined helper fuinctions?
+• What are some of Apples predefined helper functions?
     1. Filter
     2. Reduce
     3. Map
