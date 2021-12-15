@@ -45,17 +45,17 @@ class ViewController: UIViewController {
             case .began, .changed:
                 moveViewWithPan(view: fileView, sender: sender)
             case .ended:
-                // 1. Check if File Icon Overlaps our Trash Icon
+                // Check if File Icon Overlaps our Trash Icon
                 if fileView.frame.intersects(trashImageView.frame) {
-                    // 1a. Remove File Icon from View
                     UIView.animate(withDuration: 0.3) {
                         self.fileImageView.alpha = 0.0
                     }
+                    // Remove File Icon from View
                 } else {
-                    // 1b. Move File Icon back to Origin
                     UIView.animate(withDuration: 0.3) {
                         self.fileImageView.frame.origin = self.fileViewOrigin
                     }
+                    // Move File Icon back to Origin
                 }
             default:
                 print("Default Case")
