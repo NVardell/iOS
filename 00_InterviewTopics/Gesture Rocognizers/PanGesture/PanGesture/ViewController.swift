@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     
     /// Gesture | Handle Image Pan Gesture
     @objc func handlePan(sender: UIPanGestureRecognizer) {
-        let fileView = sender.view!  // Sender is our pan gesture that is attached to our file image
-        let trans = sender.translation(in: view)
+        // Sender being our pan gesture that is attached to file image (L28)
+        let fileView = sender.view!
         
         switch sender.state {
             case .began, .changed:
