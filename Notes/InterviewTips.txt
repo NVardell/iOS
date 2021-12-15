@@ -250,7 +250,10 @@
     3. Map
 • What is the main difference between Delegate/Protocol Communication & Notification/Observer?
     - Their relationships.  Delegate/Protocol is O2O & Notification/Observer is O2M.
-• 
+• Pan gesture states?
+    1. Began - When you initiate the pan movement gesture.
+    2. Change - Tracks every movement throughout the gesture, while finger is still in motion on screen.
+    3. Ended - When the gesture is complete & finger is released from screen.
 • 
 • 
 • 
