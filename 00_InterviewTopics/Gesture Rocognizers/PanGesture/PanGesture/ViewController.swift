@@ -47,10 +47,8 @@ class ViewController: UIViewController {
             case .ended:
                 // Check if File Icon Overlaps our Trash Icon
                 if fileView.frame.intersects(trashImageView.frame) {
-                    UIView.animate(withDuration: 0.3) {
-                        self.fileImageView.alpha = 0.0
-                    }
                     // Remove File Icon from View
+                    removeImageFromView(view: fileView)
                 } else {
                     UIView.animate(withDuration: 0.3) {
                         self.fileImageView.frame.origin = self.fileViewOrigin
@@ -72,6 +70,11 @@ class ViewController: UIViewController {
             y: view.center.y + trans.y)
         
         sender.setTranslation(CGPoint.zero, in: view)
+    }
+    func removeImageFromView(view: UIView) {
+        UIView.animate(withDuration: 0.3) {
+            view.alpha = 0.0
+        }
     }
 }
 
