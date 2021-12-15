@@ -223,6 +223,9 @@
     - The other 9/10 occasions would be 'if let'.  We accept a nil, but generally we expect it to work.
 • What do you call the Left/Right constraints on Interface Builder when laying out objects on Storyboard?
     - Leading & Trailing
+• What is the most important difference between Classes & Structs?
+    - Classes are Reference Type (Passed around like a Google Doc. One file w/ Many Reference.)
+    - Structs are Value Type (Passed around like handing out individual copies. One File w/ One Reference)
 
 
 /**********************************************************************************************************************
