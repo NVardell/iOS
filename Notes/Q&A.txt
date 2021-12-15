@@ -31,18 +31,18 @@
     - '...' Includes the lower and upper values.  Used when randomizing numbers in a specific range,
 • Can you have a partially open range operator?
     - Yes. '..<' Include lower bound and everything less than upper bound.
-• What is the difference between Safe Area and Superview?
-    - Superview is the area at the top/bottom of the phone where default Apple OS gestures and stats appear.
+• What is the difference between Safe Area and SuperView?
+    - SuperView is the area at the top/bottom of the phone where default Apple OS gestures and stats appear.
       Adding UI elements to these areas is frowned upon.  Hence the Safe Area auto sizes things to stay out of that area.
 • Alignment v Pinning
     - Alignment Constraints force a UI object to a horizontal/vertical rule.
     - Pinning Constraints force UI objects to be a specific # of pixels from each edge of the display.
     - Align to the Center & Pin to the bottom.
 • Name 3 different ways to create UI Container Views for objects to sit in.
-    1. Plus button, Search "uiview", Click & Drag "View" object to Builder
+    1. Plus button, Search "UIView", Click & Drag "View" object to Builder
     2. Select UI Objects -> Select 'Editor' menu -> Select 'Embed In' -> Select 'View'
     3. Select UI Objects -> Click icon in lower right with an arrow in a box -> Select 'View'
-• What views make up the right Inspector Sidebar?
+• What views make up the Inspector Sidebar? (Right Side)
     1. File
     2. History
     3. Quick Help
@@ -221,7 +221,8 @@
 • When to use 'guard let' over 'if let'
     - When the odds of an issue occurring there is slim to none, cause if it did everything would break.
     - The other 9/10 occasions would be 'if let'.  We accept a nil, but generally we expect it to work.
-
+• What do you call the Left/Right constraints on Interface Builder when laying out objects on Storyboard?
+    - Leading & Trailing
 
 
 /**********************************************************************************************************************
