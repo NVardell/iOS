@@ -228,6 +228,23 @@
 • What is the most important difference between Classes & Structs?
     - Classes are Reference Type (Passed around like a Google Doc. One file w/ Many Reference.)
     - Structs are Value Type (Passed around like handing out individual copies. One File w/ One Reference)
+• What is ARC?
+    - Automatic Reference Counting.
+• What is ARC responsible for?
+    - Automatic Reference Counting keeps count of strong references to our objects; automatically, 
+      de-allocating it from memory when the count is 0.
+• What are Retain Cycles?
+    - When 2 objects have strong references to one another resulting in ARC never being 0, 
+      resulting in a retain cycle or memory leak. 
+• How can you 'fix' possible memory leaks?
+    - Make object references weak, allowing the ARC count to reach 0, thus de-allocating objects from memory.
+• What are the two communication patterns between views?
+    - Delegates: One-to-One relationship between two views adopting specific protocol.
+    - Observers: One-to-Many relationship between one view observing many notifications.
+• Give an example of a downside to the Observer Notification pattern.
+    - This one to many view communication pattern, can have infinitely many notifications all pointing back
+      to a single observer; drastically, increasing the complexity of the application.
+
 
 
 /**********************************************************************************************************************
