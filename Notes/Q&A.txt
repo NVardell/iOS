@@ -183,9 +183,11 @@
 • Name the 5 lifecycle methods of a View.
     1. viewDidLoad()
     2. viewWillAppear()
-    3. viewDidAppear()
-    4. viewWillDissapear()
-    5. viewDidDissapear()
+    3. viewWillLayoutSubView()
+    4. viewDidLayoutSubViews()
+    5. viewDidAppear()
+    6. viewWillDissapear()
+    7. viewDidDissapear()
 • What is User Defaults & what is it most commonly used for?
     - Device Storage/Database most commonly used for storing User Preferences
         Ex. 
