@@ -252,3 +252,8 @@
 ***********************************************************************************************************************/
 • What is the lifecycle of an app?
     1. 
+• What are Memory Leaks? How do they occur?
+• Explain Memory Leaks in closures? Weak self v unknown self.
+• When should a Delegate pattern by used? Observer Pattern?
+• What is your favorite apple framework to work with?
+
