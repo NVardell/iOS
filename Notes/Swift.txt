@@ -388,6 +388,6 @@
         4. Public ~ Accessible within other modules. (More for Frameworks, Libraries, SDKs.)
         5. Open ~ Everything is accessible & modifiable. (Can be overridden, Public makes this not possible.)
     - Tuple
-        + 
-
+        + Temporary set of data that can be created on the fly in a quick n dirty way without having to 
+          explicitly create a class/struct for it.
 
