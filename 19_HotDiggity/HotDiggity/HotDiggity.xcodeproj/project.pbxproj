@@ -99,12 +99,9 @@
 		AF192CAF2778FA3100BC0DB8 /* HotDiggity */ = {
 			isa = PBXGroup;
 			children = (
-				AF192CB02778FA3100BC0DB8 /* AppDelegate.swift */,
-				AF192CB22778FA3100BC0DB8 /* SceneDelegate.swift */,
+				AF192CE02778FACD00BC0DB8 /* Support */,
 				AF192CB42778FA3100BC0DB8 /* ViewController.swift */,
 				AF192CB62778FA3100BC0DB8 /* Main.storyboard */,
-				AF192CB92778FA3200BC0DB8 /* Assets.xcassets */,
-				AF192CBB2778FA3200BC0DB8 /* LaunchScreen.storyboard */,
 				AF192CBE2778FA3200BC0DB8 /* Info.plist */,
 			);
 			path = HotDiggity;
@@ -125,6 +122,17 @@
 				AF192CD32778FA3200BC0DB8 /* HotDiggityUITestsLaunchTests.swift */,
 			);
 			path = HotDiggityUITests;
+			sourceTree = "<group>";
+		};
+		AF192CE02778FACD00BC0DB8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AF192CB02778FA3100BC0DB8 /* AppDelegate.swift */,
+				AF192CB22778FA3100BC0DB8 /* SceneDelegate.swift */,
+				AF192CB92778FA3200BC0DB8 /* Assets.xcassets */,
+				AF192CBB2778FA3200BC0DB8 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
