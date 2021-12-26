@@ -388,7 +388,7 @@
     - ML
         + Machine Learning: Field of study that gives computers the ability to learn without being explicitly programmed. - Arthur Samuel
         + There are two primary categories for Machine Learning
-            1. Supervised
+            1. Supervised Learning
                 - Telling the program it's wrong/right. 
                 - Labeled Training Data.
                 - Primary solutions used are
@@ -396,6 +396,5 @@
                         + Used when we want to estimate a value such as salary based on years experience.
                     2. Categorization
                         + Used when we want to place items into separate categories, like cats & dogs.
-            2. Unsupervised
-                - 
+            2. Unsupervised Learning
 
