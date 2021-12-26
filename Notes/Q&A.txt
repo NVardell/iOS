@@ -220,9 +220,9 @@
     Ex. 
         let touple = ("nate", 1)
         let touple = (name:"nate", age:1)
-• When to use 'guard let' over 'if let'
+• When to use 'guard let' over 'if let'?
     - When the odds of an issue occurring there is slim to none, cause if it did everything would break.
-    - The other 9/10 occasions would be 'if let'.  We accept a nil, but generally we expect it to work.
+    - The other 9/10 occasions would be 'if let'.  We accept a nil, but generally, we expect it to work.
 • What do you call the Left/Right constraints on Interface Builder when laying out objects on Storyboard?
     - Leading & Trailing
 • What is the most important difference between Classes & Structs?
@@ -252,7 +252,8 @@
         - Telling the program it's wrong/right. 
         - Labeled Training Data.
         - Primary solutions used are Regression & Categorization. 
-    2. Unsupervised: 
+    2. Unsupervised
+        - Force Model to make sense of unstructured data
 • What can CoreML NOT do?
     1. Training
     2. Static Model (Not continuing to learn.)
