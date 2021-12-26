@@ -411,4 +411,9 @@
                     1. Clustering
                         + Brakes data into clusters and generates a set of rules/boundaries required to fit cluster.
             3. Reinforcement Learning
+                - Essentially a teacher that reinforces the mandates.  Rewarding negative behavior & giving you the ruler when you mess up.
+                - Dog training is a good explanation of reinforced learning.
+
+
+
 
