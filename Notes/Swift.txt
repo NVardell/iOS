@@ -401,4 +401,6 @@
                         + Used when we want to estimate a value such as salary based on years experience.
                     2. Categorization
                         + Used when we want to place items into separate categories, like cats & dogs.
+            2. Unsupervised
+                - 
 
