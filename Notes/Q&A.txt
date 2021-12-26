@@ -244,6 +244,19 @@
 • Give an example of a downside to the Observer Notification pattern.
     - This one to many view communication pattern, can have infinitely many notifications all pointing back
       to a single observer; drastically, increasing the complexity of the application.
+• What is ML?
+    - Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed.
+    - Arthur Samuel
+• What are two broad categories of Machine Learning?
+    1. Supervised
+        - Telling the program it's wrong/right. 
+        - Labeled Training Data.
+        - Primary solutions used are Regression & Categorization.
+    2. Unsupervised: 
+• 
+• 
+• 
+• 
 
 
 
