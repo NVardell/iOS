@@ -401,4 +401,5 @@
                 - Solution Implementations
                     1. Clustering
                         + Brakes data into clusters and generates a set of rules/boundaries required to fit cluster.
+            3. Reinforcement Learning
 
