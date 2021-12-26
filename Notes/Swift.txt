@@ -234,6 +234,14 @@
             - Provides comprehensive support for concurrent code execution on multi-core hardware.
         + XCTest
             - The XCTest library provides a common framework for writing unit tests in Swift.
+        + CoreML
+            - Apples Machine Learning library allowing developers to...
+                1. Lead a Pre-Trained Model into xCode generating an open *.ml class file.
+                2. Make predictions using imported model
+            - Cons/Can't do
+                1. No training
+                2. Static Model (No continued learning.)
+                3. Not Encrypted
     - 3rd PARTY
         + Alamofire
             - Elegant HTTP networking library
