@@ -327,11 +327,6 @@
             - Open-source framework
             - Faster & Easier database solution compared to Core Data.
             - Quickly, becoming one of the most popular ways of persisting data locally on device.
-• 
-
-
-
-
 • NETWORKING
     - General Steps for interacting with APIs
         1. Create a URL
