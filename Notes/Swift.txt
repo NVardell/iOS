@@ -397,4 +397,8 @@
                     2. Categorization
                         + Used when we want to place items into separate categories, like cats & dogs.
             2. Unsupervised Learning
+                - Forces Model to find structure in our unstructured data.
+                - Solution Implementations
+                    1. Clustering
+                        + Brakes data into clusters and generates a set of rules/boundaries required to fit cluster.
 
