@@ -251,10 +251,14 @@
     1. Supervised
         - Telling the program it's wrong/right. 
         - Labeled Training Data.
-        - Primary solutions used are Regression & Categorization.
+        - Primary solutions used are Regression & Categorization. 
     2. Unsupervised: 
-• 
-• 
+• What can CoreML NOT do?
+    1. Training
+    2. Static Model (Not continuing to learn.)
+• What can CoreML do?
+    1. Import Trained Data Model
+    2. Output Predictions
 • 
 • 
 
